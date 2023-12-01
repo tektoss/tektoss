@@ -45,7 +45,7 @@ export default function PhoneNumberVerifyInput(
           </button>
         </div>
         <input
-          placeholder="eg. 0572940523"
+          placeholder="eg. 7041234567"
           className="buttons-box__phone-input"
           name="phoneNumber"
           value={formData.phoneNumber}
