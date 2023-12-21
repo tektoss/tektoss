@@ -5519,6 +5519,14 @@ form input:focus-visible, form textarea:focus-visible {
   color: #ffffff;
 }
 
+.footer__supportPage-div {
+  margin-top: 40px;
+}
+.footer__supportPage a {
+  color: #ffffff;
+}
+
+
 @media (max-width: 1000px) {
   .footer {
     padding-top: 0;

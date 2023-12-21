@@ -8,6 +8,7 @@ import Footer from '../../sections/Footer';
 import { selectAuthState } from '../../redux/slice/authSlice';
 import Main from './Main';
 import appName from '../../Constants/constantVariables';
+
 import NavbarBottom from '../../components/NavbarBottom';
 
 export default function Notifications() {

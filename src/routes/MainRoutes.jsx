@@ -27,6 +27,7 @@ import WelcomePage from '../pages/WelcomePage/WelcomePage';
 import NewArrivals from '../pages/NewArrivals/NewArrivals';
 import Messages from '../pages/Messages/Messages';
 import MobileSettings from '../pages/MobileSettings/MobileSettings';
+import SupportPage from '../pages/SupportPage/SupportPage';
 
 export default function MainRoutes() {
   useEffect(() => {
@@ -64,6 +65,7 @@ export default function MainRoutes() {
         <Route path="/payment-success" element={<PaymentSuccess />} />
         <Route path="/about" element={<About />} />
         <Route path="/termsAndConditions" element={<TermsAndConditions />} />
+        <Route path="/supportPage" element={<SupportPage />} />
         <Route path="/edit-profile" element={<EditProfile />} />
         <Route path="/find-closer-items" element={<FindCloserItems />} />
         <Route path="/edit-single-item/:id" element={<EditItem />} />

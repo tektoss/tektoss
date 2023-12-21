@@ -36,6 +36,11 @@ export default function Footer() {
                 <Link to="/termsAndConditions">Terms and Conditions</Link>
               </div>
             </div>
+            <div className="footer__supportPage-div">
+              <div className="footer__supportPage">
+                <Link to="/supportPage">Support Page</Link>
+              </div>
+            </div>
           </div>
           <div className="col-md-4">
             <h4 className="footer__heading">Categories</h4>

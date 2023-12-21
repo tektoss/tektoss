@@ -17,6 +17,7 @@
         "react"
     ],
     "rules": {
+        "max-len": ["error", { "code": 300 }],
         "react/prop-types": "off",
         "import/no-extraneous-dependencies": "off",
         "jsx-a11y/label-has-associated-control": "off",
