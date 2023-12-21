@@ -123,7 +123,7 @@ export default function SupportandFAQs() {
           </p>
         </ul>
         <div className="col-md-4">
-          <p style={{ color: 'black' }}>Reach on our social media platforms</p>
+          <p style={{ color: 'black' }}>Reach Us on our social media platforms</p>
           <div className="footer__socials-div d-flex">
             <a href="https://web.facebook.com/electrotoss" target="_blank" rel="noreferrer" className="footer__socials-inner-div" title="facebook">
               <i className="footer__social-icon fa-brands fa-facebook-f" />
