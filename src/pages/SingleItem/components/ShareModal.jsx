@@ -23,8 +23,6 @@ export default function ShareModal({ show, handleClose, itemName }) {
     const url = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(itemLink)}`;
     window.open(url, '_blank');
   };
-  
-
   const shareOnTwitter = () => {
     const itemLink = window.location.href;
     const text = encodeURIComponent(`Check out this ${itemName} at ${itemLink} via ElectroToss`);
