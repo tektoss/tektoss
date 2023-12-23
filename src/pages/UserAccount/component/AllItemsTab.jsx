@@ -4,7 +4,7 @@ import {
   collection, query, where, getDocs,
 } from '@firebase/firestore';
 import { db } from '../../../config/firebaseConfig';
-import DisplayProductLoader from '../../Home/components/DisplayProductLoader';
+import DisplayProductLoader from '../../Electronics/Home/components/DisplayProductLoader';
 import ProductCard from '../../../components/ProductCard';
 import EmptyTab from './EmptyTab';
 import InactiveItemProductCard from './InactiveItemProductCard';

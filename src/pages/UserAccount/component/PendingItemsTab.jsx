@@ -4,7 +4,7 @@ import {
 } from '@firebase/firestore';
 import { useParams } from 'react-router-dom';
 import { db } from '../../../config/firebaseConfig';
-import DisplayProductLoader from '../../Home/components/DisplayProductLoader';
+import DisplayProductLoader from '../../Electronics/Home/components/DisplayProductLoader';
 import EmptyTab from './EmptyTab';
 import ProductCard from '../../../components/ProductCard';
 

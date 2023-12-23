@@ -7,7 +7,7 @@ import { useSelector } from 'react-redux';
 // import { arrayUnion, doc, setDoc } from '@firebase/firestore';
 import { selectAuthState } from '../redux/slice/authSlice';
 // import { addToWhishList } from '../redux/slice/wishListSlice';
-import getItemDistanceFromUser from '../pages/SingleItem/utils/getItemDistanceFromUser';
+import getItemDistanceFromUser from '../pages/Electronics/SingleItem/utils/getItemDistanceFromUser';
 import { selectProductsState } from '../redux/slice/productsSlice';
 import convertSecondsToHumanDate from '../utils/DispalyDate';
 // import { errorToast, successToast } from '../utils/Toasts';

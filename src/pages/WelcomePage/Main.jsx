@@ -1,16 +1,16 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import DisplayCards from './components/DisplayCards';
+/* import DisplayCards from './components/DisplayCards'; */
 // import AdPanel from '../../components/AdPanel';
 import SectionHeader from '../../components/SectionHeader';
-import FilterCard from '../../components/FilterCard';
+/* import FilterCard from '../../components/FilterCard'; */
 // import CategoriesBox from '../../components/CategoriesBox';
-import SearchCategoriesBox from '../SearchResult/components/CategoriesBox';
-import SearchBar from './components/SearchBar';
+
+/* import SearchBar from './components/SearchBar'; */
 // import useTopScroll from '../../Hooks/useTopScroll';
 import { setFilter } from '../../redux/slice/productsSlice';
 // import HorizontalAdPanel from '../../components/HorizontalAdPanel';
-import SellNowButtonBoxMobile from '../WishList/components/SellNowButtonBoxMobile';
+/* import SellNowButtonBoxMobile from '../WishList/components/SellNowButtonBoxMobile'; */
 import Hero from './components/Hero';
 // import NewArrivalsButton from '../../components/NewArrivalsButton';
 
@@ -40,16 +40,15 @@ export default function Main() {
           {/* <CategoriesBox /> */}
           {/* <NewArrivalsButton /> */}
           <SectionHeader>Filter</SectionHeader>
-          <FilterCard />
+          {/* <FilterCard /> */}
           {/* <AdPanel /> */}
         </div>
         <div className="main-section__right-div welcome-page__right-div">
-          <SellNowButtonBoxMobile />
-          <SearchCategoriesBox />
+          {/* <AdPanel /> */}
           <Hero />
           {/* <HorizontalAdPanel /> */}
           <div className="main-section__mobile-div">
-            <SearchBar />
+            {/* <SearchBar /> *
             {/* <NewArrivalsButton /> */}
           </div>
         </div>
@@ -57,7 +56,7 @@ export default function Main() {
       <main className="main-section">
         <div>
           <SectionHeader>All Products</SectionHeader>
-          <DisplayCards />
+          {/* <DisplayCards /> */}
         </div>
       </main>
     </div>
