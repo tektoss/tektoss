@@ -5,7 +5,7 @@ import {
 } from '@firebase/firestore';
 import { fillProductsList, selectProductsState } from '../../../../redux/slice/productsSlice';
 import { db } from '../../../../config/firebaseConfig';
-import ProductCard from '../../../../components/ProductCard';
+import VehicleProductCard from '../../components/VehicleProductCard';
 import EmptyDisplay from '../../../../components/EmptyDisplay';
 import UserOffline from '../../../../components/UserOffline';
 import useGetItemsNearMe from '../../../../Hooks/useGetItemsNearMe';
@@ -139,7 +139,7 @@ export default function DisplayItemsNearMe({ mileDistance }) {
         {
       currentItems.map((product) => (
         <div className="col-6 col-md-3">
-          <ProductCard product={product} />
+          <VehicleProductCard product={product} />
         </div>
       ))
       }

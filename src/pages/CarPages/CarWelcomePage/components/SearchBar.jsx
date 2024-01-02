@@ -9,7 +9,7 @@ export default function SearchBar() {
       <form className="welcome-page__form">
         <input
           className="welcome-page__input"
-          placeholder="What are you looking for?"
+          placeholder="What Car are you Looking for?"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />

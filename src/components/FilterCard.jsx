@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { emptyProductsList, setCoordinate, setFilter } from '../redux/slice/productsSlice';
-import { categoriesArray } from '../pages/Electronics/NewItem/components/categoryObj';
+import { categoriesArray } from '../pages/Electronics/ElecNewItem/components/categoryObj';
 
 export default function FilterCard() {
   const initialFilter = {

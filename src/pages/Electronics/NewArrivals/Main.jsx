@@ -1,8 +1,8 @@
 import React from 'react';
 // import SectionHeader from '../../components/SectionHeader';
 // import AdPanel from '../../components/AdPanel';
-import SearchBar from '../SearchResult/components/SearchBar';
-import CategoriesBox from '../SearchResult/components/CategoriesBox';
+import SearchBar from '../ElectronicSearchResult/components/SearchBar';
+import CategoriesBox from '../ElectronicSearchResult/components/CategoriesBox';
 import SellNowButtonBoxMobile from '../../WishList/components/SellNowButtonBoxMobile';
 import NewArrivalsHeader from './components/NewArrivalsHeader';
 import DisplayNewArrivals from './components/DisplayNewArrivals';

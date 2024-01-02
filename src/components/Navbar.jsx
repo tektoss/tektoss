@@ -39,6 +39,7 @@ function Navbar() {
   const [showJoinModal, setShowJoinModal] = useState(false);
   const [showSignInModal, setShowSignInModal] = useState(false);
   const [showAccountModal, setShowAccountModal] = useState(false);
+  const [showCategory, setshowCategory] = useState(false);
   const [toggleDrawer, setToggleDrawer] = useState(false);
   const [userData, setUserData ] = useState({});
   
@@ -141,6 +142,23 @@ function Navbar() {
       }
     });
   },[]);
+
+  const handleCatPopOverClick = (name) => {
+    setshowCategory(false);
+
+    switch (name) {
+      case 'Cars':
+        navigate('/CarWelcomePage');
+        break;
+      case 'Electronics':
+        navigate('/ElectronicsWelcomePage');
+        break;
+      default:
+        navigate('/WelcomePage');
+        break;
+
+    }
+  }
 
   const handlePopOverClick = (name) => {
     setShowAccountModal(false);
@@ -337,6 +355,29 @@ function Navbar() {
             onChange={(e) => setSearch(e.target.value)}
             placeholder="What are you looking for"
           />
+          <div className="navbar-custom__category-div">
+                <button className="navbar-custom__icon-button" onClick={() => setshowCategory(!showCategory)}>
+                  <div className="navbar-custom__icon-button__text-div">
+                  <p className="navbar-custom__categories-text">Categories</p>
+                  <span className="navbar-custom__dropdown-arrow">&#9662;</span>
+                </div>
+                </button>
+                <ul className={ !showCategory ? 'pop-over-hidden' : 'navbar-custom__category-div__pop-over'}>
+                  <li>
+                    <button name="Cars" onClick={() => handleCatPopOverClick("Cars")} role="button" className="navbar-custom__category-div__pop-over-button">
+                      <i className="fa-solid fa-car" />
+                      <h6>Vehicles</h6>
+                    </button>
+                  </li>
+                  <li>
+                    <button name="Electronics" onClick={() => handleCatPopOverClick("Electronics")} role="button" className="navbar-custom__category-div__pop-over-button">
+                      <i className="fa-solid fa-laptop" />
+                      <h6>Electronics</h6>
+                    </button>
+                  </li>
+                </ul>
+              </div>
+
           <button
             className="bottom-nav__content-search-button"
             type="button"

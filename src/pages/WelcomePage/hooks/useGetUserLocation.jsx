@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { setCoordinates } from '../../../../redux/slice/locationSlice';
+import { setCoordinates } from '../../../redux/slice/locationSlice';
 
 export default function useGetUserLocation(isLocationAvailable) {
   const dispatch = useDispatch();

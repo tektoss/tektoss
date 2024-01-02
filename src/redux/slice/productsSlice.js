@@ -13,6 +13,8 @@ export const setPromotedItem = createAction('setPromotedItem');
 export const setProductToEdit = createAction('setProductToEdit');
 export const addNewProduct = createAction('addNewProduct');
 export const removeProduct = createAction('removeProduct');
+export const setSelectedCategory = createAction('setSelectedCategory');
+export const setSelectedModel = createAction('setSelectedModel');
 
 export const addToProductsPending = createAsyncThunk(
   'products/addToProductsPending',
@@ -32,11 +34,17 @@ export const addToProductsPending = createAsyncThunk(
 const initialFilter = {
   maxPrice: 10000,
   minPrice: 0,
+  minYear: 2000,
+  maxYear: 2024,
   location: 'all',
-  category: 'all',
-  condition: 'all',
+  model: 'all',
   brand: 'all',
+  category: 'all',
+  mainCat: 'vehicle',
+  make: 'all',
+  condition: 'all',
   updateTime: 0,
+  vehicleType: 'all',
 };
 
 const initialState = {
@@ -58,6 +66,12 @@ const productsSlice = createSlice({
     builder
       .addCase(setFilter, (state, action) => {
         state.filterObject = action.payload;
+      })
+      .addCase(setSelectedCategory, (state, action) => {
+        state.selectedCategory = action.payload;
+      })
+      .addCase(setSelectedModel, (state, action) => {
+        state.selectedModel = action.payload;
       })
       .addCase(removeProduct, (state, action) => {
         state.productsList = action.payload;

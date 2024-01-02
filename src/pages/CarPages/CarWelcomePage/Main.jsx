@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import DisplayCards from './components/DisplayCards';
+import VehicleDisplayCards from './components/VehicleDisplayCards';
 // import AdPanel from '../../components/AdPanel';
-import SectionHeader from '../../../components/SectionHeader';
-import FilterCard from '../../../components/FilterCard';
+import SectionHeader from '../components/SectionHeader';
+import FilterCard from '../components/FilterCard';
 // import CategoriesBox from '../../components/CategoriesBox';
-import SearchCategoriesBox from '../SearchResult/components/CategoriesBox';
+import SearchCategoriesBox from '../CarSearchResult/components/CategoriesBox';
 import SearchBar from './components/SearchBar';
 // import useTopScroll from '../../Hooks/useTopScroll';
 import { setFilter } from '../../../redux/slice/productsSlice';
@@ -21,9 +21,12 @@ export default function Main() {
     maxPrice: 10000,
     minPrice: 0,
     location: 'all',
-    brand: 'all',
-    category: 'all',
+    make: 'all',
+    model: 'all',
+    minYear: 2000,
+    maxYear: 2024,
     condition: 'all',
+    category: 'all',
   };
 
   useEffect(() => () => {
@@ -56,8 +59,8 @@ export default function Main() {
       </main>
       <main className="main-section">
         <div>
-          <SectionHeader>All Products</SectionHeader>
-          <DisplayCards />
+          <SectionHeader>All Vehicles</SectionHeader>
+          <VehicleDisplayCards />
         </div>
       </main>
     </div>

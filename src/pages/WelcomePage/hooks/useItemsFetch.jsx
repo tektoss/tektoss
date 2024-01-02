@@ -3,8 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import {
   collection, getDocs, query, where,
 } from '@firebase/firestore';
-import { fillProductsList, selectProductsState } from '../../../../redux/slice/productsSlice';
-import { db } from '../../../../config/firebaseConfig';
+import { fillProductsList, selectProductsState } from '../../../redux/slice/productsSlice';
+import { db } from '../../../config/firebaseConfig';
 
 export default function useItemsFetch(setIsLoading, setFilteredData, setData, isLocationAvailable) {
   const { productsList } = useSelector(selectProductsState);

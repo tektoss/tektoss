@@ -16,7 +16,7 @@ import AddToWishListButton from './AddToWishListButton';
 
 export default function ProductCard({ product }) {
   const {
-    id, price, vendor, name, condition, isPromoted, images, datePosted,
+    id, price, vendor, mainCat, name, condition, isPromoted, images, datePosted,
     // brand,
   } = product;
 
@@ -84,21 +84,21 @@ export default function ProductCard({ product }) {
 
   return (
     <div className="product-card" key={id}>
-      <Link to={`/single-item/${id}`} className="product-card__link">
+      <Link to={mainCat === 'vehicle' ? `/single-vehicle/${id}` : `/single-electronic/${id}`} className="product-card__link">
         <div className="product-card__image-div">
           <img src={image || ''} alt="product" className="product-card__image" />
         </div>
         <p className="product-card__product-name">{name}</p>
         <h5 className="product-card__product-price">{`$ ${price}`}</h5>
         {/* <div className="product-card__product-location-div d-flex align-items-center">
-          <p className="product-card__product-location-name">{brand}</p>
-        </div> */}
-        <p className="product-card__product-mile-range">{parseInt(miles) >= 0 ? `${miles} miles away` : '' }</p>
+      <p className="product-card__product-location-name">{brand}</p>
+    </div> */}
+        <p className="product-card__product-mile-range">{parseInt(miles) >= 0 ? `${miles} miles away` : ''}</p>
         <p className="product-card__product-post-date">{`posted on ${postDate}`}</p>
         <div className="product-card__product-condition-div">
           <p className="product-card__product-condition">{condition}</p>
         </div>
-        { isPromoted && (
+        {isPromoted && (
         <div className="product-card__promotion-div">
           <p className="product-card__promotion">promoted</p>
         </div>

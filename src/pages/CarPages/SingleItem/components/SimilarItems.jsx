@@ -1,6 +1,6 @@
 import React from 'react';
 // import ProductCard from '../../../components/ProductCard';
-import SectionHeader from '../../../components/SectionHeader';
+import SectionHeader from '../../components/SectionHeader';
 
 export default function SimilarItems() {
   return (

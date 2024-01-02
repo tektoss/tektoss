@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import AdPanel from '../components/AdPanel';
 import CategoriesBox from '../components/CategoriesBox';
-import SearchCategoriesBox from '../pages/Electronics/SearchResult/components/CategoriesBox';
+import SearchCategoriesBox from '../pages/Electronics/ElectronicSearchResult/components/CategoriesBox';
 import FilterCard from '../components/FilterCard';
 import Hero from '../components/Hero';
 import SectionHeader from '../components/SectionHeader';

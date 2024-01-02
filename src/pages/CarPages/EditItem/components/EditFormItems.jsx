@@ -7,10 +7,11 @@ import { toast } from 'react-toastify';
 import {
   doc, setDoc,
 } from '@firebase/firestore';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { selectProductsState } from '../../../../redux/slice/productsSlice';
 // import Uneditable from './Uneditable';
-import { categoryBrandArray, subCategoriesObj } from '../../NewItem/components/categoryObj';
+import { vehiclesArray } from '../../CarNewItem/components/categoryObj';
+
 import {
   db,
   storage,
@@ -24,26 +25,30 @@ export default function EditFormItems() {
   const { id } = useParams();
 
   const [item, setItem] = useState(productToEdit);
-  const [selectedCategory, setSelectedCategory] = useState(productToEdit?.category);
-  const [selectedSubCategory, setSelectedSubCategory] = useState(productToEdit?.subCategory);
-  const [selectedBrand, setSelectedBrand] = useState(productToEdit?.brand);
+  const [selectedVehicle, setSelectedVehicle] = useState(productToEdit?.vehicleType);
+  const [selectedCategory, setSelectedCategory] = useState(productToEdit?.make);
+  const [selectedModel, setSelectedModel] = useState(productToEdit?.model);
   const [previewImages, setPreviewImages] = useState([]);
   const [otherBrand, setOtherBrand] = useState('');
   const [isPosting, setIsPosting] = useState(false);
+  const navigate = useNavigate();
 
   const { userInfo, loginInfo } = useSelector(selectAuthState);
   const { uid } = loginInfo;
   const { displayName, photoURL } = userInfo;
 
+  const handleVehicleChange = (event) => {
+    const vehicle = event.target.value;
+    setSelectedVehicle(vehicle);
+  };
+
   const handleCategoryChange = (event) => {
     const category = event.target.value;
     setSelectedCategory(category);
-    setSelectedSubCategory(subCategoriesObj[category][0]);
-    setSelectedBrand(categoryBrandArray[category][0]);
+    // setSelectedSubCategory(vehiclesArray[selectedVehicle][category]);
   };
-
   const handleBrandChange = (event) => {
-    setSelectedBrand(event.target.value);
+    setSelectedModel(event.target.value);
     setOtherBrand('');
   };
 
@@ -96,11 +101,12 @@ export default function EditFormItems() {
     e.preventDefault();
 
     const {
-      name, price, details, condition, datePosted, location,
+      name, price, year, details, condition, datePosted, location,
       images, viewCount, subCategory,
     } = item;
 
     setIsPosting(true);
+    navigate('/');
 
     if (!name.trim() || !price.trim() || !details.trim()) {
       toast.error('Found empty text fields', {
@@ -120,6 +126,21 @@ export default function EditFormItems() {
 
     if (isNaN(price.trim())) {
       toast.error('Price must be a number', {
+        position: 'top-center',
+        autoClose: 2500,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: 'light',
+      });
+
+      setIsPosting(false);
+      return;
+    }
+    if (isNaN(year.trim())) {
+      toast.error('Year must be a date', {
         position: 'top-center',
         autoClose: 2500,
         hideProgressBar: true,
@@ -174,10 +195,10 @@ export default function EditFormItems() {
       }
 
       let itemBrand;
-      if (selectedBrand === 'other') {
+      if (selectedModel === 'other') {
         itemBrand = otherBrand;
       } else {
-        itemBrand = selectedBrand;
+        itemBrand = selectedModel;
       }
 
       const vendorData = {
@@ -187,12 +208,14 @@ export default function EditFormItems() {
       };
 
       const productsData = {
-        name: name.trim(),
+        name: `${year} ${selectedCategory} ${itemBrand}`,
         price: price.trim(),
-        brand: itemBrand,
+        year,
+        vehicleType: 'Cars & Trucks',
+        model: itemBrand,
         details: details.trim(),
         status: 'pending',
-        category: selectedCategory,
+        make: selectedCategory,
         condition,
         lastEdited: new Date(),
         location: {
@@ -230,7 +253,7 @@ export default function EditFormItems() {
     e.preventDefault();
 
     const {
-      name, price, details, condition, location, subCategory, viewCount,
+      name, price, year, details, condition, location, subCategory, viewCount,
       images, datePosted,
     } = item;
 
@@ -308,10 +331,10 @@ export default function EditFormItems() {
       }
 
       let itemBrand;
-      if (selectedBrand === 'other') {
+      if (selectedModel === 'other') {
         itemBrand = otherBrand;
       } else {
-        itemBrand = selectedBrand;
+        itemBrand = selectedModel;
       }
 
       const vendorData = {
@@ -322,11 +345,13 @@ export default function EditFormItems() {
 
       const productsData = {
         name: name.trim(),
+        vehiclesArray: selectedVehicle,
+        year,
         price: price.trim(),
-        brand: itemBrand,
+        model: itemBrand,
         details: details.trim(),
         status: 'pending',
-        category: selectedCategory,
+        make: selectedCategory,
         condition,
         lastEdited: new Date(),
         location: {
@@ -404,28 +429,33 @@ export default function EditFormItems() {
   return (
     <form className="new-item-form" onSubmit={handleEdit}>
       <div className="row g-4">
-        <div className="col-md-12">
+        <div className="col-md-6">
           <div className="new-item-form__input-div">
-            <label htmlFor="name-input" className="new-item-form__label">
-              Item Name
-            </label>
-            <input
-              id="name-input"
+            <label htmlFor="itemCategory" className="new-item-form__label">Vehicle Type</label>
+            <select
               className="new-item-form__input"
-              placeholder="eg. Playstation 5S"
-              name="name"
-              value={item.name}
-              onChange={handleFormChange}
-            />
+              aria-label="Default select example"
+              name="vehicleCat"
+              value={selectedVehicle}
+              onChange={handleVehicleChange}
+            >
+              {Object.keys(vehiclesArray).slice()
+                .sort((a, b) => a.localeCompare(b))
+                .map((vehicle) => (
+                  <option key={vehicle} value={vehicle}>
+                    {vehicle}
+                  </option>
+                ))}
+            </select>
           </div>
         </div>
         <div className="col-md-6">
           <div className="new-item-form__input-div">
-            <label htmlFor="price-input" className="new-item-form__label">Item Price</label>
+            <label htmlFor="price-input" className="new-item-form__label">Vehicle Price</label>
             <input
               id="price-input"
               className="new-item-form__input"
-              placeholder="eg. $ 150"
+              placeholder="eg. $ 12,000"
               name="price"
               value={item.price}
               onChange={handleFormChange}
@@ -434,7 +464,20 @@ export default function EditFormItems() {
         </div>
         <div className="col-md-6">
           <div className="new-item-form__input-div">
-            <label htmlFor="price-input" className="new-item-form__label">Item Condition</label>
+            <label htmlFor="price-input" className="new-item-form__label">Vehicle Year</label>
+            <input
+              id="price-input"
+              className="new-item-form__input"
+              placeholder="eg. 2020"
+              name="year"
+              value={item.year}
+              onChange={handleFormChange}
+            />
+          </div>
+        </div>
+        <div className="col-md-6">
+          <div className="new-item-form__input-div">
+            <label htmlFor="price-input" className="new-item-form__label">Vehicle Condition</label>
             <select
               className="new-item-form__input"
               aria-label="Default select example"
@@ -450,7 +493,7 @@ export default function EditFormItems() {
         </div>
         <div className="col-md-6">
           <div className="new-item-form__input-div">
-            <label htmlFor="category" className="new-item-form__label">Item Category</label>
+            <label htmlFor="category" className="new-item-form__label">Vehicle Make</label>
             <select
               className="new-item-form__input"
               aria-label="Default select example"
@@ -458,55 +501,41 @@ export default function EditFormItems() {
               value={selectedCategory}
               onChange={handleCategoryChange}
             >
-              {Object.keys(subCategoriesObj).map((category) => (
-                <option key={category} value={category}>
-                  {category}
-                </option>
-              ))}
+              {Object.keys(vehiclesArray[selectedVehicle]).slice()
+                .sort((a, b) => a.localeCompare(b))
+                .map((Vehiclemake) => (
+                  <option key={Vehiclemake} value={Vehiclemake}>
+                    {Vehiclemake}
+                  </option>
+                ))}
             </select>
           </div>
         </div>
         <div className="col-md-6">
           <div className="new-item-form__input-div">
-            <label htmlFor="category" className="new-item-form__label">Sub Category</label>
-            <select
-              className="new-item-form__input"
-              aria-label="Default select example"
-              name="subCategory"
-              value={selectedSubCategory}
-              onChange={(e) => setSelectedSubCategory(e.target.value)}
-            >
-              {subCategoriesObj[selectedCategory].map((subCategory) => (
-                <option key={subCategory} value={subCategory}>
-                  {subCategory}
-                </option>
-              ))}
-            </select>
-          </div>
-        </div>
-        <div className="col-md-6">
-          <div className="new-item-form__input-div">
-            <label htmlFor="brand" className="new-item-form__label">Item Brand</label>
+            <label htmlFor="brand" className="new-item-form__label">Vehicle Model</label>
             <select
               className="new-item-form__input"
               aria-label="Default select example"
               name="brand"
-              value={selectedBrand}
+              value={selectedModel}
               onChange={handleBrandChange}
             >
-              {categoryBrandArray[selectedCategory].map((brand) => (
-                <option key={brand} value={brand}>
-                  {brand}
-                </option>
-              ))}
+              {vehiclesArray[selectedVehicle]?.[selectedCategory]?.slice()
+                ?.sort((a, b) => a.localeCompare(b)) // Sort the array alphabetically
+                .map((model) => (
+                  <option key={model} value={model}>
+                    {model}
+                  </option>
+                ))}
             </select>
           </div>
         </div>
-        {(selectedBrand === 'other') && (
+        {(selectedModel === 'other') && (
         <div className="col-md-6">
           <div className="new-item-form__input-div">
             <label htmlFor="other-brand-input" className="new-item-form__label">
-              Please Specify the Item Brand
+              Please Specify the Vehicle model
             </label>
             <input
               id="other-brand-input"
@@ -522,7 +551,7 @@ export default function EditFormItems() {
         <div className="col-md-12">
           <div className="new-item-form__textarea-div">
             <label className="new-item-form__label new-item-form__label--alt">
-              <h6>Item Detail</h6>
+              <h6>Detail Description of Car</h6>
               <span
                 className={
                 (item.details.length <= 300)
@@ -535,7 +564,7 @@ export default function EditFormItems() {
             </label>
             <textarea
               className="new-item-form__textarea"
-              placeholder="Write a suitable description for your item,
+              placeholder="Write a suitable description for your Car,
               such as color, brand, model and other useful information."
               name="details"
               value={item.details}

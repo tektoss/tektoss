@@ -3,9 +3,9 @@ import {
 } from '@firebase/firestore';
 import React, { useState, useEffect } from 'react';
 import { db } from '../../../../config/firebaseConfig';
-import SectionHeader from '../../../../components/SectionHeader';
-import ProductCard from '../../../../components/ProductCard';
-import EmptyDisplay from '../../../../components/EmptyDisplay';
+import SectionHeader from '../../components/SectionHeader';
+import VehicleProductCard from '../../components/VehicleProductCard';
+import EmptyDisplay from '../../components/EmptyDisplay';
 
 export default function DisplaySimilarItems({ category, id }) {
   const [data, setData] = useState([]);
@@ -52,7 +52,7 @@ export default function DisplaySimilarItems({ category, id }) {
         {
           data.map((product) => (
             <div className="col-6 col-sm-4 col-md-3">
-              <ProductCard product={product} />
+              <VehicleProductCard product={product} />
             </div>
           ))
           }

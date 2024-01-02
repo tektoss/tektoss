@@ -17,8 +17,9 @@ export default function useFilterProductData(
 
   const { filterObject } = useSelector(selectProductsState);
   const {
-    maxPrice, minPrice, category, condition,
+    maxPrice, minPrice, minYear, maxYear, condition, category,
   } = filterObject;
+  // const selectedCategory = useSelector((state) => state.products.selectedCategory);
 
   useEffect(() => {
     const filterProductData = async () => {
@@ -30,10 +31,12 @@ export default function useFilterProductData(
         if (isLocationAvailable) {
           filtered = data.filter(
             (item) => (
-              item.price >= minPrice
+              item.mainCat === category
+              && item.price >= minPrice
               && item.price <= maxPrice
+              && item.year >= minYear
+              && item.year <= maxYear
               && (item.condition === condition || condition === 'all')
-              && (item.category === category || category === 'all')
               && isItemWithinMiles(miles, coordinates, item)
             ),
           );
@@ -42,10 +45,13 @@ export default function useFilterProductData(
         if (!isLocationAvailable) {
           filtered = data.filter(
             (item) => (
-              item.price >= minPrice
+              item.mainCat === category
+              && item.price >= minPrice
               && item.price <= maxPrice
+              && item.year >= minYear
+              && item.year <= maxYear
               && (item.condition === condition || condition === 'all')
-              && (item.category === category || category === 'all')
+
             ),
           );
         }

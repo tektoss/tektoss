@@ -1,0 +1,10 @@
+.categories-container {
+    display: flex;
+    flex-direction: row;
+  }
+.hover-text-electronics {
+    flex-direction: row;
+}
+.hover-text-car {
+    flex-direction: row;
+}

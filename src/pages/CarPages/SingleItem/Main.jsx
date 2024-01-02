@@ -4,9 +4,9 @@ import {
 } from 'firebase/firestore';
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import AdPanel from '../../../components/AdPanel';
+import AdPanel from '../components/AdPanel';
 import { db } from '../../../config/firebaseConfig';
-import ProductDetail from './components/ProductDetails';
+import VehicleProductDetails from './components/VehicleProductDetails';
 import ProductLocation from './components/ProductLocation';
 import { selectAuthState } from '../../../redux/slice/authSlice';
 import VendorDetails from './components/VendorDetails';
@@ -82,7 +82,7 @@ export default function Main() {
     <div className="main-section-div">
       <main className="main-section d-flex justify-content-between">
         <div className="main-section__left-div">
-          <ProductDetail />
+          <VehicleProductDetails />
           <ProductLocation />
           <ViewsBox uid={uid} />
           <VendorDetails id={product?.vendor?.uid} />
@@ -97,7 +97,7 @@ export default function Main() {
           <ItemImageBox />
           <div className="main-section__mobile-div">
             <ViewsBox uid={uid} />
-            <ProductDetail />
+            <VehicleProductDetails />
             <ProductLocation />
             <VendorDetails id={product?.vendor?.uid} />
             {!userIsAnonymous && <ButtonsBox product={product} />}

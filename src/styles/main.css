@@ -78,10 +78,112 @@
   border-radius: 5px;
   background-color: white;
 }
+
+
+.navbar-custom__category-div__pop-over {
+  position: absolute;
+  top: 0;
+  right: 100%; /* Place the pop-over to the left */
+  border: 1px solid #2a027d;
+  border-radius: 5px;
+  background-color: white;
+  width: 150px;
+  min-height: 50px;
+  padding: 0;
+  overflow: hidden;
+  z-index: 5;
+}
+
+/* Add this style to make "Categories" bold */
+.navbar-custom__categories-text {
+  font-weight: bold;
+  margin-right: 8px; /* Adjust the spacing between text and arrow */
+}
+
+/* Add this style for the dropdown arrow */
+.navbar-custom__dropdown-arrow {
+  font-size: 0.8em;
+}
+
+
+
+
+.navbar-custom__category-div__pop-over li {
+  margin: 0;
+  height: 2em;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1882352941);
+  transition: background-color 0.3s;
+}
+.navbar-custom__categorydiv__pop-over li:hover {
+  background-color: rgba(255, 255, 102, 0);
+}
+.navbar-custom__category-div__pop-over li:last-child {
+  border-bottom: unset;
+}
+
+.categories-container {
+  display: flex;
+  flex-direction: row;
+  column-gap: 15px;
+}
+
+
+.navbar-custom__category-div__pop-over-button {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  outline: none;
+  border: none;
+  padding: 0 12.8px !important;
+  background-color: transparent;
+  padding-left: 0.8em;
+  padding-right: 0.8em;
+}
+.navbar-custom__category-div__pop-over-button i {
+  color: #2a027d;
+  font-size: 0.9em;
+  margin-right: 12px;
+}
+
+
+
+
+
+
+
+
+
+
+.navbar-custom__icon-catbutton {
+  border: 2px solid #2a027d;
+  border-radius: 30%;
+  padding: 10px;
+  background-color: white;
+}
+.navbar-custom__icon-catbutton__text-div {
+  font-size: 0.85em;
+  line-height: 1;
+  margin-bottom: 3px;
+  color: rgba(255, 255, 255, 0.5843137255);
+}
+
 .navbar-custom__user-account-div {
   position: relative;
 }
-.navbar-custom__user-account-div__pop-over {
+
+.navbar-custom__user-cat-div {
+  position: relative;
+}
+
+.navbar-custom__category-div {
+  position: absolute;
+  left: -85px;
+  top: -7px;
+  
+}
+
+.navbar-custom__category-div__pop-over {
   position: absolute;
   top: 60px;
   left: 9px;
@@ -106,6 +208,14 @@
 .navbar-custom__user-account-div__pop-over li:last-child {
   border-bottom: unset;
 }
+
+.categories-container {
+  display: flex;
+  flex-direction: row;
+  column-gap: 15px;
+}
+
+
 .navbar-custom__user-account-div__pop-over-button {
   display: flex;
   align-items: center;
@@ -131,6 +241,52 @@
 .navbar-custom__user-account-div .pop-over-hidden {
   display: none;
 }
+
+
+.navbar-custom__category-div .pop-over-hidden {
+  display: none;
+}
+.navbar-custom__category-div__pop-over-button {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  outline: none;
+  border: none;
+  padding: 0 12.8px !important;
+  background-color: transparent;
+  padding-left: 0.8em;
+  padding-right: 0.8em;
+
+}
+
+.navbar-custom__category-div__pop-over-button i {
+  color: #2a027d;
+  font-size: 0.9em;
+  margin-right: 12px;
+}
+.navbar-custom__category-div__pop-over-button h6 {
+  color: #2a027d;
+  font-size: 0.9em;
+  margin: 0;
+
+}
+
+.navbar-custom__category-div__pop-over li {
+  margin: 0;
+  height: 2em;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1882352941);
+  transition: background-color 0.3s;
+}
+.navbar-custom__category-div__pop-over li:hover {
+  background-color: rgba(255, 255, 102, 0);
+}
+.navbar-custom__category-div__pop-over li:last-child {
+  border-bottom: unset;
+}
+
+
+
 .navbar-custom__icon-button {
   position: relative;
   display: flex;
@@ -785,6 +941,18 @@ a {
   color: #484848;
   font-weight: 700;
 }
+.sell-now-main {
+  background-color: #fac007;
+  border-radius: 50px;
+  padding: 0.5em 1.5em;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: inline-block;
+  border: 1px solid #fac007;
+  color: #484848;
+  font-weight: 700;
+}
+
 .sell-now h6 {
   margin-bottom: 0;
   color: #484848;
@@ -1457,31 +1625,86 @@ a {
   border: 1px solid #999;
   -moz-appearance: textfield;
 }
-.filter-card__price-input .filter-card__separator {
+.filter-card__price-input .filter-card-year__separator {
   width: 100px;
   display: flex;
   font-size: 19px;
   align-items: center;
   justify-content: center;
 }
+.filter-card__year-input .filter-card-year__separator {
+  width: 100px;
+  display: flex;
+  font-size: 19px;
+  align-items: center;
+  justify-content: center;
+}
+.filter-card__year-input .filter-card-year__field {
+  display: flex;
+  width: 100%;
+  height: 2em;
+  align-items: center;
+}
+
+.filter-card-year__field input {
+  width: 100%;
+  height: 100%;
+  outline: none;
+  font-size: 1em;
+  margin-left: 0.5em;
+  border-radius: 5px;
+  text-align: center;
+  border: 1px solid #999;
+  -moz-appearance: textfield;
+}
+
 .filter-card__slider {
   height: 5px;
   position: relative;
-  background: #ddd;
+  background: #dddddd;
   border-radius: 5px;
 }
-.filter-card__slider .filter-card__progress {
+.filter-card__slider .filter-card-year__progress {
   height: 100%;
-  left: 25%;
   right: 25%;
+  left: 25%;
   position: absolute;
   border-radius: 5px;
   background: #2a027d;
 }
+
+.filter-card-year__slider {
+  height: 5px;
+  position: relative;
+  background: #dddddd;
+  border-radius: 5px;
+}
+.filter-card-year__slider .filter-card-year__progress {
+  height: 100%;
+  right: 25%;
+  left: 25%;
+  position: absolute;
+  border-radius: 5px;
+  background: #2a027d;
+}
+
 .filter-card__range-input {
   position: relative;
 }
+.filter-card-year__range-input {
+  position: relative;
+}
 .filter-card__range-input input {
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  top: -5px;
+  background: none;
+  pointer-events: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+.filter-card-year__range-input input {
   position: absolute;
   width: 100%;
   height: 5px;
@@ -4965,6 +5188,9 @@ form input:focus-visible, form textarea:focus-visible {
     transform: translateY(-20px);
   }
 }
+.search__categories-box {
+  overflow: visible; /* or auto, depending on your layout */
+}
 
 .search__categories-box ul {
   padding: 0;
@@ -4973,15 +5199,17 @@ form input:focus-visible, form textarea:focus-visible {
   margin-top: 0;
 }
 .search__categories-box button {
+  cursor: pointer;
   border: none;
   background-color: rgb(243, 243, 243);
   border: 1px solid lightgrey;
-  padding: 0.5em 1em;
+  padding: 0.7em 1em;
   border-radius: 50px;
   color: #2a027d;
   font-weight: 700;
   letter-spacing: 0.8px;
   margin: 0.3em;
+  
 }
 .search__categories-box button * {
   font-weight: 700;
@@ -4995,6 +5223,7 @@ form input:focus-visible, form textarea:focus-visible {
     overflow-x: scroll;
     justify-content: flex-start;
     align-items: center;
+    flex-grow: 1; /* Allow buttons to take equal space */
   }
   .search__categories-box h6 {
     text-wrap: nowrap;

@@ -7,7 +7,7 @@ export default function Uneditable() {
 
   const handleBackToHome = () => {
     if (id) {
-      navigate(`/single-item/${id}`);
+      navigate(`/single-vehicle/${id}`);
     } else {
       navigate('/');
     }

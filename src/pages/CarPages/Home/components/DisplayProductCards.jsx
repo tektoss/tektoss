@@ -6,14 +6,14 @@ import {
   useDispatch,
   useSelector,
 } from 'react-redux';
-import { db } from '../../../config/firebaseConfig';
-import ProductCard from '../../../components/ProductCard';
+import { db } from '../../../../config/firebaseConfig';
+import ProductCard from '../../../../components/ProductCard';
 import DisplayProductLoader from './DisplayProductLoader';
 import {
   fillProductsList,
   selectProductsState,
-} from '../../../redux/slice/productsSlice';
-import Pagination from '../../../components/Pagination';
+} from '../../../../redux/slice/productsSlice';
+import Pagination from '../../../../components/Pagination';
 
 export default function DisplayProductCards() {
   const [products, setProducts] = useState([]);

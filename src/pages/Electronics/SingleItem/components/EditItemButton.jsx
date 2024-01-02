@@ -9,7 +9,7 @@ export default function EditItemButton({ product, id }) {
 
   const handleEdit = () => {
     dispatch(setProductToEdit(product));
-    navigate(`/edit-single-item/${id}`);
+    navigate(`/edit-electronic-item/${id}`);
   };
 
   return (

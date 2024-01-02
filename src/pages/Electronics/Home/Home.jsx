@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <>
       <Helmet>
-        <title>{`Home | ${appName}`}</title>
+        <title>{`Electronics Home | ${appName}`}</title>
         <meta
           name="description"
           content={`Your One-Stop Electronic Gadget Marketplace.

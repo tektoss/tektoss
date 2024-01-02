@@ -10,7 +10,7 @@ import {
 import { useParams } from 'react-router-dom';
 import { selectProductsState } from '../../../../redux/slice/productsSlice';
 // import Uneditable from './Uneditable';
-import { categoryBrandArray, subCategoriesObj } from '../../NewItem/components/categoryObj';
+import { categoryBrandArray, subCategoriesObj } from '../../ElecNewItem/components/categoryObj';
 import {
   db,
   storage,

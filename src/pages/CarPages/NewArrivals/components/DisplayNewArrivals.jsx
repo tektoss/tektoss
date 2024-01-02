@@ -7,7 +7,7 @@ import {
   query,
 } from '@firebase/firestore';
 import { useSelector } from 'react-redux';
-import ProductCard from '../../../../components/ProductCard';
+import VehicleProductCard from '../../components/VehicleProductCard';
 import EmptyDisplay from '../../../../components/EmptyDisplay';
 import Loader from '../../../../components/Loader';
 import { selectProductsState } from '../../../../redux/slice/productsSlice';
@@ -124,7 +124,7 @@ export default function DisplayNewArrivals() {
           {
           currentItems.map((product) => (
             <div className="col-6 col-sm-4 col-md-2">
-              <ProductCard product={product} />
+              <VehicleProductCard product={product} />
             </div>
           ))
           }

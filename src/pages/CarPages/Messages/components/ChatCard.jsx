@@ -44,7 +44,7 @@ export default function ChatCard({ mssg }) {
         {(mssg?.itemId)
           && (
           <div className="chat-card__product-link-div">
-            <Link to={`/single-item/${mssg?.itemId}`} className="chat-card__product-link">
+            <Link to={`/single-vehicle/${mssg?.itemId}`} className="chat-card__product-link">
               {mssg?.itemName.length > 15 ? `link to ${mssg?.itemName.slice(0, 14).trim().concat('...')}` : `link to ${mssg?.itemName}`}
             </Link>
           </div>

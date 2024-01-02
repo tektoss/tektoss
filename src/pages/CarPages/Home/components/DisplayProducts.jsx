@@ -6,13 +6,13 @@ import {
   useDispatch,
 //   useSelector,
 } from 'react-redux';
-import { db } from '../../../config/firebaseConfig';
-import ProductCard from '../../../components/ProductCard';
+import { db } from '../../../../config/firebaseConfig';
+import ProductCard from '../../../../components/ProductCard';
 // import DisplayProductLoader from './DisplayProductLoader';
 import {
   fillProductsList,
 //   selectProductsState,
-} from '../../../redux/slice/productsSlice';
+} from '../../../../redux/slice/productsSlice';
 
 export default function DisplayProducts() {
   // const [data, setData] = useState([]);

@@ -1,9 +1,50 @@
+/* eslint-disable react/button-has-type */
+/* eslint-disable react/function-component-definition */
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { selectAuthState } from '../redux/slice/authSlice';
 import SignUpModal from '../auth/Register/SignUpModal';
 import SignInModal from '../auth/SignIn/SignInModal';
+
+const ButtonWithLinks = () => {
+  // State to track whether links are visible or hidden
+  const [areLinksVisible, setAreLinksVisible] = useState(false);
+
+  // State to track whether the "Sell Now" button should be visible
+  const [isSellNowVisible, setIsSellNowVisible] = useState(true);
+
+  // Function to toggle the visibility of links
+  const toggleLinks = () => {
+    // Hide the "Sell Now" button and show the links
+    setIsSellNowVisible(false);
+    setAreLinksVisible(true);
+  };
+
+  return (
+    <div>
+      {/* Button that will trigger the display of links */}
+      {isSellNowVisible && (
+        <button onClick={toggleLinks} className="sell-now-main" style={{ textAlign: 'right' }}>
+          Sell Now
+        </button>
+      )}
+
+      {/* Container for the links with conditional rendering based on state */}
+      {areLinksVisible && (
+        <div>
+          {/* Two links/buttons */}
+          <Link to="/CarWelcomePage/CarNewItem" className="sell-now">
+            Sell Cars
+          </Link>
+          <Link to="/ElectronicsWelcomePage/ElecNewItem" className="sell-now">
+            Sell Electronics
+          </Link>
+        </div>
+      )}
+    </div>
+  );
+};
 
 export default function SellNowButton() {
   const { loginInfo } = useSelector(selectAuthState);
@@ -18,17 +59,11 @@ export default function SellNowButton() {
   const handleShowSignInModal = () => setShowSignInModal(true);
 
   const isAnonymousJSON = localStorage.getItem('isAnonymous');
-
   const userAnonymous = JSON.parse(isAnonymousJSON);
-
   const userIsAnonymous = userAnonymous?.isAnonymous || isAnonymous;
 
   if (!userIsAnonymous) {
-    return (
-      <Link to="/new-item" className="sell-now">
-        <h6>Sell Now</h6>
-      </Link>
-    );
+    return <ButtonWithLinks />;
   }
 
   return (

@@ -5,7 +5,7 @@ import DisplayCards from './components/DisplayCards';
 import SectionHeader from '../../../components/SectionHeader';
 import FilterCard from '../../../components/FilterCard';
 // import CategoriesBox from '../../components/CategoriesBox';
-import SearchCategoriesBox from '../SearchResult/components/CategoriesBox';
+import SearchCategoriesBox from '../ElectronicSearchResult/components/CategoriesBox';
 import SearchBar from './components/SearchBar';
 // import useTopScroll from '../../Hooks/useTopScroll';
 import { setFilter } from '../../../redux/slice/productsSlice';
@@ -63,27 +63,3 @@ export default function Main() {
     </div>
   );
 }
-
-// <div className="main-section-div">
-//       <main className="main-section d-flex justify-content-between">
-//         <div className="main-section__left-div">
-//           {/* <CategoriesBox /> */}
-//           <NewArrivalsButton />
-//           <SectionHeader>Filter</SectionHeader>
-//           <FilterCard />
-//           <AdPanel />
-//         </div>
-//         <div className="main-section__right-div">
-//           <SellNowButtonBoxMobile />
-//           <SearchCategoriesBox />
-//           {/* <Hero /> */}
-//           {/* <HorizontalAdPanel /> */}
-//           <div className="main-section__mobile-div">
-//             <SearchBar />
-//             <NewArrivalsButton />
-//           </div>
-//           <SectionHeader>All Products</SectionHeader>
-//           <DisplayCards />
-//         </div>
-//       </main>
-//     </div>

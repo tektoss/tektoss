@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { selectProductsState } from '../../../../redux/slice/productsSlice';
+import { selectProductsState } from '../../../redux/slice/productsSlice';
 import isItemWithinMiles from '../utils/isItemWithinMiles';
 
 export default function useFilterProductData(

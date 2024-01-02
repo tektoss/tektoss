@@ -82,7 +82,7 @@ export default function VerifyMessageBox() {
           <button
             type="button"
             className="verification-box__send-verification-button--success"
-            onClick={() => navigate('/new-item')}
+            onClick={() => navigate('/all-new-item')}
           >
             Start Posting
           </button>
