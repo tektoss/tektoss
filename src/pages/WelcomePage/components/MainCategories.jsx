@@ -44,7 +44,7 @@ export default function MainCategories() {
           {/* Main category button with click handler */}
           <button onClick={() => handleCatClick('Vehicles')}>
             {/* <i className="fa-solid fa-car" /> */}
-            <h6>Vehicles</h6>
+            {/* <h6>Vehicles</h6> */}
           </button>
           {/* Conditionally render vehicle subcategories if showVehicleSubcategories is true */}
           {showVehicleSubcategories && (
@@ -65,7 +65,7 @@ export default function MainCategories() {
           {/* Main category button with click handler */}
           <button onClick={() => handleCatClick('Electronics')}>
             {/* <i className="fa-solid fa-laptop" /> */}
-            <h6>Electronics</h6>
+            {/* <h6>Electronics</h6> */}
           </button>
           {/* Conditionally render electronics subcategories if showElectronicsSubcategories is true */}
           {showElectronicsSubcategories && (
