@@ -9,7 +9,7 @@ import VehicleProductCard from '../../components/VehicleProductCard';
 import { selectProductsState } from '../../../../redux/slice/productsSlice';
 import Loader from '../../../../components/Loader';
 import EmptyDisplay from '../../../../components/EmptyDisplay';
-import FilterByDistance from '../../../Electronics/ElectronicsWelcomePage/components/FilterByDistance';
+import FilterByDistance from '../../CarWelcomePage/components/FilterByDistance';
 import isItemWithinMiles from '../../../Electronics/ElectronicsWelcomePage/utils/isItemWithinMiles';
 import { selectLocationState } from '../../../../redux/slice/locationSlice';
 // import { subCategoriesObj } from '../../../Constants/constantObjects';
@@ -146,6 +146,7 @@ export default function DisplayCategoryProducts() {
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentItems = filteredData.slice(indexOfFirstItem, indexOfLastItem);
+  console.log('currentItems are', currentItems);
 
   const paginate = (pageNumber) => {
     setCurrentPage(pageNumber);
@@ -170,10 +171,12 @@ export default function DisplayCategoryProducts() {
       <div className="search-result-items">
         <div className="row g-2">
           {
-      currentItems.map((product) => (
-        <div className="col-6 col-sm-4 col-md-2">
-          <VehicleProductCard product={product} />
-        </div>
+      currentItems?.map((product) => (
+        // eslint-disable-next-line no-sequences
+        console.log('this products', product),
+          <div className="col-6 col-sm-4 col-md-2">
+            <VehicleProductCard product={product} />
+          </div>
       ))
       }
         </div>

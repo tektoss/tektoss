@@ -13,6 +13,7 @@ export default function CategoryFilterCard({ vehicleType }) {
     make: 'all',
     model: 'all',
     condition: 'all',
+    vehicleType,
     maxYear: 2024,
     minYear: 2000,
   };
@@ -26,6 +27,7 @@ export default function CategoryFilterCard({ vehicleType }) {
 
   // const { brand } = useParams();
   const [SelectedMake, setSelectedMake] = useState(initialFilter.make);
+  // const [SelectedModel, setSelectedModel] = useState(initialFilter.model);
 
   // useEffect(() => {
   //   const getBrandArray = (categoryName) => {
@@ -192,7 +194,7 @@ export default function CategoryFilterCard({ vehicleType }) {
           onChange={handleModelChange}
         >
           {
-            vehiclesArray[vehicleType][SelectedMake]?.map((model) => (
+            vehiclesArray[vehicleType]?.[SelectedMake]?.map((model) => (
               <option value={model} key={model}>{model}</option>
             ))
           }
@@ -250,7 +252,7 @@ export default function CategoryFilterCard({ vehicleType }) {
       </div>
 
       <div className="filter-card__category-div">
-        <h6>Item Condition</h6>
+        <h6>Vehicle Condition</h6>
         <select
           className="form-select"
           aria-label="Default select example"

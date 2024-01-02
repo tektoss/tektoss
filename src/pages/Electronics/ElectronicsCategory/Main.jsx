@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 // import AdPanel from '../../components/AdPanel';
-import SectionHeader from '../components/SectionHeader';
+import SectionHeader from '../../../components/SectionHeader';
 // import SearchBar from '../SearchResult/components/SearchBar';
 import CategoriesBox from '../components/CategoriesBox';
 import DisplayCategoryProducts from './components/DisplayCategoryProducts';

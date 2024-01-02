@@ -5,92 +5,47 @@ import { setFilter } from '../../../redux/slice/productsSlice';
 
 export default function CategoriesBox() {
   const dispatch = useDispatch();
-
   const initialFilter = {
     maxPrice: 10000,
     minPrice: 0,
+    minYear: 2000,
+    maxYear: 2024,
+    make: 'all',
+    model: 'all',
     location: 'all',
+    category: 'all',
     condition: 'all',
   };
+  const vehicleCat = ['Motorcycles',
+    'Cars & Trucks',
+    'Campers & RVs',
+    'Boats & Marine',
+    'Powersport vehicles',
+    'Trailers',
+    'Tires & Rims',
+    'Auto parts & Accessories',
+  ];
 
   const handleClearFilter = () => {
     dispatch(setFilter({ ...initialFilter, updateTime: Date.now() }));
   };
 
   return (
-    <div className="categories-box">
-      <div className="categories-box__title-div d-flex align-items-center">
-        <div className="categories-box__lines-div d-flex flex-column justify-content-between">
-          <div className="categories-box__lines" />
-          <div className="categories-box__lines" />
-          <div className="categories-box__lines" />
-        </div>
-        <h6 className="categories-box__title">Categories</h6>
-      </div>
-      <ul className="categories-box__list d-flex flex-column justify-content-between">
-        <li className="categories-box__list-item">
-          <Link to="CarWelcomePage/:category/:brand" onClick={handleClearFilter}>
-            <div className="d-flex align-items-center">
-              <i className="fa-solid fa-mobile me-2" />
-              <p>Phones</p>
-            </div>
-            <i className="categories-box__list-item-icon fa-solid fa-chevron-right" />
-          </Link>
-        </li>
-        <li className="categories-box__list-item categories-box__list-item">
-          <Link to="/Carscategory/televisions" onClick={handleClearFilter}>
-            <div className="d-flex align-items-center">
-              <i className="fa-solid fa-tv me-2" />
-              <p>Televisions</p>
-            </div>
-            <i className="categories-box__list-item-icon fa-solid fa-chevron-right" />
-          </Link>
-        </li>
-        <li className="categories-box__list-item">
-          <Link to="/Carscategory/desktops" onClick={handleClearFilter}>
-            <div className="d-flex align-items-center">
-              <i className="fa-solid fa-desktop me-2" />
-              <p>Desktops</p>
-            </div>
-            <i className="categories-box__list-item-icon fa-solid fa-chevron-right" />
-          </Link>
-        </li>
-        <li className="categories-box__list-item">
-          <Link to="/Carscategory/laptops" onClick={handleClearFilter}>
-            <div className="d-flex align-items-center">
-              <i className="fa-solid fa-laptop me-2" />
-              <p>Laptops</p>
-            </div>
-            <i className="categories-box__list-item-icon fa-solid fa-chevron-right" />
-          </Link>
-        </li>
-        <li className="categories-box__list-item">
-          <Link to="/Carscategory/game consoles" onClick={handleClearFilter}>
-            <div className="d-flex align-items-center">
-              <i className="fa-solid fa-gamepad me-2" />
-              <p>Game Consoles</p>
-            </div>
-            <i className="categories-box__list-item-icon fa-solid fa-chevron-right" />
-          </Link>
-        </li>
-        <li className="categories-box__list-item">
-          <Link to="/Carscategory/headphones and speakers" onClick={handleClearFilter}>
-            <div className="d-flex align-items-center">
-              <i className="fa-solid fa-headphones me-2" />
-              <p>Headphones & Speakers</p>
-            </div>
-            <i className="categories-box__list-item-icon fa-solid fa-chevron-right" />
-          </Link>
-        </li>
-        <li className="categories-box__list-item">
-          <Link to="/Carscategory/accessories" onClick={handleClearFilter}>
-            <div className="d-flex align-items-center">
-              <i className="fa-solid fa-puzzle-piece me-2" />
-              <p>Accessories</p>
-            </div>
-            <i className="categories-box__list-item-icon fa-solid fa-chevron-right" />
-          </Link>
-        </li>
+    <div className="search__categories-box">
+      <ul>
+        {vehicleCat.map((category) => (
+          <li key={category}>
+            <Link
+              to={`/CarWelcomePage/${category}`}
+              onClick={handleClearFilter}
+              style={{
+                backgroundColor: 'white', color: 'purple', padding: '15px', borderRadius: '15%', display: 'inline-block', margin: '4px',
+              }}
+            >
+              <h6>{category}</h6>
+            </Link>
+          </li>
+        ))}
       </ul>
     </div>
   );

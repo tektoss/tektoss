@@ -226,6 +226,27 @@ export const vehicleCat = ["Motorcycles",
   "Other",
 ];
 
+export const TiresRims = [
+  'Michelin',
+  'Goodyear',
+  'Bridgestone',
+  'Continental',
+  'Pirelli',
+  'Dunlop',
+  'Firestone',
+  'Yokohama',
+  'Hankook',
+  'Toyo',
+  'OZ Racing',
+  'Vossen',
+  'American Racing',
+  'Konig',
+  'Rotiform',
+  'Advan',
+  'HRE Performance Wheels',
+  'TSW Alloy Wheels',
+];
+
 export const Motorcycles = [
   "Yamaha",
   "Honda",
@@ -488,11 +509,54 @@ export const Trailers = {
   Trailers: ["Other"],
 };
 
+export const AutopartsAccessories = {
+  'Auto parts & Accessories': ["Other"],
+};
+export const tiresRimsModels = {
+  Michelin: ['Other'],
+  Goodyear: ['Other'],
+  Bridgestone: ['Other'],
+  Continental: ['Other'],
+  Pirelli: ['Other'],
+  Dunlop: ['Other'],
+  Firestone: ['Other'],
+  Yokohama: ['Other'],
+  Hankook: ['Other'],
+  Toyo: ['Other'],
+  'OZ Racing': ['Other'],
+  Vossen: ['Other'],
+  'American Racing': ['Other'],
+  Konig: ['Other'],
+  Rotiform: ['Other'],
+  Advan: ['Other'],
+  'HRE Performance Wheels': ['Other'],
+  'TSW Alloy Wheels': ['Other'],
+};
+
+export const Powersportvehicles = ['Yamaha', 'Honda', 'Kawasaki', 'Harley Davidson', 'Polaris', 'CanAm', 'SkiDoo', 'ArcticCat', 'SeaDo'];
+
+export const PowersportvehiclesModels = {
+  Yamaha: ['YZF-R1', 'YZF-R6', 'MT-07', 'MT-09', 'Grizzly', 'GP1800', 'EX', 'VX', 'SuperJet', 'Kodiak', 'Raptor', 'YFZ450', 'Sidewinder', 'SRViper', 'Apex', 'Vector'],
+  Honda: ['CBR1000RR', 'CBR600RR', 'CB500F', 'Africa Twin'],
+  Kawasaki: ['Ninja ZX-10R', 'Ninja 650', 'Z900', 'Versys', 'Ultra', 'STX', 'SX-R', 'Jet Ski'],
+  HarleyDavidson: ['Sportster', 'Softail', 'Touring', 'Street'],
+  Polaris: ['Sportsman', 'Scrambler', 'RZR', 'Ace', 'Indy', 'Rush', 'Switchback', 'Titan'],
+  CanAm: ['Outlander', 'Renegade', 'Maverick', 'DS'],
+
+  Suzuki: ['KingQuad', 'QuadSport', 'Ozark', 'Vinson'],
+  SkiDoo: ['MXZ', 'Renegade', 'Freeride', 'Summit'],
+  ArcticCat: ['ZR', 'M', 'Pantera', 'Mountain Cat'],
+  SeaDoo: ['RXP-X', 'GTX', 'Spark', 'Fish Pro'],
+};
+
 export const vehiclesArray = {
   Motorcycles: motorcycleModels,
   'Cars & Trucks': carsObj,
   'Campers & RVs': CampersRVs,
   'Boats & Marine': BoatsMarine,
+  'Auto parts & Accessories': AutopartsAccessories,
+  'Powersport vehicles': PowersportvehiclesModels,
+  'Tires & Rims': tiresRimsModels,
   Trailers,
 };
 

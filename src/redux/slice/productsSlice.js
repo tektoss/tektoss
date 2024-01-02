@@ -15,6 +15,7 @@ export const addNewProduct = createAction('addNewProduct');
 export const removeProduct = createAction('removeProduct');
 export const setSelectedCategory = createAction('setSelectedCategory');
 export const setSelectedModel = createAction('setSelectedModel');
+export const setMainCatFilter = createAction('setMainCatFilter');
 
 export const addToProductsPending = createAsyncThunk(
   'products/addToProductsPending',
@@ -83,6 +84,9 @@ const productsSlice = createSlice({
         state.filterObject = initialFilter;
       })
       .addCase(setCategoryFilter, (state, action) => {
+        state.filterCategoryObject = action.payload;
+      })
+      .addCase(setMainCatFilter, (state, action) => {
         state.filterCategoryObject = action.payload;
       })
       .addCase(setPromotedItem, (state, action) => {

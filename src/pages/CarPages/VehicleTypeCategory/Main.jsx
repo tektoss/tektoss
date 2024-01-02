@@ -21,9 +21,10 @@ export default function Main() {
     minPrice: 0,
     location: 'all',
     brand: 'all',
+    maake: 'all',
+    model: 'all',
     category: 'all',
     condition: 'all',
-    vehicleType: 'all',
   };
 
   useEffect(() => () => {
