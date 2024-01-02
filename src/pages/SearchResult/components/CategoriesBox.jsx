@@ -26,7 +26,7 @@ export default function CategoriesBox() {
   return (
     <div className="categories-container">
       <div className="category-container" onMouseEnter={() => setElectronicsCategoriesVisible(true)} onMouseLeave={() => setElectronicsCategoriesVisible(false)}>
-        <span className="hover-text">Electronics </span>
+        {/* <span className="hover-text">Electronics </span> */}
 
         {isElectronicsCategoriesVisible && (
         <div className="search__categories-box">
@@ -46,7 +46,7 @@ export default function CategoriesBox() {
         )}
       </div>
       <div className="category-container" onMouseEnter={() => setCarCategoriesVisible(true)} onMouseLeave={() => setCarCategoriesVisible(false)}>
-        <span className="hover-text">Car Make</span>
+        {/* <span className="hover-text">Car Make</span> */}
 
         {isCarCategoriesVisible && (
         <div className="search__categories-box">
