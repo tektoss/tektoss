@@ -13,6 +13,7 @@ import FilterByDistance from '../../../Electronics/ElectronicsWelcomePage/compon
 import isItemWithinMiles from '../../../Electronics/ElectronicsWelcomePage/utils/isItemWithinMiles';
 import { selectLocationState } from '../../../../redux/slice/locationSlice';
 // import { subCategoriesObj } from '../../../Constants/constantObjects';
+// http://localhost:3000/CarWelcomePage/Motorcycles/Yamaha
 
 export default function DisplayCategoryProducts() {
   const [data, setData] = useState([]);
@@ -27,11 +28,11 @@ export default function DisplayCategoryProducts() {
   const [filteredData, setFilteredData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
-  const { category, brand } = useParams();
+  const { vehicleType, make } = useParams();
   const modelType = useSelector((state) => state.products.selectedModel);
-  console.log('what brand is gotten', brand);
-  console.log('what cat is gotten', category);
-  console.log('what cat is model', modelType);
+  console.log('what make is gotten', make);
+  console.log('what vehicle is gotten', vehicleType);
+  console.log('what model is gotten', modelType);
 
   const fetchData = async () => {
     try {
@@ -39,8 +40,8 @@ export default function DisplayCategoryProducts() {
       const q = query(
         collection(db, 'products'),
         where('mainCat', '==', 'vehicle'),
-        where('vehicleType', '==', category),
-        // where('make', '==', brand),
+        where('vehicleType', '==', vehicleType),
+        where('make', '==', make),
         where('isPromoted', '==', true),
         where('status', '==', 'active'),
       );
@@ -54,8 +55,8 @@ export default function DisplayCategoryProducts() {
       const q2 = query(
         collection(db, 'products'),
         where('mainCat', '==', 'vehicle'),
-        where('vehicleType', '==', category),
-        where('make', '==', brand),
+        where('vehicleType', '==', vehicleType),
+        where('make', '==', make),
         where('isPromoted', '==', true),
         where('status', '==', 'pending'),
       );
@@ -68,8 +69,8 @@ export default function DisplayCategoryProducts() {
       const q3 = query(
         collection(db, 'products'),
         where('mainCat', '==', 'vehicle'),
-        where('vehicleType', '==', category),
-        where('make', '==', brand),
+        where('vehicleType', '==', vehicleType),
+        where('make', '==', make),
         where('isPromoted', '==', false),
         where('status', '==', 'active'),
       );
@@ -82,8 +83,8 @@ export default function DisplayCategoryProducts() {
       const q4 = query(
         collection(db, 'products'),
         where('mainCat', '==', 'vehicle'),
-        where('vehicleType', '==', category),
-        where('make', '==', brand),
+        where('vehicleType', '==', vehicleType),
+        where('make', '==', make),
         where('isPromoted', '==', false),
         where('status', '==', 'pending'),
       );
@@ -92,7 +93,7 @@ export default function DisplayCategoryProducts() {
         const docData = doc.data();
         allProducts.push({ ...docData, id: doc.id });
       });
-      console.log('this is crazy', allProducts);
+      console.log('this is crazy here Motorcycles', allProducts);
       setIsLoading(false);
       setData(allProducts);
       setFilteredData(allProducts);
@@ -104,7 +105,7 @@ export default function DisplayCategoryProducts() {
 
   useEffect(() => {
     fetchData();
-  }, [category, brand]);
+  }, [vehicleType, make]);
 
   useEffect(() => {
     const filterData = async () => {
@@ -144,7 +145,7 @@ export default function DisplayCategoryProducts() {
     };
 
     filterData();
-  }, [data, time, miles]);
+  }, [data, time, miles, modelType]);
 
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;

@@ -41,11 +41,11 @@ const initialFilter = {
   model: 'all',
   brand: 'all',
   category: 'all',
-  mainCat: 'vehicle',
   make: 'all',
   condition: 'all',
   updateTime: 0,
   vehicleType: 'all',
+  mainCat: 'all',
 };
 
 const initialState = {

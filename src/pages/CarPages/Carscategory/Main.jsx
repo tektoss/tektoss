@@ -13,7 +13,7 @@ import SellNowButtonBoxMobile from '../../WishList/components/SellNowButtonBoxMo
 import Hero from '../components/Hero';
 
 export default function Main() {
-  const { category, brand } = useParams();
+  const { vehicleType, make } = useParams();
   const dispatch = useDispatch();
 
   const initialFilter = {
@@ -23,22 +23,25 @@ export default function Main() {
     brand: 'all',
     category: 'all',
     condition: 'all',
+    vehicleType: 'all',
+    make: 'all',
+    model: 'all',
   };
 
   useEffect(() => () => {
     dispatch(setCategoryFilter(initialFilter));
-  }, [category]);
+  }, [vehicleType]);
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [category]);
+  }, [vehicleType]);
 
   return (
     <div className="main-section-div">
       <main className="main-section d-flex justify-content-between">
         <div className="main-section__left-div">
           <SectionHeader>Filter</SectionHeader>
-          <CategoryFilterCard category={category} brand={brand} />
+          <CategoryFilterCard vehicleType={vehicleType} make={make} />
           {/* <AdPanel /> */}
         </div>
         <div className="main-section__right-div main-section__right-div__category-alt">
@@ -51,7 +54,7 @@ export default function Main() {
       </main>
       <main className="main-section">
         <div>
-          <SectionHeader>{`All ${category}`}</SectionHeader>
+          <SectionHeader>{`All ${vehicleType}`}</SectionHeader>
           <DisplayCategoryProducts />
         </div>
       </main>

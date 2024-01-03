@@ -30,7 +30,8 @@ export default function useFilterProductData(
         if (isLocationAvailable) {
           filtered = data.filter(
             (item) => (
-              item.price >= minPrice
+              item.mainCat === 'electronics'
+              && item.price >= minPrice
               && item.price <= maxPrice
               && (item.condition === condition || condition === 'all')
               && (item.category === category || category === 'all')
@@ -42,7 +43,8 @@ export default function useFilterProductData(
         if (!isLocationAvailable) {
           filtered = data.filter(
             (item) => (
-              item.price >= minPrice
+              item.mainCat === 'electronics'
+              && item.price >= minPrice
               && item.price <= maxPrice
               && (item.condition === condition || condition === 'all')
               && (item.category === category || category === 'all')

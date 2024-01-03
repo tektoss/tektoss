@@ -26,7 +26,7 @@ export default function Main() {
     minYear: 2000,
     maxYear: 2024,
     condition: 'all',
-    category: 'all',
+    mainCat: 'vehicle',
   };
 
   useEffect(() => () => {

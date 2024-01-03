@@ -3,7 +3,7 @@ import { React, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { setFilter } from '../../../../redux/slice/productsSlice';
-import { carMake } from '../../CarNewItem/components/categoryObj';
+import { vehiclesArray } from '../../CarNewItem/components/categoryObj';
 
 export default function CategoriesBox() {
   const vehicleCategory = useSelector((state) => state.products.selectedCategory);
@@ -17,81 +17,6 @@ export default function CategoriesBox() {
   const [getBrandsArray, setGetBrandsArray] = useState([]);
 
   console.log('here is the thing', vehicleCategory);
-
-  const vehiclesArray = {
-    'Motorcycles': [
-      'Yamaha',
-      'Honda',
-      'Harley-Davidson',
-      'BMW',
-      'Kawasaki',
-      'Ducati',
-      'KTM',
-      'Triumph',
-      'Suzuki',
-      'Aprilia',
-      'Indian Motorcycle',
-      'Moto Guzzi',
-      'MV Agusta',
-      'Royal Enfield',
-      'Benelli',
-      'Bajaj',
-      'Norton',
-      'Victory',
-      'Bimota',
-      'Hero',
-    ],
-
-    'Cars & Trucks': carMake,
-
-    'Campers & RVs': [
-      'Travel Trailers',
-      'Fifth Wheels',
-      'Class A Motorhomes',
-      'Class B Motorhomes (Camper Vans)',
-      'Class C Motorhomes',
-      'Pop-Up Campers',
-      'Truck Campers',
-      'Teardrop Trailers',
-      'Toy Haulers',
-      'Park Models',
-      'Airstream Trailers',
-      'Hybrid Trailers',
-      'Bus Conversions',
-      'Off-Road RVs',
-      'Vintage Trailers',
-      'Expandable Trailers',
-      'Trailer Tents',
-      'Small RVs for Couples',
-      'Luxury RVs',
-      'Compact Motorhomes',
-    ],
-    'Boats & Marine': [
-      'Powerboats',
-      'Sailboats',
-      'Personal Watercraft',
-      'Pontoon Boats',
-      'Yachts',
-      'Fishing Boats',
-      'Jet Boats',
-      'Houseboats',
-      'Dinghies',
-      'Canoes',
-      'Kayaks',
-      'Inflatable Boats',
-      'Catamarans',
-      'Trawlers',
-      'Deck Boats',
-      'Bowriders',
-      'Cruisers',
-      'Ski Boats',
-      'Wakeboard Boats',
-      'Runabouts',
-    ],
-    Trailers: [
-
-      'Trailers'],
-  };
   useEffect(() => {
     const getBrandArray = (categoryName) => {
       switch (categoryName) {
@@ -128,7 +53,7 @@ export default function CategoriesBox() {
     <div className="search__categories-box">
       <ul>
         {
-          getBrandsArray?.map((categories) => (
+          Object.keys(getBrandsArray)?.map((categories) => (
             <li>
               <button type="button" onClick={() => handleClearFilter(`/CarWelcomePage/${vehicleCategory}/${categories}`)}><h6>{categories}</h6></button>
             </li>

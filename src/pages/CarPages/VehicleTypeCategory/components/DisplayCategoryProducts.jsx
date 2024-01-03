@@ -10,7 +10,7 @@ import { selectProductsState } from '../../../../redux/slice/productsSlice';
 import Loader from '../../../../components/Loader';
 import EmptyDisplay from '../../../../components/EmptyDisplay';
 import FilterByDistance from '../../CarWelcomePage/components/FilterByDistance';
-import isItemWithinMiles from '../../../Electronics/ElectronicsWelcomePage/utils/isItemWithinMiles';
+import isItemWithinMiles from '../../CarWelcomePage/utils/isItemWithinMiles';
 import { selectLocationState } from '../../../../redux/slice/locationSlice';
 // import { subCategoriesObj } from '../../../Constants/constantObjects';
 
@@ -87,7 +87,7 @@ export default function DisplayCategoryProducts() {
         const docData = doc.data();
         allProducts.push({ ...docData, id: doc.id });
       });
-      console.log('this is crazy', allProducts);
+      console.log('this is crazy vehicle type', allProducts);
       setIsLoading(false);
       setData(allProducts);
       setFilteredData(allProducts);
@@ -98,7 +98,9 @@ export default function DisplayCategoryProducts() {
   };
 
   useEffect(() => {
-    fetchData();
+    if (vehicleType) {
+      fetchData();
+    }
   }, [vehicleType]);
 
   useEffect(() => {

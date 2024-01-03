@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
 import {
   collection, getDocs, query, where,
 } from '@firebase/firestore';
@@ -10,7 +11,9 @@ export default function useItemsFetch(setIsLoading, setFilteredData, setData, is
   const { productsList } = useSelector(selectProductsState);
   const dispatch = useDispatch();
   const selectedCategory = useSelector((state) => state.products.selectedCategory);
-  console.log('here is the chosen category: ', selectedCategory);
+  console.log('here is the chosen category from useitem: ', selectedCategory);
+  const { CarWelcomePage } = useParams();
+  console.log('here is the chosen CarWelcomePage from useitem: ', CarWelcomePage);
 
   useEffect(() => {
     const fetchItems = async () => {

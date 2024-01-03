@@ -24,6 +24,7 @@ export default function Main() {
     brand: 'all',
     category: 'all',
     condition: 'all',
+    mainCat: 'electronics',
   };
 
   useEffect(() => () => {
@@ -56,7 +57,7 @@ export default function Main() {
       </main>
       <main className="main-section">
         <div>
-          <SectionHeader>All Products</SectionHeader>
+          <SectionHeader>All Electronics</SectionHeader>
           <DisplayCards />
         </div>
       </main>

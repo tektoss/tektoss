@@ -74,7 +74,7 @@ export default function MainRoutes() {
         <Route path="/messages" element={<Messages />} />
         <Route path="/Electronicscategory/:category" element={<ElectronicsCategory />} />
         <Route path="/CarWelcomePage/:vehicleType" element={<VehicleTypeCategory />} />
-        <Route path="/CarWelcomePage/:category/:brand" element={<Carscategory />} />
+        <Route path="/CarWelcomePage/:vehicleType/:make" element={<Carscategory />} />
         <Route path="/all-new-item" element={<AllNewItem />} />
         <Route path="/ElectronicsWelcomePage/ElecNewItem" element={<ElecNewItem />} />
         <Route path="/user-account/:id" element={<UserAccount />} />

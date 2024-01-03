@@ -3,9 +3,9 @@ import { useDispatch } from 'react-redux';
 import {
   emptyProductsList, setCoordinate, setCategoryFilter, setSelectedModel,
 } from '../../../../redux/slice/productsSlice';
-import { carsObj, motorcycleModels } from '../../CarNewItem/components/categoryObj';
+import { vehiclesArray } from '../../CarNewItem/components/categoryObj';
 
-export default function CategoryFilterCard({ category, brand }) {
+export default function CategoryFilterCard({ vehicleType, make }) {
   const initialFilter = {
     maxPrice: 10000,
     minPrice: 0,
@@ -16,8 +16,9 @@ export default function CategoryFilterCard({ category, brand }) {
     maxYear: 2024,
     minYear: 2000,
   };
-  console.log('here Category:', category);
-  console.log('here Brand:', brand);
+  console.log('here nextttttt vehicleType:', vehicleType);
+  console.log('here nextttttt make:', make);
+  console.log('here nexttttt, model', vehiclesArray[vehicleType][make]);
 
   const dispatch = useDispatch();
   // const [getBrandsArray, setGetBrandsArray] = useState([]);
@@ -26,61 +27,6 @@ export default function CategoryFilterCard({ category, brand }) {
   const priceGap = 900;
 
   // const { brand } = useParams();
-
-  const vehiclesArray = {
-    Motorcycles: motorcycleModels,
-
-    'Cars & Trucks': carsObj,
-
-    'Campers & RVs': [
-      'Travel Trailers',
-      'Fifth Wheels',
-      'Class A Motorhomes',
-      'Class B Motorhomes (Camper Vans)',
-      'Class C Motorhomes',
-      'Pop-Up Campers',
-      'Truck Campers',
-      'Teardrop Trailers',
-      'Toy Haulers',
-      'Park Models',
-      'Airstream Trailers',
-      'Hybrid Trailers',
-      'Bus Conversions',
-      'Off-Road RVs',
-      'Vintage Trailers',
-      'Expandable Trailers',
-      'Trailer Tents',
-      'Small RVs for Couples',
-      'Luxury RVs',
-      'Compact Motorhomes',
-    ],
-    'Boats & Marine': [
-      'Powerboats',
-      'Sailboats',
-      'Personal Watercraft',
-      'Pontoon Boats',
-      'Yachts',
-      'Fishing Boats',
-      'Jet Boats',
-      'Houseboats',
-      'Dinghies',
-      'Canoes',
-      'Kayaks',
-      'Inflatable Boats',
-      'Catamarans',
-      'Trawlers',
-      'Deck Boats',
-      'Bowriders',
-      'Cruisers',
-      'Ski Boats',
-      'Wakeboard Boats',
-      'Runabouts',
-    ],
-    Trailers: [
-
-      'Trailers'],
-  };
-  const chosenBrand = vehiclesArray[category][brand];
 
   // useEffect(() => {
   //   const getBrandArray = (categoryName) => {
@@ -225,7 +171,7 @@ export default function CategoryFilterCard({ category, brand }) {
           onChange={handleModelChange}
         >
           {
-            chosenBrand?.map((model) => (
+            vehiclesArray[vehicleType][make].map((model) => (
               <option value={model} key={model}>{model}</option>
             ))
           }

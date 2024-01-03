@@ -220,10 +220,8 @@ export const vehicleCat = ["Motorcycles",
   "Boats & Marine",
   "Powersport vehicles",
   "Trailers",
-  "Commercial vehicles",
   "Tires & Rims",
   "Auto parts & Accessories",
-  "Other",
 ];
 
 export const TiresRims = [
@@ -549,6 +547,28 @@ export const PowersportvehiclesModels = {
   SeaDoo: ['RXP-X', 'GTX', 'Spark', 'Fish Pro'],
 };
 
+export const Trailer = ['BigTex', 'CarryOn', 'PJTrailers', 'WellsCargo', 'Airstream', 'Forest River', 'Jayco', 'Winnebago', 'Haulmark', 'Stealth', 'ContinentalCargo', 'LookTrail', 'Sundowner', 'Featherlite', 'Exiss', 'Bison'];
+
+export const trailerMakesAndModels = {
+  BigTex: ['10PI', '14PI', '30SA', '35SA'],
+  CarryOn: ['3.5X5LSHS', '5X8GW', '6X12GW2BRK'],
+  PJTrailers: ['U6', 'U8', 'UVT'],
+  WellsCargo: ['FT', 'VT', 'WHD'],
+  Airstream: ['Basecamp', 'Flying Cloud', 'International', 'Classic'],
+  ForestRiver: ['Rockwood', 'Flagstaff', 'R-Pod', 'Salem'],
+  Jayco: ['Jay Flight', 'White Hawk', 'Eagle', 'North Point'],
+  Winnebago: ['Micro Minnie', 'Minne Plus', 'Voyage', 'Forza'],
+  Haulmark: ['Passport', 'Transport', 'Grizzly', 'Edge'],
+  Stealth: ['Phantom', 'Cobra', 'Predator', 'Liberty'],
+  ContinentalCargo: ['Tailwind', 'V-Series', 'AutoMaster', 'Haulmark'],
+  LookTrailers: ['Element', 'Vision', 'Dlx', 'Puresport'],
+  Sundowner: ['Super Sport', 'Sunlite', 'Sunlite Stampede', 'Charter SE'],
+  Featherlite: ['9401', '9651', '9751', '8581'],
+  Exiss: ['Express', 'Escape', 'STC', 'CX Edition'],
+  Bison: ['Ranger', 'Laredo', 'Trail Hand', 'Premier'],
+
+};
+
 export const vehiclesArray = {
   Motorcycles: motorcycleModels,
   'Cars & Trucks': carsObj,
@@ -557,7 +577,7 @@ export const vehiclesArray = {
   'Auto parts & Accessories': AutopartsAccessories,
   'Powersport vehicles': PowersportvehiclesModels,
   'Tires & Rims': tiresRimsModels,
-  Trailers,
+  Trailers: trailerMakesAndModels,
 };
 
 export default carsObj;
