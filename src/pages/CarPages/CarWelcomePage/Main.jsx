@@ -4,8 +4,8 @@ import VehicleDisplayCards from './components/VehicleDisplayCards';
 // import AdPanel from '../../components/AdPanel';
 import SectionHeader from '../components/SectionHeader';
 import FilterCard from '../components/FilterCard';
-// import CategoriesBox from '../../components/CategoriesBox';
-import SearchCategoriesBox from '../CarSearchResult/components/CategoriesBox';
+import CategoriesBox from '../Carscategory/components/CategoriesBox';
+// import SearchCategoriesBox from '../CarSearchResult/components/CategoriesBox';
 import SearchBar from './components/SearchBar';
 // import useTopScroll from '../../Hooks/useTopScroll';
 import { setFilter } from '../../../redux/slice/productsSlice';
@@ -48,7 +48,7 @@ export default function Main() {
         </div>
         <div className="main-section__right-div welcome-page__right-div">
           <SellNowButtonBoxMobile />
-          <SearchCategoriesBox />
+          <CategoriesBox />
           <Hero />
           {/* <HorizontalAdPanel /> */}
           <div className="main-section__mobile-div">

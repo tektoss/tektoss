@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
 import {
   collection, getDocs, query, where,
 } from '@firebase/firestore';
@@ -10,10 +9,8 @@ import { db } from '../../../../config/firebaseConfig';
 export default function useItemsFetch(setIsLoading, setFilteredData, setData, isLocationAvailable) {
   const { productsList } = useSelector(selectProductsState);
   const dispatch = useDispatch();
-  const selectedCategory = useSelector((state) => state.products.selectedCategory);
-  console.log('here is the chosen category from useitem: ', selectedCategory);
-  const { CarWelcomePage } = useParams();
-  console.log('here is the chosen CarWelcomePage from useitem: ', CarWelcomePage);
+  const vehicleCategory = useSelector((state) => state.products.selectedCategory);
+  console.log('here is the chosen category from useitem: ', vehicleCategory);
 
   useEffect(() => {
     const fetchItems = async () => {
@@ -28,11 +25,11 @@ export default function useItemsFetch(setIsLoading, setFilteredData, setData, is
         try {
           let q; let q2; let q3; let
             q4;
-          if (selectedCategory) {
+          if (vehicleCategory) {
             q = query(
-              console.log('this is working=>', selectedCategory),
+              console.log('this is working=>', vehicleCategory),
               collection(db, 'products'),
-              where('vehicleType', '==', selectedCategory),
+              where('vehicleType', '==', vehicleCategory),
               where('isPromoted', '==', true),
               where('mainCat', '==', 'vehicle'),
               where('status', '==', 'active'),
@@ -46,16 +43,16 @@ export default function useItemsFetch(setIsLoading, setFilteredData, setData, is
             );
           }
           const querySnapshot = await getDocs(q);
-          const VehicleProducts = [];
+          const products = [];
           querySnapshot.forEach((doc) => {
             const queryData = doc.data();
-            VehicleProducts.push({ ...queryData, id: doc.id });
+            products.push({ ...queryData, id: doc.id });
           });
 
-          if (selectedCategory) {
+          if (vehicleCategory) {
             q2 = query(
               collection(db, 'products'),
-              where('vehicleType', '==', selectedCategory),
+              where('vehicleType', '==', vehicleCategory),
               where('isPromoted', '==', true),
               where('mainCat', '==', 'vehicle'),
               where('status', '==', 'pending'),
@@ -71,14 +68,14 @@ export default function useItemsFetch(setIsLoading, setFilteredData, setData, is
           const querySnapshot2 = await getDocs(q2);
           querySnapshot2.forEach((doc) => {
             const queryData = doc.data();
-            VehicleProducts.push({ ...queryData, id: doc.id });
+            products.push({ ...queryData, id: doc.id });
           });
 
-          if (selectedCategory) {
+          if (vehicleCategory) {
             q3 = query(
               collection(db, 'products'),
               where('isPromoted', '==', false),
-              where('vehicleType', '==', selectedCategory),
+              where('vehicleType', '==', vehicleCategory),
               where('mainCat', '==', 'vehicle'),
               where('status', '==', 'active'),
             );
@@ -93,13 +90,13 @@ export default function useItemsFetch(setIsLoading, setFilteredData, setData, is
           const querySnapshot3 = await getDocs(q3);
           querySnapshot3.forEach((doc) => {
             const queryData = doc.data();
-            VehicleProducts.push({ ...queryData, id: doc.id });
+            products.push({ ...queryData, id: doc.id });
           });
 
-          if (selectedCategory) {
+          if (vehicleCategory) {
             q4 = query(
               collection(db, 'products'),
-              where('vehicleType', '==', selectedCategory),
+              where('vehicleType', '==', vehicleCategory),
               where('isPromoted', '==', false),
               where('mainCat', '==', 'vehicle'),
               where('status', '==', 'pending'),
@@ -115,13 +112,13 @@ export default function useItemsFetch(setIsLoading, setFilteredData, setData, is
           const querySnapshot4 = await getDocs(q4);
           querySnapshot4.forEach((doc) => {
             const queryData = doc.data();
-            VehicleProducts.push({ ...queryData, id: doc.id });
+            products.push({ ...queryData, id: doc.id });
           });
 
-          console.log('this is from all products =>', VehicleProducts);
-          setData(VehicleProducts);
-          dispatch(fillProductsList(VehicleProducts));
-          setFilteredData(VehicleProducts);
+          console.log('this is from all vehicle =>', products);
+          setData(products);
+          dispatch(fillProductsList(products));
+          setFilteredData(products);
           setIsLoading(false);
         } catch (error) {
           console.log(error.message);
@@ -131,5 +128,5 @@ export default function useItemsFetch(setIsLoading, setFilteredData, setData, is
     };
 
     fetchItems();
-  }, [isLocationAvailable, selectedCategory]);
+  }, [isLocationAvailable, vehicleCategory]);
 }

@@ -18,9 +18,11 @@ export default function Main({ searchName }) {
     maxPrice: 10000,
     minPrice: 0,
     location: 'all',
-    brand: 'all',
-    category: 'all',
+    make: 'all',
+    model: 'all',
     condition: 'all',
+    maxYear: 2024,
+    minYear: 2000,
   };
 
   useEffect(() => () => {

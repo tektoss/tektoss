@@ -14,10 +14,8 @@ export default function FilterCard() {
     minPrice: 0,
     minYear: 2000,
     maxYear: 2024,
-    // make: 'all',
-    // model: 'all',
-    location: 'all',
-    category: 'all',
+    make: 'all',
+    model: 'all',
     condition: 'all',
   };
 

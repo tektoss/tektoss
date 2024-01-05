@@ -66,7 +66,6 @@ export default function useItemsFetch(setIsLoading, setFilteredData, setData, is
             allProducts.push({ ...queryData, id: doc.id });
           });
 
-          console.log('this is from all products =>', allProducts);
           setData(allProducts);
           dispatch(fillProductsList(allProducts));
           setFilteredData(allProducts);

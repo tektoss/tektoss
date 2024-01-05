@@ -38,6 +38,7 @@ export default function VehicleDisplayCards() {
     time,
     setIsLoading,
   );
+  console.log('this is from VehicleDisplayCards =>', data);
 
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;

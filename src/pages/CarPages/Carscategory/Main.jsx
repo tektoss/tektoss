@@ -20,8 +20,6 @@ export default function Main() {
     maxPrice: 10000,
     minPrice: 0,
     location: 'all',
-    brand: 'all',
-    category: 'all',
     condition: 'all',
     vehicleType: 'all',
     make: 'all',

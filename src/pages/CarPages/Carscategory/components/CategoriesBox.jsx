@@ -1,5 +1,5 @@
 /* eslint-disable quote-props */
-import { React, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { setFilter } from '../../../../redux/slice/productsSlice';
@@ -11,8 +11,11 @@ export default function CategoriesBox() {
     maxPrice: 10000,
     minPrice: 0,
     location: 'all',
-    category: 'all',
+    make: 'all',
+    model: 'all',
     condition: 'all',
+    maxYear: 2024,
+    minYear: 2000,
   };
   const [getBrandsArray, setGetBrandsArray] = useState([]);
 
@@ -30,8 +33,14 @@ export default function CategoriesBox() {
           return vehiclesArray['Boats & Marine'];
         case 'Trailers':
           return vehiclesArray.Trailers;
+        case 'Auto parts & Accessories':
+          return vehiclesArray['Auto parts & Accessories'];
+        case 'Powersport vehicles':
+          return vehiclesArray['Powersport vehicles'];
+        case 'Tires & Rims':
+          return vehiclesArray['Tires & Rims'];
         default:
-          return null;
+          return [];
       }
     };
 
@@ -53,9 +62,11 @@ export default function CategoriesBox() {
     <div className="search__categories-box">
       <ul>
         {
-          Object.keys(getBrandsArray)?.map((categories) => (
-            <li>
-              <button type="button" onClick={() => handleClearFilter(`/CarWelcomePage/${vehicleCategory}/${categories}`)}><h6>{categories}</h6></button>
+          Object.keys(getBrandsArray || {}).map((categories) => (
+            <li key={categories}>
+              <button type="button" onClick={() => handleClearFilter(`/CarWelcomePage/${vehicleCategory}/${categories}`)}>
+                <h6>{categories}</h6>
+              </button>
             </li>
           ))
         }

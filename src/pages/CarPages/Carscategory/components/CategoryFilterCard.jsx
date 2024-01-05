@@ -26,31 +26,6 @@ export default function CategoryFilterCard({ vehicleType, make }) {
 
   const priceGap = 900;
 
-  // const { brand } = useParams();
-
-  // useEffect(() => {
-  //   const getBrandArray = (categoryName) => {
-  //     switch (categoryName) {
-  //       case 'Motorcycles':
-  //         return vehiclesArray.Motorcycles;
-  //       case 'Cars and Trucks':
-  //         return vehiclesArray['Cars and Trucks'];
-  //       case 'campers_rvs_categories':
-  //         return vehiclesArray.campers_rvs_categories;
-  //       case 'boats_marine_categories':
-  //         return vehiclesArray.boats_marine_categories;
-  //       case 'Trailers':
-  //         return vehiclesArray.Trailers;
-  //       default:
-  //         return null;
-  //     }
-  //   };
-
-  //   const brands = getBrandArray(category);
-
-  //   setGetBrandsArray(brands);
-  // }, [category]);
-
   const handleMinPriceChange = (e) => {
     const value = parseInt(e.target.value);
     if (value >= 0 && value < (filterObj.maxPrice - priceGap)) {
