@@ -16,7 +16,7 @@ export default function Carscategory() {
         <title>{`Categories - ${vehicleType} | ${appName}`}</title>
         <meta
           name="description"
-          content={`Find the latest ${vehicleType} and get the best prices and deals right here at ${appName}`}
+          content={`Find the latest ${vehicleType} and get the best prices and deals right here at Cirloz`}
         />
         <link rel="canonical" href={`Carscategory/${vehicleType}/${make}#page-top`} />
       </Helmet>

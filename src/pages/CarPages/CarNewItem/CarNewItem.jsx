@@ -36,7 +36,7 @@ export default function CarNewItem() {
         <meta
           name="description"
           content={`Your One-Stop Electronic Gadget Marketplace.
-          Discover the Best Deals, Connect with Sellers, and Trade Gadgets with Ease right here on ${appName}.`}
+          Discover the Best Deals, Connect with Sellers, and Trade Gadgets with Ease right here on Cirloz.`}
         />
         <link rel="canonical" href="/Vehicles/CarNewItem" />
       </Helmet>

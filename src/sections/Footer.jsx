@@ -3,8 +3,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import SellNowButton from '../components/SellNowButton';
+// eslint-disable-next-line import/no-named-as-default, import/no-duplicates
 import appName, { helpEmail, marketingAndPartnershipEmail } from '../Constants/constantVariables';
-import appLogo from '../assets/images/electrotossLogoWhite.png';
+import movingLogo from '../assets/images/movingLogo.png';
+// eslint-disable-next-line import/no-duplicates
+import { nameForLogo } from '../Constants/constantVariables';
 
 export default function Footer() {
   const handleEmailClick = (emailAddress) => {
@@ -23,11 +26,11 @@ export default function Footer() {
           <div className="col-md-4">
             <Link to="/" className="footer__brand">
               <span>
-                <img className="footer__app-logo" src={appLogo} alt={appName} />
+                <img className="navbar-custom__app-logo" src={movingLogo} alt={nameForLogo} />
               </span>
-              <h4 className="footer__heading">
-                { appName }
-              </h4>
+              <span className="h2 navbar-custom__brand-text">
+                <span style={{ color: 'White', fontWeight: 'bold' }}>irloz</span>
+              </span>
             </Link>
             <p className="footer__brand-info">{`Connect, Buy, and Sell Your Favorite Gadgets right here on ${appName}.`}</p>
             <SellNowButton />
@@ -46,9 +49,12 @@ export default function Footer() {
             <h4 className="footer__heading">Categories</h4>
             <ul className="footer__category-list">
               <li className="footer__category-list-item">
-                <Link to="/category/Computers & Tablets">Computers &amp; Tablets</Link>
+                <Link to="/Vehicles">Vehicles</Link>
               </li>
               <li className="footer__category-list-item">
+                <Link to="/Electronics">Electronics</Link>
+              </li>
+              {/* <li className="footer__category-list-item">
                 <Link to="/category/Video Games & Consoles">Video Games &amp; Consoles</Link>
               </li>
               <li className="footer__category-list-item">
@@ -74,7 +80,7 @@ export default function Footer() {
               </li>
               <li className="footer__category-list-item">
                 <Link to="/category/Televisions">Televisions</Link>
-              </li>
+              </li> */}
             </ul>
           </div>
           <div className="col-md-4">
@@ -95,13 +101,13 @@ export default function Footer() {
           <div className="col-md-4">
             <h4 className="footer__heading">Follow Us</h4>
             <div className="footer__socials-div d-flex">
-              <a href="https://web.facebook.com/cirloz" target="_blank" rel="noreferrer" className="footer__socials-inner-div" title="facebook">
+              <a href="https://web.facebook.com/CirLoZ" target="_blank" rel="noreferrer" className="footer__socials-inner-div" title="facebook">
                 <i className="footer__social-icon fa-brands fa-facebook-f" />
               </a>
-              <a href="https://www.instagram.com/cirloz" target="_blank" rel="noreferrer" className="footer__socials-inner-div" title="instagram">
+              <a href="https://www.instagram.com/CirLoZ" target="_blank" rel="noreferrer" className="footer__socials-inner-div" title="instagram">
                 <i className="footer__social-icon fa-brands fa-instagram" />
               </a>
-              <a href="https://twitter.com/cirloz" target="_blank" rel="noreferrer" className="footer__socials-inner-div" title="twitter">
+              <a href="https://twitter.com/CirLoZ" target="_blank" rel="noreferrer" className="footer__socials-inner-div" title="twitter">
                 <i className="footer__social-icon fa-brands fa-twitter" />
               </a>
               <a href="https://www.youtube.com/channel/UCUDgJq_u7d7A_i_2n6Ap-qg" target="_blank" rel="noreferrer" className="footer__socials-inner-div" title="youtube">

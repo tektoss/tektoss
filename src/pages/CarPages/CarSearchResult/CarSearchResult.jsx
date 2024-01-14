@@ -13,7 +13,7 @@ export default function CarSearchResult() {
   return (
     <>
       <Helmet>
-        <title>{`Search | ${appName}`}</title>
+        <title>Search Cirloz</title>
         <meta
           name="description"
           content={`${appName} has got you covered. Here is a search result list for your search - ${searchName}`}

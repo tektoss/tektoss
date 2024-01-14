@@ -1,15 +1,25 @@
+/* Navbar with search bar */
 .navbar-custom {
-  background-color: #2a027d;
+  background-color: #893dc2 ;
   position: relative;
 }
 .navbar-custom__app-logo {
   width: 50px;
   margin-right: 10px;
-  
-
 }
+
+.bottom-nav__content-App-div {
+  display: flex;
+  width: 350px;
+  height: 2.2em;
+  position: relative;
+  height: 2.2em;
+  /* background-color: #f3f3f3; Replace 'your-color' with the desired color code */
+  margin-right: auto; /* This will push the element to the left */
+}
+
 .navbar-custom__top-div {
-  background-color: rgba(255, 255, 255, 0.1254901961);
+  background-color: #560694;
   padding-top: 0.5em;
   padding-bottom: 0.5em;
 }
@@ -20,6 +30,7 @@
   align-items: center;
   justify-content: space-between;
 }
+
 .navbar-custom__top-div ul {
   margin: 0;
 }
@@ -392,7 +403,7 @@
 .bottom-nav {
   width: 100%;
   height: 5.3em;
-  background-color: #2a027d;
+  background-color: #893dc2;
   position: fixed;
   top: -5.5em;
   z-index: 10;
@@ -470,6 +481,7 @@
   top: 0;
 }
 
+
 @media (max-width: 1000px) {
   .navbar-custom.toggled {
     position: fixed;
@@ -478,9 +490,12 @@
     right: 0;
     left: 0;
   }
-  .navbar-custom__top-div {
-    display: none;
-  }
+  /* top navbar */
+.navbar-custom__top-div {
+  background-color: #560694;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
   .navbar-custom__bottom-div {
     width: 100%;
     margin: 0;
@@ -5657,7 +5672,7 @@ form input:focus-visible, form textarea:focus-visible {
 
 .footer {
   height: auto;
-  background-color: #2a027d;
+  background-color: #893dc2;
   padding-top: 30px;
 }
 .footer__top-div {

@@ -10,8 +10,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
 import { selectAuthState, setUserId, setUserInfo } from '../redux/slice/authSlice';
 // import RegisterModal from './RegisterModal';
-import appName from '../Constants/constantVariables';
+// import appName from '../Constants/constantVariables';
+import { nameForLogo } from '../Constants/constantVariables';
 import appLogo from '../assets/images/electrotossLogoWhite.png';
+import movingLogo from  '../assets/images/movingLogo.png'
 import { doc, getDoc, onSnapshot } from '@firebase/firestore';
 import { auth, db } from '../config/firebaseConfig';
 import { selectWishListState, setWishlistIds } from '../redux/slice/wishListSlice';
@@ -251,7 +253,7 @@ function Navbar() {
         <div className="navbar-custom__top-brand-div">
             <Link to="/" className="navbar-custom__brand">
               <span>
-                <img className="navbar-custom__app-logo" src={appLogo} alt={appName} />
+                <img className="navbar-custom__app-logo" src={appLogo} alt={nameForLogo} />
               </span>
               <span className="h2 navbar-custom__brand-text">
               <span style={{ color: 'White', fontWeight: 'bold' }}>irloz</span>
@@ -259,6 +261,8 @@ function Navbar() {
             </Link>
             <p>Electronic Gadgets Marketplace</p>
           </div>
+
+       
           <ul className="d-flex justify-content-end align-items-center">
             { !isAnonymous && <li>
               <button className="navbar-custom__icon-button" title="notifications" onClick={() => navigate("/notifications")}>
@@ -341,15 +345,28 @@ function Navbar() {
         <div className="navbar-custom__bottom-div">
           <div className="navbar-custom__brand-div">
             <Link to="/" className="navbar-custom__brand">
-              <span>
-                <img className="navbar-custom__app-logo" src={appLogo} alt={appName} />
-              </span>
-              <span className="h2 navbar-custom__brand-text">
-              { appName }
-              </span>
+            <span>
+              <img className="navbar-custom__app-logo" src={movingLogo} alt={nameForLogo} />
+            </span>
+            <span style={{ color: 'White', fontWeight: 'bold' }}>{ nameForLogo }</span>
             </Link>
             <p>Electronic Gadgets Marketplace</p>
           </div>
+
+          <div className="bottom-nav__content-App-div">
+          <h4 className="footer__heading" style={{ fontSize: '1.1em', fontWeight: 'bold', marginBottom: '15px', fontStyle: 'revert-layer' }}>Download our App</h4>
+            <div style={{ marginLeft: '8px' }}></div>
+            <div className="d-flex">
+              <a href="https://apps.apple.com/us/app/electrotoss/id6473089394" target="_blank" rel="noreferrer" className="footer__socials-inner-div" title="iOS">
+                <i className="fa-brands fa-app-store-ios" style={{ color: 'white', fontSize: '30px', size: 10 }} />
+              </a>
+              <a href="https://play.google.com/store/apps/details?id=com.tektoss.electrotoss" target="_blank" rel="noreferrer" className="footer__socials-inner-div" title="Android">
+                <i className="fa-brands fa-google-play" style={{ color: 'white', fontSize: '30px', size: 70 }} />
+              </a>
+
+            </div>
+          </div>
+
           <div className="bottom-nav__content-search-div navbar-custom__search-div">
           <input
             value={search}

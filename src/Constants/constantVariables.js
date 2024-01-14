@@ -1,5 +1,6 @@
-const appName = 'irloz';
+export const nameForLogo = 'irloz';
 
+export const appName = 'Cirloz';
 export const helpEmail = 'admhelp@electrotoss.com';
 export const marketingAndPartnershipEmail = 'market-ad@electrotoss.com';
 export const appPhoneNumber = '';

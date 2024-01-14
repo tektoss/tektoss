@@ -3,6 +3,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import SellElecNowButton from '../components/SellElecNowButton';
+// eslint-disable-next-line import/no-named-as-default
 import appName, { helpEmail, marketingAndPartnershipEmail } from '../../../Constants/constantVariables';
 import appLogo from '../../../assets/images/electrotossLogoWhite.png';
 

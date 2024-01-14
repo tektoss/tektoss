@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import AdPanel from '../../components/AdPanel';
 import ContentInfoBox from '../../components/ContentInfoBox';
 import AboutImg from '../../assets/images/About.png';
-import appName from '../../Constants/constantVariables';
+// import appName from '../../Constants/constantVariables';
 
 export default function Main() {
   const navigate = useNavigate();
@@ -28,7 +28,7 @@ export default function Main() {
             <div className="about__image-div">
               <img src={AboutImg} alt="side" />
             </div>
-            <h2 className="about__heading">{`Welcom to ${appName}`}</h2>
+            <h2 className="about__heading">Welcom to Cirloz</h2>
             <p>
               Lorem, ipsum dolor sit amet consectetur adipisicing elit.
               <br />

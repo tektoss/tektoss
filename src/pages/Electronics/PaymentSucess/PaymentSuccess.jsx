@@ -1,3 +1,4 @@
+/* eslint-disable import/no-named-as-default */
 import React, { useEffect } from 'react';
 import { toast } from 'react-toastify';
 import { useSelector } from 'react-redux';

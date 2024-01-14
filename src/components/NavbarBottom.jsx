@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import appName from '../Constants/constantVariables';
-import appLogo from '../assets/images/electrotossLogoWhite.png';
+// eslint-disable-next-line import/no-named-as-default
+import { nameForLogo } from '../Constants/constantVariables';
+import movingLogo from '../assets/images/movingLogo.png';
 
 export default function NavbarBottom() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -37,10 +38,10 @@ export default function NavbarBottom() {
         <div className="navbar-custom__top-brand-div">
           <Link to="/" className="navbar-custom__brand">
             <span>
-              <img className="navbar-custom__app-logo" src={appLogo} alt={appName} />
+              <img className="navbar-custom__app-logo" src={movingLogo} alt={nameForLogo} />
             </span>
             <span className="h2 navbar-custom__brand-text">
-              { appName }
+              <span style={{ color: 'White', fontWeight: 'bold' }}>irloz</span>
             </span>
           </Link>
           <p>Electronic Gadgets Marketplace</p>

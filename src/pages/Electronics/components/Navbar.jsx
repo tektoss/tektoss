@@ -11,8 +11,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
 import { selectAuthState, setUserId, setUserInfo } from '../../../redux/slice/authSlice';
 // import RegisterModal from './RegisterModal';
-import appName from '../../../Constants/constantVariables';
+// import appName from '../../../Constants/constantVariables';
+import { nameForLogo } from '../../../Constants/constantVariables';
 import appLogo from '../../../assets/images/electrotossLogoWhite.png';
+import movingLogo from '../../../assets/images/movingLogo.png'
 import { doc, getDoc, onSnapshot } from '@firebase/firestore';
 import { auth, db } from '../../../config/firebaseConfig';
 import { selectWishListState, setWishlistIds } from '../../../redux/slice/wishListSlice';
@@ -250,11 +252,11 @@ function Navbar() {
         <div className="navbar-custom__top-div__inner-div"> 
         <div className="navbar-custom__top-brand-div">
             <Link to="/" className="navbar-custom__brand">
-              <span>
-                <img className="navbar-custom__app-logo" src={appLogo} alt={appName} />
+            <span>
+                <img className="navbar-custom__app-logo" src={appLogo} alt={nameForLogo} />
               </span>
               <span className="h2 navbar-custom__brand-text">
-              { appName }
+              <span style={{ color: 'White', fontWeight: 'bold' }}>irloz</span>
               </span>
             </Link>
             <p>Electronic Gadgets Marketplace</p>
@@ -341,11 +343,11 @@ function Navbar() {
         <div className="navbar-custom__bottom-div">
           <div className="navbar-custom__brand-div">
             <Link to="/" className="navbar-custom__brand">
-              <span>
-                <img className="navbar-custom__app-logo" src={appLogo} alt={appName} />
+            <span>
+                <img className="navbar-custom__app-logo" src={movingLogo} alt={nameForLogo} />
               </span>
               <span className="h2 navbar-custom__brand-text">
-              { appName }
+              <span style={{ color: 'White', fontWeight: 'bold' }}>irloz</span>
               </span>
             </Link>
             <p>Electronic Gadgets Marketplace</p>
