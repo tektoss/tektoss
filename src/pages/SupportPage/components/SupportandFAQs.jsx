@@ -125,13 +125,13 @@ export default function SupportandFAQs() {
         <div className="col-md-4">
           <p style={{ color: 'black' }}>Reach Us on our social media platforms</p>
           <div className="footer__socials-div d-flex">
-            <a href="https://web.facebook.com/electrotoss" target="_blank" rel="noreferrer" className="footer__socials-inner-div" title="facebook">
+            <a href="https://web.facebook.com/cirloz" target="_blank" rel="noreferrer" className="footer__socials-inner-div" title="facebook">
               <i className="footer__social-icon fa-brands fa-facebook-f" />
             </a>
-            <a href="https://www.instagram.com/electrotoss" target="_blank" rel="noreferrer" className="footer__socials-inner-div" title="instagram">
+            <a href="https://www.instagram.com/cirloz" target="_blank" rel="noreferrer" className="footer__socials-inner-div" title="instagram">
               <i className="footer__social-icon fa-brands fa-instagram" />
             </a>
-            <a href="https://twitter.com/electrotoss" target="_blank" rel="noreferrer" className="footer__socials-inner-div" title="twitter">
+            <a href="https://twitter.com/cirloz" target="_blank" rel="noreferrer" className="footer__socials-inner-div" title="twitter">
               <i className="footer__social-icon fa-brands fa-twitter" />
             </a>
             <a href="https://www.youtube.com/channel/UCUDgJq_u7d7A_i_2n6Ap-qg" target="_blank" rel="noreferrer" className="footer__socials-inner-div" title="youtube">

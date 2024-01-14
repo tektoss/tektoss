@@ -25,7 +25,7 @@ export default function SellCarNowButton() {
 
   if (!userIsAnonymous) {
     return (
-      <Link to="/CarWelcomePage/CarNewItem" className="sell-now">
+      <Link to="/Vehicles/CarNewItem" className="sell-now">
         <h6>Sell Your Car</h6>
       </Link>
     );

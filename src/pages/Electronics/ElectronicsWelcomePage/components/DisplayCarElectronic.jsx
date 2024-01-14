@@ -6,11 +6,11 @@ export default function DisplayCarElectronic() {
     <div>
 
       {/* Button for Page 1 */}
-      <Link to="/ElectronicsWelcomePage">
+      <Link to="/Electronics">
         <button type="button">Explore electronics</button>
       </Link>
 
-      <Link to="/CarWelcomePage">
+      <Link to="/Vehicles">
         <button type="button">Explore Vehicles</button>
       </Link>
     </div>

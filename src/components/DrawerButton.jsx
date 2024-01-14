@@ -18,7 +18,7 @@ export default function DrawerButton({
   const dispatch = useDispatch();
 
   const handleCategoryClick = (category) => {
-    navigate(`/category/${category}`);
+    navigate(`Electronicscategory/${category}`);
     setToggleDrawer(false);
   };
 
@@ -198,16 +198,16 @@ export default function DrawerButton({
           <h5>Categories</h5>
           <ul>
             <li className="drawer-button__menu-item">
-              <button type="button" onClick={() => handleCategoryClick('phones')}>
+              <button type="button" onClick={() => handleCategoryClick('Cellphones and Smartphones')}>
                 <div className="drawer-button__menu-item__button-div">
                   <i className="fa-solid fa-mobile" />
-                  <h6>Cellphones & Accessories</h6>
+                  <h6>Cellphones and Smartphones</h6>
                 </div>
                 <i className="fa-solid fa-chevron-right" />
               </button>
             </li>
             <li className="drawer-button__menu-item">
-              <button type="button" onClick={() => handleCategoryClick('Televisions')}>
+              <button type="button" onClick={() => handleCategoryClick('Desk')}>
                 <div className="drawer-button__menu-item__button-div">
                   <i className="fa-solid fa-tv" />
                   <h6>Televisions</h6>
@@ -216,19 +216,19 @@ export default function DrawerButton({
               </button>
             </li>
             <li className="drawer-button__menu-item">
-              <button type="button" onClick={() => handleCategoryClick('Computers & Tablets')}>
+              <button type="button" onClick={() => handleCategoryClick('Laptops')}>
                 <div className="drawer-button__menu-item__button-div">
                   <i className="fa-solid fa-desktop" />
-                  <h6>Computers & Tablets</h6>
+                  <h6>Laptops</h6>
                 </div>
                 <i className="fa-solid fa-chevron-right" />
               </button>
             </li>
             <li className="drawer-button__menu-item">
-              <button type="button" onClick={() => handleCategoryClick('Office Electronics')}>
+              <button type="button" onClick={() => handleCategoryClick('Monitors & Screens')}>
                 <div className="drawer-button__menu-item__button-div">
                   <i className="fa-solid fa-print" />
-                  <h6>Office Electronics</h6>
+                  <h6>Monitors & Screens</h6>
                 </div>
                 <i className="fa-solid fa-chevron-right" />
               </button>

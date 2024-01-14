@@ -33,7 +33,7 @@ export default function DisplayCategoryProducts() {
       setIsLoading(true);
       const q = query(
         collection(db, 'products'),
-        where('mainCat', '==', 'electronics'),
+        // where('mainCat', '==', 'electronics'),
         where('category', '==', category),
         where('isPromoted', '==', true),
         where('status', '==', 'active'),
@@ -47,7 +47,7 @@ export default function DisplayCategoryProducts() {
 
       const q2 = query(
         collection(db, 'products'),
-        where('mainCat', '==', 'electronics'),
+        // where('mainCat', '==', 'electronics'),
         where('category', '==', category),
         where('isPromoted', '==', true),
         where('status', '==', 'pending'),
@@ -60,7 +60,7 @@ export default function DisplayCategoryProducts() {
 
       const q3 = query(
         collection(db, 'products'),
-        where('mainCat', '==', 'electronics'),
+        // where('mainCat', '==', 'electronics'),
         where('category', '==', category),
         where('isPromoted', '==', false),
         where('status', '==', 'active'),
@@ -73,7 +73,7 @@ export default function DisplayCategoryProducts() {
 
       const q4 = query(
         collection(db, 'products'),
-        where('mainCat', '==', 'electronics'),
+        // where('mainCat', '==', 'electronics'),
         where('category', '==', category),
         where('isPromoted', '==', false),
         where('status', '==', 'pending'),

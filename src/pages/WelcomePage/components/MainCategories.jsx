@@ -50,10 +50,10 @@ export default function MainCategories() {
           {showVehicleSubcategories && (
             <ul>
               {/* Map through vehicle subcategories and create buttons with click handlers */}
-              {vehicleSubcategories.map((subCategory) => (
-                <li key={subCategory}>
-                  <button onClick={() => navigate(`/CarWelcomePage/${subCategory}`)}>
-                    <h6>{subCategory}</h6>
+              {vehicleSubcategories.map((vehicleType) => (
+                <li key={vehicleType}>
+                  <button onClick={() => navigate(`/Vehicles/${vehicleType}`)}>
+                    <h6>{vehicleType}</h6>
                   </button>
                 </li>
               ))}
@@ -71,10 +71,10 @@ export default function MainCategories() {
           {showElectronicsSubcategories && (
             <ul>
               {/* Map through electronics subcategories and create buttons with click handlers */}
-              {electronicsSubcategories.map((subCategory) => (
-                <li key={subCategory}>
-                  <button onClick={() => navigate(`/Electronicscategory/${subCategory}`)}>
-                    <h6>{subCategory}</h6>
+              {electronicsSubcategories.map((category) => (
+                <li key={category}>
+                  <button onClick={() => navigate(`/Electronicscategory/${category}`)}>
+                    <h6>{category}</h6>
                   </button>
                 </li>
               ))}

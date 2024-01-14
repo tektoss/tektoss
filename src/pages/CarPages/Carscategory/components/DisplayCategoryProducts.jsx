@@ -110,6 +110,11 @@ export default function DisplayCategoryProducts() {
   useEffect(() => {
     const filterData = async () => {
       try {
+        // Check if data is available before filtering
+        if (data.length === 0) {
+          // Wait for data to be fetched
+          return;
+        }
         let filtered = [];
 
         if (isLocationAvailable) {

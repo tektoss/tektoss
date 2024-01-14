@@ -74,7 +74,7 @@ export default function LoginModal(
               <div />
             </button>
             <div className="buttons-box__modal-logo-div">
-              <img src={logo} className="buttons-box__modal-logo" alt="electrotoss logo" />
+              <img src={logo} className="buttons-box__modal-logo" alt="cirloz logo" />
             </div>
             <div className="buttons-box__modal-title-div sign-in">
               <h4 className="buttons-box__modal-title">Sign In</h4>

@@ -9,6 +9,7 @@ import { db } from '../../../../config/firebaseConfig';
 export default function useItemsFetch(setIsLoading, setFilteredData, setData, isLocationAvailable) {
   const { productsList } = useSelector(selectProductsState);
   const dispatch = useDispatch();
+  console.log('here is it', productsList);
 
   useEffect(() => {
     const fetchItems = async () => {
@@ -23,7 +24,7 @@ export default function useItemsFetch(setIsLoading, setFilteredData, setData, is
         try {
           const q = query(
             collection(db, 'products'),
-            where('mainCat', '==', 'electronics'),
+            // where('mainCat', '!=', 'electronics'),
             where('isPromoted', '==', true),
             where('status', '==', 'active'),
           );
@@ -36,7 +37,7 @@ export default function useItemsFetch(setIsLoading, setFilteredData, setData, is
 
           const q2 = query(
             collection(db, 'products'),
-            where('mainCat', '==', 'electronics'),
+            // where('mainCat', '==', 'electronics'),
             where('isPromoted', '==', true),
             where('status', '==', 'pending'),
           );
@@ -48,7 +49,7 @@ export default function useItemsFetch(setIsLoading, setFilteredData, setData, is
 
           const q3 = query(
             collection(db, 'products'),
-            where('mainCat', '==', 'electronics'),
+            // where('mainCat', '!=', 'electronics'),
             where('isPromoted', '==', false),
             where('status', '==', 'active'),
           );
@@ -60,7 +61,7 @@ export default function useItemsFetch(setIsLoading, setFilteredData, setData, is
 
           const q4 = query(
             collection(db, 'products'),
-            where('mainCat', '==', 'electronics'),
+            // where('mainCat', '!=', 'electronics'),
             where('isPromoted', '==', false),
             where('status', '==', 'pending'),
           );
@@ -79,6 +80,7 @@ export default function useItemsFetch(setIsLoading, setFilteredData, setData, is
           console.log(error.message);
           setIsLoading(false);
         }
+        console.log('here is the allprod', productsList);
       }
     };
 

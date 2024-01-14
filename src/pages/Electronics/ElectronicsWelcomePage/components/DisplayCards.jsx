@@ -42,6 +42,7 @@ export default function DisplayCards() {
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentItems = filteredData.slice(indexOfFirstItem, indexOfLastItem);
+  console.log('currentdata electronics: ', currentItems);
 
   if (!navigator.onLine) {
     return (

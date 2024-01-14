@@ -145,16 +145,17 @@ function Navbar() {
 
   const handleCatPopOverClick = (name) => {
     setshowCategory(false);
+    console.log('Category name:', name);
 
     switch (name) {
-      case 'Cars':
-        navigate('/CarWelcomePage');
+      case 'Vehicles':
+        navigate('/Vehicles');
         break;
       case 'Electronics':
-        navigate('/ElectronicsWelcomePage');
+        navigate('/Electronics');
         break;
       default:
-        navigate('/WelcomePage');
+        navigate('/');
         break;
 
     }
@@ -253,7 +254,7 @@ function Navbar() {
                 <img className="navbar-custom__app-logo" src={appLogo} alt={appName} />
               </span>
               <span className="h2 navbar-custom__brand-text">
-              { appName }
+              <span style={{ color: 'White', fontWeight: 'bold' }}>irloz</span>
               </span>
             </Link>
             <p>Electronic Gadgets Marketplace</p>
@@ -358,13 +359,13 @@ function Navbar() {
           <div className="navbar-custom__category-div">
                 <button className="navbar-custom__icon-button" onClick={() => setshowCategory(!showCategory)}>
                   <div className="navbar-custom__icon-button__text-div">
-                  <p className="navbar-custom__categories-text">Categories</p>
+                  <p className="navbar-custom__categories-text">Category</p>
                   <span className="navbar-custom__dropdown-arrow">&#9662;</span>
                 </div>
                 </button>
                 <ul className={ !showCategory ? 'pop-over-hidden' : 'navbar-custom__category-div__pop-over'}>
                   <li>
-                    <button name="Cars" onClick={() => handleCatPopOverClick("Cars")} role="button" className="navbar-custom__category-div__pop-over-button">
+                    <button name="Vehicles" onClick={() => handleCatPopOverClick("Vehicles")} role="button" className="navbar-custom__category-div__pop-over-button">
                       <i className="fa-solid fa-car" />
                       <h6>Vehicles</h6>
                     </button>

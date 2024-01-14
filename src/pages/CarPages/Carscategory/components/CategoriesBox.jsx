@@ -64,7 +64,7 @@ export default function CategoriesBox() {
         {
           Object.keys(getBrandsArray || {}).map((categories) => (
             <li key={categories}>
-              <button type="button" onClick={() => handleClearFilter(`/CarWelcomePage/${vehicleCategory}/${categories}`)}>
+              <button type="button" onClick={() => handleClearFilter(`/Vehicles/${vehicleCategory}/${categories}`)}>
                 <h6>{categories}</h6>
               </button>
             </li>

@@ -184,7 +184,7 @@ export default function MobileLoginModal({ showJoinModal, handleCloseMobileModal
           displayName: displayName.trim(),
           email: `${signUpData.phoneNumber}@electrotoss.com`,
           emailVerified: user.emailVerified,
-          bio: 'Hi there, this is my Electrotoss shop page.',
+          bio: 'Hi there, this is my cirloz shop page.',
           followers: 0,
           photoURL: '',
           isPremium: false,

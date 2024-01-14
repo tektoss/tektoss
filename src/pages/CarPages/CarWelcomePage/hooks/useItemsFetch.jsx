@@ -16,6 +16,10 @@ export default function useItemsFetch(setIsLoading, setFilteredData, setData, is
     const fetchItems = async () => {
       const loading = true;
       setIsLoading(loading);
+      if (productsList.length === 0) {
+        // Wait for data to be fetched
+        return;
+      }
 
       if (productsList.length > 1) {
         setData(productsList);
@@ -23,8 +27,10 @@ export default function useItemsFetch(setIsLoading, setFilteredData, setData, is
         setIsLoading(false);
       } else {
         try {
-          let q; let q2; let q3; let
-            q4;
+          let q;
+          let q2;
+          let q3;
+          let q4;
           if (vehicleCategory) {
             q = query(
               console.log('this is working=>', vehicleCategory),

@@ -16,7 +16,7 @@ export default function EditItem() {
           content={`Your One-Stop Electronic Gadget Marketplace.
           Discover the Best Deals, Connect with Sellers, and Trade Gadgets with Ease right here on ${appName}.`}
         />
-        <link rel="canonical" href="/CarWelcomePage/CarNewItem" />
+        <link rel="canonical" href="/Vehicles/CarNewItem" />
       </Helmet>
       <Navbar />
       <NavbarBottom />

@@ -5,6 +5,8 @@
 .navbar-custom__app-logo {
   width: 50px;
   margin-right: 10px;
+  
+
 }
 .navbar-custom__top-div {
   background-color: rgba(255, 255, 255, 0.1254901961);
@@ -60,13 +62,14 @@
   align-items: center;
 }
 .navbar-custom__brand-text {
-  font-family: "Mogra", cursive;
-  letter-spacing: 0.5px;
-  color: #ffffff;
-  font-size: 1.8em;
+  font-family: 'Raleway', sans-serif, cursive;
+  letter-spacing: 0.9px;
+  color: 'white';
+  font-size: 1.9em;
   margin: 0;
   cursor: pointer;
   padding-top: 5px;
+  margin-left: -30px;
 }
 .navbar-custom bottom-brand-logo {
   display: none;
@@ -1538,6 +1541,7 @@ a {
   justify-content: center;
   align-items: center;
   padding: 15px;
+  position: -webkit-sticky !important;
   position: sticky !important;
   top: 15px !important;
 }
@@ -1570,6 +1574,7 @@ a {
   height: auto;
   margin-bottom: 20px;
   overflow: hidden;
+  position: -webkit-sticky !important;
   position: sticky !important;
   top: 15px !important;
 }
@@ -1623,6 +1628,7 @@ a {
   border-radius: 5px;
   text-align: center;
   border: 1px solid #999;
+  -webkit-appearance: textfield;
   -moz-appearance: textfield;
 }
 .filter-card__price-input .filter-card-year__separator {
@@ -1655,6 +1661,7 @@ a {
   border-radius: 5px;
   text-align: center;
   border: 1px solid #999;
+  -webkit-appearance: textfield;
   -moz-appearance: textfield;
 }
 

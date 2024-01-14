@@ -34,8 +34,8 @@ import NewArrivals from '../pages/Electronics/NewArrivals/NewArrivals';
 import Messages from '../pages/Electronics/Messages/Messages';
 import MobileSettings from '../pages/Electronics/MobileSettings/MobileSettings';
 import SupportPage from '../pages/SupportPage/SupportPage';
-import ElectronicsWelcomePage from '../pages/Electronics/ElectronicsWelcomePage/ElectronicsWelcomePage';
-import CarWelcomePage from '../pages/CarPages/CarWelcomePage/CarWelcomePage';
+import Electronics from '../pages/Electronics/ElectronicsWelcomePage/Electronics';
+import Vehicles from '../pages/CarPages/CarWelcomePage/Vehicles';
 import CarNewItem from '../pages/CarPages/CarNewItem/CarNewItem';
 import AllNewItem from '../pages/AllNewItem/AllNewItem';
 
@@ -61,22 +61,22 @@ export default function MainRoutes() {
       <Routes>
         {/* <Route path="/" element={<Home />} /> */}
         <Route path="/" element={<WelcomePage />} />
-        <Route path="/CarWelcomePage" element={<CarWelcomePage />} />
-        <Route path="/ElectronicsWelcomePage" element={<ElectronicsWelcomePage />} />
+        <Route path="/Vehicles" element={<Vehicles />} />
+        <Route path="/Electronics" element={<Electronics />} />
         {/* <Route path="/home" element={<Home />} /> */}
         <Route path="/Electronicsearch/:searchName" element={<ElectronicSearchResult />} />
         <Route path="/search/:searchName" element={<SearchResult />} />
-        <Route path="CarWelcomePage/Carsearch/:searchName" element={<CarSearchResult />} />
-        <Route path="/CarWelcomePage/CarNewItem" element={<CarNewItem />} />
+        <Route path="Vehicles/Carsearch/:searchName" element={<CarSearchResult />} />
+        <Route path="/Vehicles/CarNewItem" element={<CarNewItem />} />
         <Route path="/single-electronic/:id" element={<SingleElectronicItem />} />
         <Route path="/single-vehicle/:id" element={<SingleVehicleItem />} />
         <Route path="/chat-room" element={<ChatRoom />} />
         <Route path="/messages" element={<Messages />} />
         <Route path="/Electronicscategory/:category" element={<ElectronicsCategory />} />
-        <Route path="/CarWelcomePage/:vehicleType" element={<VehicleTypeCategory />} />
-        <Route path="/CarWelcomePage/:vehicleType/:make" element={<Carscategory />} />
+        <Route path="/Vehicles/:vehicleType" element={<VehicleTypeCategory />} />
+        <Route path="/Vehicles/:vehicleType/:make" element={<Carscategory />} />
         <Route path="/all-new-item" element={<AllNewItem />} />
-        <Route path="/ElectronicsWelcomePage/ElecNewItem" element={<ElecNewItem />} />
+        <Route path="/Electronics/ElecNewItem" element={<ElecNewItem />} />
         <Route path="/user-account/:id" element={<UserAccount />} />
         <Route path="/wish-list" element={<WishList />} />
         <Route path="/notifications" element={<Notifications />} />

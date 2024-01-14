@@ -27,13 +27,19 @@ export default function useFilterProductData(
       try {
         setIsLoading(true);
 
+        // Check if data is available before filtering
+        if (data.length === 0) {
+          // Wait for data to be fetched
+          return;
+        }
+
         let filtered = [];
 
         if (isLocationAvailable) {
           filtered = data.filter(
             (item) => (
               item.price >= minPrice
-              && item.mainCat === 'vehicle'
+              // && item.mainCat === 'vehicle'
               && item.price <= maxPrice
               && item.year >= minYear
               && item.year <= maxYear
@@ -47,7 +53,7 @@ export default function useFilterProductData(
           filtered = data.filter(
             (item) => (
               item.price >= minPrice
-              && item.mainCat === 'vehicle'
+              // && item.mainCat === 'vehicle'
               && item.price <= maxPrice
               && item.year >= minYear
               && item.year <= maxYear

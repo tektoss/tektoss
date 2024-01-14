@@ -80,7 +80,7 @@ export default function TermsOfService() {
         <h6>Content Guidelines:</h6>
         <p>
           Users must not post misleading, offensive, or fraudulent content on the platform.
-          Electrotoss reserves the right to remove any listings or content
+          Cirloz reserves the right to remove any listings or content
           {' '}
           that violate our guidelines or infringe upon others&apos; rights.
         </p>

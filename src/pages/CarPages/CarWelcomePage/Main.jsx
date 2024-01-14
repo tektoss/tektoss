@@ -66,27 +66,3 @@ export default function Main() {
     </div>
   );
 }
-
-// <div className="main-section-div">
-//       <main className="main-section d-flex justify-content-between">
-//         <div className="main-section__left-div">
-//           {/* <CategoriesBox /> */}
-//           <NewArrivalsButton />
-//           <SectionHeader>Filter</SectionHeader>
-//           <FilterCard />
-//           <AdPanel />
-//         </div>
-//         <div className="main-section__right-div">
-//           <SellNowButtonBoxMobile />
-//           <SearchCategoriesBox />
-//           {/* <Hero /> */}
-//           {/* <HorizontalAdPanel /> */}
-//           <div className="main-section__mobile-div">
-//             <SearchBar />
-//             <NewArrivalsButton />
-//           </div>
-//           <SectionHeader>All Products</SectionHeader>
-//           <DisplayCards />
-//         </div>
-//       </main>
-//     </div>

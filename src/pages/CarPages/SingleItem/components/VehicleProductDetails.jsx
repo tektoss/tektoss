@@ -15,12 +15,7 @@ export default function VehicleProductDetail() {
       .then((itemDoc) => {
         if (itemDoc.exists()) {
           const data = itemDoc.data();
-          if (data.mainCat === 'vehicle') {
-            console.log('Product in details:', data);
-            setProduct(data);
-          } else {
-            console.log('Document found, but mainCat is not "vehicle".');
-          }
+          setProduct(data);
         } else {
           console.log('No such document!');
         }
@@ -34,7 +29,7 @@ export default function VehicleProductDetail() {
     fetchData();
   }, [id]);
 
-  if (!product.make) {
+  if (!product) {
     return (<ProductDetailLoading />);
   }
 

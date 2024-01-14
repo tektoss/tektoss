@@ -34,10 +34,10 @@ const ButtonWithLinks = () => {
       {areLinksVisible && (
         <div>
           {/* Two links/buttons */}
-          <Link to="/CarWelcomePage/CarNewItem" className="sell-now">
+          <Link to="/Vehicles/CarNewItem" className="sell-now">
             Sell Cars
           </Link>
-          <Link to="/ElectronicsWelcomePage/ElecNewItem" className="sell-now">
+          <Link to="/Electronics/ElecNewItem" className="sell-now">
             Sell Electronics
           </Link>
         </div>

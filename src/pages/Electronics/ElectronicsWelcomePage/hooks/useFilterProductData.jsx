@@ -13,8 +13,6 @@ export default function useFilterProductData(
   time,
   setIsLoading,
 ) {
-  console.log('this is from filter Items =>', data);
-
   const { filterObject } = useSelector(selectProductsState);
   const {
     maxPrice, minPrice, category, condition,
@@ -25,13 +23,19 @@ export default function useFilterProductData(
       try {
         setIsLoading(true);
 
+        // Check if data is available before filtering
+        if (data.length === 0) {
+          // Wait for data to be fetched
+          return;
+        }
+
         let filtered = [];
 
         if (isLocationAvailable) {
           filtered = data.filter(
             (item) => (
-              item.mainCat === 'electronics'
-              && item.price >= minPrice
+              // item.mainCat !== 'vehicle'
+              item.price >= minPrice
               && item.price <= maxPrice
               && (item.condition === condition || condition === 'all')
               && (item.category === category || category === 'all')
@@ -43,8 +47,8 @@ export default function useFilterProductData(
         if (!isLocationAvailable) {
           filtered = data.filter(
             (item) => (
-              item.mainCat === 'electronics'
-              && item.price >= minPrice
+              // item.mainCat !== 'vehicle'
+              item.price >= minPrice
               && item.price <= maxPrice
               && (item.condition === condition || condition === 'all')
               && (item.category === category || category === 'all')

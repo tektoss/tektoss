@@ -149,13 +149,13 @@ function Navbar() {
 
     switch (name) {
       case 'Vehicles':
-        navigate('/CarWelcomePage');
+        navigate('/Vehicles');
         break;
       case 'Electronics':
-        navigate('/ElectronicsWelcomePage');
+        navigate('/Electronics');
         break;
       default:
-        navigate('/WelcomePage');
+        navigate('/');
         break;
 
     }

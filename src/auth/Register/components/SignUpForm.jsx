@@ -78,7 +78,7 @@ export default function SignUpForm({
               <div />
             </button>
             <div className="buttons-box__modal-logo-div">
-              <img src={logo} className="buttons-box__modal-logo" alt="electrotoss logo" />
+              <img src={logo} className="buttons-box__modal-logo" alt="cirloz logo" />
             </div>
             <div className="buttons-box__modal-title-div">
               <h4 className="buttons-box__modal-title">Register</h4>
