@@ -1,4 +1,5 @@
 import React from 'react';
+// eslint-disable-next-line import/no-named-as-default
 import appName from '../../../Constants/constantVariables';
 import NewArrivals from './NewArrivals';
 // import image from '../../../assets/images/womanHoldingLaptop.png';

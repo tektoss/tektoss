@@ -7,6 +7,7 @@ import { Helmet } from 'react-helmet-async';
 // import Main from './Main';
 // import Footer from '../../sections/Footer';
 import { selectAuthState } from '../../../redux/slice/authSlice';
+// eslint-disable-next-line import/no-named-as-default
 import appName from '../../../Constants/constantVariables';
 import PaymentSuccessCard from './components/PaymentSuccessCard';
 

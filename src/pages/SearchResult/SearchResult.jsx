@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import Navbar from '../../components/Navbar';
 import Footer from '../../sections/Footer';
 import Main from './Main';
+// eslint-disable-next-line import/no-named-as-default
 import appName from '../../Constants/constantVariables';
 import NavbarBottom from '../../components/NavbarBottom';
 

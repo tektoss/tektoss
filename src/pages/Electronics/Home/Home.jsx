@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import Navbar from '../../../components/Navbar';
 import Footer from '../../../sections/Footer';
 import Main from '../../../sections/HomeMain';
+// eslint-disable-next-line import/no-named-as-default
 import appName from '../../../Constants/constantVariables';
 
 export default function Home() {

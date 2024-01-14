@@ -7,6 +7,7 @@ import { selectAuthState } from '../../redux/slice/authSlice';
 import Navbar from '../../components/Navbar';
 import Main from './Main';
 import Footer from '../../sections/Footer';
+// eslint-disable-next-line import/no-named-as-default
 import appName from '../../Constants/constantVariables';
 import NavbarBottom from '../../components/NavbarBottom';
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import Navbar from '../../components/Navbar';
+// eslint-disable-next-line import/no-named-as-default
 import appName from '../../Constants/constantVariables';
 import Footer from '../../sections/Footer';
 import Main from './Main';

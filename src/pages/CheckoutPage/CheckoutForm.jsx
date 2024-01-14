@@ -8,6 +8,7 @@ import { Helmet } from 'react-helmet-async';
 import PaymentForm from './components/PaymentForm';
 import Loader from '../../components/Loader';
 import { selectAuthState } from '../../redux/slice/authSlice';
+// eslint-disable-next-line import/no-named-as-default
 import appName from '../../Constants/constantVariables';
 
 // Make sure to call loadStripe outside of a component’s render to avoid

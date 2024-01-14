@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import Navbar from '../../../components/Navbar';
 import Main from './Main';
+// eslint-disable-next-line import/no-named-as-default
 import appName from '../../../Constants/constantVariables';
 import { selectAuthState } from '../../../redux/slice/authSlice';
 
