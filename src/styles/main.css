@@ -197,7 +197,7 @@
   
 }
 
-.navbar-custom__category-div__pop-over {
+.navbar-custom__user-account-div__pop-over {
   position: absolute;
   top: 60px;
   left: 9px;
@@ -229,7 +229,6 @@
   column-gap: 15px;
 }
 
-
 .navbar-custom__user-account-div__pop-over-button {
   display: flex;
   align-items: center;
@@ -253,11 +252,6 @@
   margin: 0;
 }
 .navbar-custom__user-account-div .pop-over-hidden {
-  display: none;
-}
-
-
-.navbar-custom__category-div .pop-over-hidden {
   display: none;
 }
 .navbar-custom__category-div__pop-over-button {

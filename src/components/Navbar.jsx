@@ -373,7 +373,7 @@ function Navbar() {
             onChange={(e) => setSearch(e.target.value)}
             placeholder="What are you looking for"
           />
-          <div className="navbar-custom__category-div">
+          {/* <div className="navbar-custom__category-div">
                 <button className="navbar-custom__icon-button" onClick={() => setshowCategory(!showCategory)}>
                   <div className="navbar-custom__icon-button__text-div">
                   <p className="navbar-custom__categories-text">Category</p>
@@ -394,7 +394,7 @@ function Navbar() {
                     </button>
                   </li>
                 </ul>
-              </div>
+              </div> */}
 
           <button
             className="bottom-nav__content-search-button"
