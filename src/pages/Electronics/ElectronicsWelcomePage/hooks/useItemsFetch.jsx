@@ -71,6 +71,12 @@ export default function useItemsFetch(setIsLoading, setFilteredData, setData, is
             allProducts.push({ ...queryData, id: doc.id });
           });
 
+          // Check if data is available before filtering
+          if (allProducts.length === 0) {
+          // Wait for data to be fetched
+            return;
+          }
+
           console.log('this is from all products =>', allProducts);
           setData(allProducts);
           dispatch(fillProductsList(allProducts));
@@ -85,5 +91,5 @@ export default function useItemsFetch(setIsLoading, setFilteredData, setData, is
     };
 
     fetchItems();
-  }, [isLocationAvailable]);
+  }, [isLocationAvailable, dispatch]);
 }

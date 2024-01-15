@@ -36,7 +36,7 @@ function Navbar() {
   const { notificationCount, messageCount } = useSelector(selectNotificationState);
   const { isAnonymous, uid } = loginInfo;
   const { displayName } = userInfo;
-  
+
   const [showForgotPasswordModal, setShowForgotPasswordModal] = useState(false);
   const [showRegisterModal, setShowRegisterModal] = useState(false);
   const [showJoinModal, setShowJoinModal] = useState(false);
@@ -44,8 +44,8 @@ function Navbar() {
   const [showAccountModal, setShowAccountModal] = useState(false);
   const [showCategory, setshowCategory] = useState(false);
   const [toggleDrawer, setToggleDrawer] = useState(false);
-  const [userData, setUserData ] = useState({});
-  
+  const [userData, setUserData] = useState({});
+
   const handleCloseRegisterModal = () => setShowRegisterModal(false);
   const handleShowRegisterModal = () => setShowRegisterModal(true);
   const handleCloseSignInModal = () => setShowSignInModal(false);
@@ -53,12 +53,12 @@ function Navbar() {
   const handleShowForgotPasswordModal = () => setShowForgotPasswordModal(true);
   const handleCloseForgotPasswordModal = () => setShowForgotPasswordModal(false);
   const handleShowMobileModal = () => setShowJoinModal(true);
-  const handleCloseMobileModal= () => setShowJoinModal(false);
+  const handleCloseMobileModal = () => setShowJoinModal(false);
 
   const handleClickWishList = (e) => {
     navigate('/wish-list');
   }
-  
+
   const initialCountObject = { notificationCount: 0, messageCount: 0 };
 
   const { location } = useSelector(selectLocationState);
@@ -70,35 +70,35 @@ function Navbar() {
 
   useAssignDeviceId();
   useGetUserLocation();
- 
+
   useEffect(() => {
-    if(uid){
-    const unsub = onSnapshot(doc(db, 'vendors', uid), (doc) => {
-    const notificationCount = doc.data()?.newNotifications?.length || 0;
-    const messageCount = doc.data()?.newMessages?.length || 0;
-    const wishList = doc.data()?.wishlist?.length || 0;
+    if (uid) {
+      const unsub = onSnapshot(doc(db, 'vendors', uid), (doc) => {
+        const notificationCount = doc.data()?.newNotifications?.length || 0;
+        const messageCount = doc.data()?.newMessages?.length || 0;
+        const wishList = doc.data()?.wishlist?.length || 0;
 
-    const dataJSON = JSON.stringify({ messageCount, notificationCount });
-    localStorage.setItem('notificationsCounts', dataJSON);
+        const dataJSON = JSON.stringify({ messageCount, notificationCount });
+        localStorage.setItem('notificationsCounts', dataJSON);
 
-    const wishListDataJSON = JSON.stringify({ wishList });
-    localStorage.setItem('wishListCount', wishListDataJSON);
+        const wishListDataJSON = JSON.stringify({ wishList });
+        localStorage.setItem('wishListCount', wishListDataJSON);
 
-    setCountObject({ messageCount, notificationCount });
-    dispatch(setNotifications({ messageCount, notificationCount }));
-  });
+        setCountObject({ messageCount, notificationCount });
+        dispatch(setNotifications({ messageCount, notificationCount }));
+      });
 
-    return () => {
-      unsub();
-    };
-  }
+      return () => {
+        unsub();
+      };
+    }
   }, []);
 
   useEffect(() => {
-    if(uid){
+    if (uid) {
       const unsubWish = onSnapshot(doc(db, 'wishlists', uid), (doc3) => {
         const wishlist = doc3.data()?.itemIds || [];
-        console.log('wishlist collection =>', doc3.data()); 
+        console.log('wishlist collection =>', doc3.data());
         setWishlistArray(wishlist);
         dispatch(setWishlistIds(wishlist));
       });
@@ -116,14 +116,14 @@ function Navbar() {
         console.log("user from auth changed", user);
         dispatch(setUserId({ uid, isAnonymous: false }));
 
-        if ( !userInfo.userInfoIsSet ){
+        if (!userInfo.userInfoIsSet) {
 
           const docRef = doc(db, 'vendors', uid);
           const docSnapData = await getDoc(docRef);
           const userData = docSnapData.data();
 
           const userInfo = {
-            emailVerified: user?.emailVerified ? user.emailVerified  : '',
+            emailVerified: user?.emailVerified ? user.emailVerified : '',
             displayName: userData?.firstName || userData?.displayName,
             bio: userData?.bio,
             email: userData?.email,
@@ -144,24 +144,24 @@ function Navbar() {
         dispatch(setUserId({ uid, isAnonymous: true }));
       }
     });
-  },[]);
+  }, []);
 
-  const handleCatPopOverClick = (name) => {
-    setshowCategory(false);
+  // const handleCatPopOverClick = (name) => {
+  //   setshowCategory(false);
 
-    switch (name) {
-      case 'Vehicles':
-        navigate('/Vehicles');
-        break;
-      case 'Electronics':
-        navigate('/Electronics');
-        break;
-      default:
-        navigate('/');
-        break;
+  //   switch (name) {
+  //     case 'vehicles':
+  //       navigate('/vehicles');
+  //       break;
+  //     case 'electronics':
+  //       navigate('/electronics');
+  //       break;
+  //     default:
+  //       navigate('/');
+  //       break;
 
-    }
-  }
+  //   }
+  // }
 
   const handlePopOverClick = (name) => {
     setShowAccountModal(false);
@@ -191,10 +191,10 @@ function Navbar() {
           const dataToStore = { isAnonymous: true };
           const dataJSON = JSON.stringify(dataToStore);
 
-          const storeNotificationsCounts = { messageCount:0, notificationCount:0 };
+          const storeNotificationsCounts = { messageCount: 0, notificationCount: 0 };
           const storeNotificationsCountsJSON = JSON.stringify(storeNotificationsCounts);
 
-          const storeWishListCount = { wishList:0 };
+          const storeWishListCount = { wishList: 0 };
           const storeWishListCountJSON = JSON.stringify(storeWishListCount);
 
           localStorage.setItem('isAnonymous', dataJSON);
@@ -211,7 +211,7 @@ function Navbar() {
             draggable: true,
             progress: undefined,
             theme: 'light',
-            });
+          });
         }).catch((error) => {
           toast.error(error.message, {
             position: 'top-center',
@@ -222,7 +222,7 @@ function Navbar() {
             draggable: true,
             progress: undefined,
             theme: 'light',
-            });
+          });
         });
         break;
       default:
@@ -247,42 +247,42 @@ function Navbar() {
 
   return (
     <>
-      <nav id="page-top" className={toggleDrawer ? 'navbar-custom toggled':'navbar-custom'}>
+      <nav id="page-top" className={toggleDrawer ? 'navbar-custom toggled' : 'navbar-custom'}>
         <div className="navbar-custom__top-div">
-        <div className="navbar-custom__top-div__inner-div"> 
-        <div className="navbar-custom__top-brand-div">
-            <Link to="/" className="navbar-custom__brand">
-            <span>
-                <img className="navbar-custom__app-logo" src={appLogo} alt={nameForLogo} />
-              </span>
-              <span className="h2 navbar-custom__brand-text">
-              <span style={{ color: 'White', fontWeight: 'bold' }}>irloz</span>
-              </span>
-            </Link>
-            <p>Electronic Gadgets Marketplace</p>
-          </div>
-          <ul className="d-flex justify-content-end align-items-center">
-            { !isAnonymous && <li>
-              <button className="navbar-custom__icon-button" title="notifications" onClick={() => navigate("/notifications")}>
-                <i className="fa-regular fa-bell navbar-custom__icon" />
-                <div className="navbar-custom__icon-button__text-div">
-                  <p>Activity Info</p>
-                  <h6>My Notifications</h6>
-                </div>
-                {notificationsData?.notificationCount > 0 && (<div className="navbar-custom__data-count">{ notificationsData?.notificationCount }</div>)}
-              </button>
-            </li>}
-            { !isAnonymous && <li>
-              <button className="navbar-custom__icon-button" title="message" onClick={() => navigate("/messages")}>
-                <i className="fa-regular fa-message navbar-custom__icon" />
-                <div className="navbar-custom__icon-button__text-div">
-                  <p>Chats</p>
-                  <h6>My Messages</h6>
-                </div>
-                { notificationsData?.messageCount > 0 && (<div className="navbar-custom__data-count">{ notificationsData?.messageCount }</div>)}
-              </button>
-            </li>}
-            {/* { !isAnonymous && <li>
+          <div className="navbar-custom__top-div__inner-div">
+            <div className="navbar-custom__top-brand-div">
+              <Link to="/" className="navbar-custom__brand">
+                <span>
+                  <img className="navbar-custom__app-logo" src={appLogo} alt={nameForLogo} />
+                </span>
+                <span className="h2 navbar-custom__brand-text">
+                  <span style={{ color: 'White', fontWeight: 'bold' }}>irloz</span>
+                </span>
+              </Link>
+              <p>Electronic Gadgets Marketplace</p>
+            </div>
+            <ul className="d-flex justify-content-end align-items-center">
+              {!isAnonymous && <li>
+                <button className="navbar-custom__icon-button" title="notifications" onClick={() => navigate("/notifications")}>
+                  <i className="fa-regular fa-bell navbar-custom__icon" />
+                  <div className="navbar-custom__icon-button__text-div">
+                    <p>Activity Info</p>
+                    <h6>My Notifications</h6>
+                  </div>
+                  {notificationsData?.notificationCount > 0 && (<div className="navbar-custom__data-count">{notificationsData?.notificationCount}</div>)}
+                </button>
+              </li>}
+              {!isAnonymous && <li>
+                <button className="navbar-custom__icon-button" title="message" onClick={() => navigate("/messages")}>
+                  <i className="fa-regular fa-message navbar-custom__icon" />
+                  <div className="navbar-custom__icon-button__text-div">
+                    <p>Chats</p>
+                    <h6>My Messages</h6>
+                  </div>
+                  {notificationsData?.messageCount > 0 && (<div className="navbar-custom__data-count">{notificationsData?.messageCount}</div>)}
+                </button>
+              </li>}
+              {/* { !isAnonymous && <li>
               <button className="navbar-custom__icon-button" title="message" onClick={() => navigate("/chat-room")}>
                 <i className="fa-regular fa-message navbar-custom__icon" />
                 <div className="navbar-custom__icon-button__text-div">
@@ -292,74 +292,98 @@ function Navbar() {
                 { notificationsData?.messageCount > 0 && (<div className="navbar-custom__data-count">{ notificationsData?.messageCount }</div>)}
               </button>
             </li>} */}
-            { !isAnonymous && <li>
-              <button className="navbar-custom__icon-button" title="wish list" onClick={handleClickWishList}>
-                <i className="fa-regular fa-heart navbar-custom__icon" />
-                <div className="navbar-custom__icon-button__text-div">
-                  <p>Favorites</p>
-                  <h6>My Wish List</h6>
-                </div>
-                { wishlistArray?.length > 0 && (<div className="navbar-custom__data-count">{ wishlistArray?.length }</div>) }
-              </button>
-            </li>}
-            { !isAnonymous && <li>
-              <div className="navbar-custom__user-account-div">
-                <button className="navbar-custom__icon-button" title="user account" onClick={() => setShowAccountModal(!showAccountModal)}>
-                  <i className="fa-regular fa-user navbar-custom__icon" />
+              {!isAnonymous && <li>
+                <button className="navbar-custom__icon-button" title="wish list" onClick={handleClickWishList}>
+                  <i className="fa-regular fa-heart navbar-custom__icon" />
                   <div className="navbar-custom__icon-button__text-div">
-                    <p>Account</p>
-                    <h6>{ displayName ? `Hi ${displayName.split(' ')[0]}` : 'My User Profile' }</h6>
-                </div>
+                    <p>Favorites</p>
+                    <h6>My Wish List</h6>
+                  </div>
+                  {wishlistArray?.length > 0 && (<div className="navbar-custom__data-count">{wishlistArray?.length}</div>)}
                 </button>
-                <ul className={ !showAccountModal ? 'pop-over-hidden' : 'navbar-custom__user-account-div__pop-over'}>
-                  <li>
-                    <button name="my-account" onClick={() => handlePopOverClick("my-account")} role="button" className="navbar-custom__user-account-div__pop-over-button">
-                      <i className="fa-solid fa-user" />
-                      <h6>my account</h6>
-                    </button>
-                  </li>
-                  <li>
-                    <button name="log-out" onClick={() => handlePopOverClick("log-out")} role="button" className="navbar-custom__user-account-div__pop-over-button">
-                      <i className="fa-sharp fa-solid fa-arrow-right-from-bracket" />
-                      <h6>log out</h6>
-                    </button>
-                  </li>
-                </ul>
-              </div>
-            </li>}
-            { isAnonymous && <li>
-              <button className="navbar-custom__text-button navbar-custom__sign-in" onClick={handleShowSignInModal}>
-                <h6>Sign In</h6>
-              </button>
-            </li>}
-            { isAnonymous && <li>
-              <button className="navbar-custom__text-button navbar-custom__register" onClick={handleShowRegisterModal}>
-                <h6>Register Now</h6>
-              </button>
-            </li>}
-          </ul>
+              </li>}
+              {!isAnonymous && <li>
+                <div className="navbar-custom__user-account-div">
+                  <button className="navbar-custom__icon-button" title="user account" onClick={() => setShowAccountModal(!showAccountModal)}>
+                    <i className="fa-regular fa-user navbar-custom__icon" />
+                    <div className="navbar-custom__icon-button__text-div">
+                      <p>Account</p>
+                      <h6>{displayName ? `Hi ${displayName.split(' ')[0]}` : 'My User Profile'}</h6>
+                    </div>
+                  </button>
+                  <ul className={!showAccountModal ? 'pop-over-hidden' : 'navbar-custom__user-account-div__pop-over'}>
+                    <li>
+                      <button name="my-account" onClick={() => handlePopOverClick("my-account")} role="button" className="navbar-custom__user-account-div__pop-over-button">
+                        <i className="fa-solid fa-user" />
+                        <h6>my account</h6>
+                      </button>
+                    </li>
+                    <li>
+                      <button name="log-out" onClick={() => handlePopOverClick("log-out")} role="button" className="navbar-custom__user-account-div__pop-over-button">
+                        <i className="fa-sharp fa-solid fa-arrow-right-from-bracket" />
+                        <h6>log out</h6>
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+              </li>}
+              {isAnonymous && <li>
+                <button className="navbar-custom__text-button navbar-custom__sign-in" onClick={handleShowSignInModal}>
+                  <h6>Sign In</h6>
+                </button>
+              </li>}
+              {isAnonymous && <li>
+                <button className="navbar-custom__text-button navbar-custom__register" onClick={handleShowRegisterModal}>
+                  <h6>Register Now</h6>
+                </button>
+              </li>}
+            </ul>
           </div>
         </div>
+
         <div className="navbar-custom__bottom-div">
+          <div className="bottom-nav__content-cat-div">
+            <ul style={{ display: 'flex', listStyle: 'none', padding: 0, position: 'absolute', right: 150 }}>
+              <li style={{ marginRight: '20px' }}>
+                <Link to="/vehicles" className="link">
+                  <button
+                    name="vehicles"
+                    // onClick={() => handleCatPopOverClick("vehicles")}
+                    role="button"
+                    style={{
+                      background: 'none',
+                      border: 'none',
+                      color: 'white', // Replace 'your-desired-color' with the color you want
+                      cursor: 'pointer',
+                    }}
+                  >
+                    <h6>Vehicles</h6>
+                  </button>
+                </Link>
+              </li>
+              </ul>
+          </div>
+
           <div className="navbar-custom__brand-div">
             <Link to="/" className="navbar-custom__brand">
-            <span>
+              <span>
                 <img className="navbar-custom__app-logo" src={movingLogo} alt={nameForLogo} />
               </span>
               <span className="h2 navbar-custom__brand-text">
-              <span style={{ color: 'White', fontWeight: 'bold' }}>irloz</span>
+                <span style={{ color: 'White', fontWeight: 'bold' }}>irloz</span>
               </span>
             </Link>
             <p>Electronic Gadgets Marketplace</p>
+
           </div>
           <div className="bottom-nav__content-search-div navbar-custom__search-div">
-          <input
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            placeholder="What are you looking for"
-          />
+            <input
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              placeholder="What are you looking for"
+            />
 
-<div className="navbar-custom__category-div">
+            {/* <div className="navbar-custom__category-div">
                 <button className="navbar-custom__icon-button" onClick={() => setshowCategory(!showCategory)}>
                   <div className="navbar-custom__icon-button__text-div">
                   <p className="navbar-custom__categories-text">Categories</p>
@@ -380,16 +404,16 @@ function Navbar() {
                     </button>
                   </li>
                 </ul>
-              </div>
+              </div> */}
 
-          <button
-            className="bottom-nav__content-search-button"
-            type="button"
-            onClick={handleSubmit}
-          >
-            <i className="fa-solid fa-magnifying-glass" />
-          </button>
-        </div>
+            <button
+              className="bottom-nav__content-search-button"
+              type="button"
+              onClick={handleSubmit}
+            >
+              <i className="fa-solid fa-magnifying-glass" />
+            </button>
+          </div>
           <SellNowButton />
           <DrawerButton
             setToggleDrawer={setToggleDrawer}
@@ -397,8 +421,8 @@ function Navbar() {
             handleShowRegisterModal={handleShowRegisterModal}
             handleShowSignInModal={handleShowSignInModal}
             notificationCount={notificationsData?.notificationCount}
-            wishListCount={ wishListData?.wishList }
-            messageCount={ notificationsData?.messageCount }
+            wishListCount={wishListData?.wishList}
+            messageCount={notificationsData?.messageCount}
           />
         </div>
       </nav>

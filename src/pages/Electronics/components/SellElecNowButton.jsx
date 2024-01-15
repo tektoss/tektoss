@@ -25,7 +25,7 @@ export default function SellElecNowButton() {
 
   if (!userIsAnonymous) {
     return (
-      <Link to="/Electronics/ElecNewItem" className="sell-now">
+      <Link to="/electronics/ElecNewItem" className="sell-now">
         <h6>Sell Your Electronic</h6>
       </Link>
     );

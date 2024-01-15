@@ -49,10 +49,10 @@ export default function Footer() {
             <h4 className="footer__heading">Categories</h4>
             <ul className="footer__category-list">
               <li className="footer__category-list-item">
-                <Link to="/Vehicles">Vehicles</Link>
+                <Link to="/vehicles">Vehicles</Link>
               </li>
               <li className="footer__category-list-item">
-                <Link to="/Electronics">Electronics</Link>
+                <Link to="/electronics">Electronics</Link>
               </li>
               {/* <li className="footer__category-list-item">
                 <Link to="/category/Video Games & Consoles">Video Games &amp; Consoles</Link>

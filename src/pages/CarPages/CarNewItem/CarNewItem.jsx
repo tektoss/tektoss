@@ -39,7 +39,7 @@ export default function CarNewItem() {
           content={`Your One-Stop Electronic Gadget Marketplace.
           Discover the Best Deals, Connect with Sellers, and Trade Gadgets with Ease right here on Cirloz.`}
         />
-        <link rel="canonical" href="/Vehicles/CarNewItem" />
+        <link rel="canonical" href="/vehicles/CarNewItem" />
       </Helmet>
       <Navbar />
       <NavbarBottom />

@@ -62,6 +62,9 @@ export default function useFilterProductData(
       } catch (error) {
         setIsLoading(false);
         console.log(error.message);
+      } finally {
+        // Set loading to false even if there's an error or no data
+        setIsLoading(false);
       }
     };
 

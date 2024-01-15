@@ -13,7 +13,7 @@ export default function AdPanel() {
     );
   }
 
-  const pathName = window.location.pathname;
+  const pathName = window.location.pathname.toLowerCase();
 
   useEffect(() => {
     const scriptElement = document.querySelector(

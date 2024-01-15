@@ -12,6 +12,7 @@ export default function Hero() {
         <h1>
           Vehicle Shops at
           {' '}
+          {appName}
         </h1>
         <p className="welcome-page__hero__text-large">
           {`Unleash the Power of Possibilities with the Latest Vehicles right here at ${appName}.`}

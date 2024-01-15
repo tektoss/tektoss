@@ -36,7 +36,7 @@ export default function CategoriesBox() {
         {vehicleCat.map((category) => (
           <li key={category}>
             <Link
-              to={`/Vehicles/${category}`}
+              to={`/vehicles/${category}`}
               onClick={handleClearFilter}
               style={{
                 backgroundColor: 'white', color: 'purple', padding: '15px', borderRadius: '15%', display: 'inline-block', margin: '4px',

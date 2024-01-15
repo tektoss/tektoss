@@ -59,24 +59,22 @@ export default function MainRoutes() {
         theme="light"
       />
       <Routes>
-        {/* <Route path="/" element={<Home />} /> */}
         <Route path="/" element={<WelcomePage />} />
-        <Route path="/Vehicles" element={<Vehicles />} />
-        <Route path="/Electronics" element={<Electronics />} />
-        {/* <Route path="/home" element={<Home />} /> */}
+        <Route path="/vehicles" element={<Vehicles />} />
+        <Route path="/electronics" element={<Electronics />} />
         <Route path="/Electronicsearch/:searchName" element={<ElectronicSearchResult />} />
         <Route path="/search/:searchName" element={<SearchResult />} />
-        <Route path="Vehicles/Carsearch/:searchName" element={<CarSearchResult />} />
-        <Route path="/Vehicles/CarNewItem" element={<CarNewItem />} />
+        <Route path="vehicles/Carsearch/:searchName" element={<CarSearchResult />} />
+        <Route path="/vehicles/CarNewItem" element={<CarNewItem />} />
         <Route path="/single-electronic/:id" element={<SingleElectronicItem />} />
         <Route path="/single-vehicle/:id" element={<SingleVehicleItem />} />
         <Route path="/chat-room" element={<ChatRoom />} />
         <Route path="/messages" element={<Messages />} />
         <Route path="/Electronicscategory/:category" element={<ElectronicsCategory />} />
-        <Route path="/Vehicles/:vehicleType" element={<VehicleTypeCategory />} />
-        <Route path="/Vehicles/:vehicleType/:make" element={<Carscategory />} />
+        <Route path="/vehicles/:vehicleType" element={<VehicleTypeCategory />} />
+        <Route path="/vehicles/:vehicleType/:make" element={<Carscategory />} />
         <Route path="/all-new-item" element={<AllNewItem />} />
-        <Route path="/Electronics/ElecNewItem" element={<ElecNewItem />} />
+        <Route path="/electronics/ElecNewItem" element={<ElecNewItem />} />
         <Route path="/user-account/:id" element={<UserAccount />} />
         <Route path="/wish-list" element={<WishList />} />
         <Route path="/notifications" element={<Notifications />} />

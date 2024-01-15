@@ -19,7 +19,7 @@ export default function VehicleTypeCategory() {
           name="description"
           content={`Find the latest ${vehicleType} and get the best prices and deals right here at ${appName}`}
         />
-        <link rel="canonical" href={`/Vehicles/${vehicleType}#page-top`} />
+        <link rel="canonical" href={`/vehicles/${vehicleType}#page-top`} />
       </Helmet>
       <Navbar />
       <NavbarBottom />

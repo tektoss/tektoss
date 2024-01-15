@@ -18,7 +18,7 @@ export default function Electronics() {
           name="description"
           content="Your One-Stop Electronic Gadget Marketplace."
         />
-        <link rel="canonical" href="/Electronics" />
+        <link rel="canonical" href="/electronics" />
       </Helmet>
       <Navbar />
       <NavbarBottom />
