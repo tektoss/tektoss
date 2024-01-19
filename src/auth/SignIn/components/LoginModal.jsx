@@ -6,7 +6,7 @@ import { useDispatch } from 'react-redux';
 import { handleSwitchToForgotPassword, handleSwitchToSignUp } from '../../utils/SwitchModals';
 import PhoneNumberVerifyInput from './PhoneNumberInput';
 import { signInFormValidated } from '../../utils/FormValidated';
-import logo from '../../../assets/images/electrotossLogoBlue.png';
+import movingLogo from '../../../assets/images/movingLogo.png';
 import { signInUserWithPhoneAndPassword, handleSignInWithGoogle } from '../../utils/authenticateUser';
 
 export default function LoginModal(
@@ -74,7 +74,7 @@ export default function LoginModal(
               <div />
             </button>
             <div className="buttons-box__modal-logo-div">
-              <img src={logo} className="buttons-box__modal-logo" alt="cirloz logo" />
+              <img src={movingLogo} className="buttons-box__modal-logo" alt="cirloz logo" />
             </div>
             <div className="buttons-box__modal-title-div sign-in">
               <h4 className="buttons-box__modal-title">Sign In</h4>
