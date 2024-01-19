@@ -56,7 +56,7 @@ export default function MainCategories() {
             <ul>
               {electronicsSubcategories.map((category) => (
                 <li key={category}>
-                  <button onClick={() => navigate(`/Electronicscategory/${category}`)}>
+                  <button onClick={() => navigate(`/electronics/${category}`)}>
                     <h6>{category}</h6>
                   </button>
                 </li>

@@ -70,7 +70,7 @@ export default function MainRoutes() {
         <Route path="/single-vehicle/:id" element={<SingleVehicleItem />} />
         <Route path="/chat-room" element={<ChatRoom />} />
         <Route path="/messages" element={<Messages />} />
-        <Route path="/Electronicscategory/:category" element={<ElectronicsCategory />} />
+        <Route path="/electronics/:category" element={<ElectronicsCategory />} />
         <Route path="/vehicles/:vehicleType" element={<VehicleTypeCategory />} />
         <Route path="/vehicles/:vehicleType/:make" element={<Carscategory />} />
         <Route path="/all-new-item" element={<AllNewItem />} />

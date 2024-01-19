@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useLocation } from 'react-router-dom';
 import {
   collection, getDocs, query, where,
 } from '@firebase/firestore';
@@ -11,6 +12,7 @@ export default function useItemsFetch(setIsLoading, setFilteredData, setData, is
   const dispatch = useDispatch();
   const vehicleCategory = useSelector((state) => state.products.selectedCategory);
   console.log('here is the chosen category from useitem: ', vehicleCategory);
+  const location = useLocation();
 
   useEffect(() => {
     const fetchItems = async () => {
@@ -26,6 +28,7 @@ export default function useItemsFetch(setIsLoading, setFilteredData, setData, is
       //   setFilteredData(productsList);
       //   setIsLoading(false);
       // } else {
+      // if (location.pathname === '/vehicles') {
       try {
         let q;
         let q2;
@@ -127,7 +130,7 @@ export default function useItemsFetch(setIsLoading, setFilteredData, setData, is
           return;
         }
 
-        console.log('this is from all vehicle =>', allProducts);
+        console.log('this is from all here =>', allProducts);
         setData(allProducts);
         dispatch(fillProductsList(allProducts));
         setFilteredData(allProducts);
@@ -139,5 +142,5 @@ export default function useItemsFetch(setIsLoading, setFilteredData, setData, is
     };
 
     fetchItems();
-  }, [isLocationAvailable, vehicleCategory, dispatch]);
+  }, [isLocationAvailable, vehicleCategory, location]);
 }

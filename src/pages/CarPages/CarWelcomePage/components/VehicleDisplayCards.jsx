@@ -11,7 +11,6 @@ import useItemsFetch from '../hooks/useItemsFetch';
 import useFilterProductData from '../hooks/useFilterProductData';
 import PaginationBar from '../../components/PaginationBar';
 import FilterByDistance from './FilterByDistance';
-// import FindItemsSlider from './FindItemsSlider';
 
 export default function VehicleDisplayCards() {
   const { filterObject } = useSelector(selectProductsState);
@@ -28,6 +27,7 @@ export default function VehicleDisplayCards() {
 
   useGetUserLocation(isLocationAvailable);
   useItemsFetch(setIsLoading, setFilteredData, setData, isLocationAvailable);
+  console.log('here from itemsfetch', filteredData);
   useFilterProductData(
     data,
     setFilteredData,
@@ -38,11 +38,12 @@ export default function VehicleDisplayCards() {
     time,
     setIsLoading,
   );
-  console.log('this is from VehicleDisplayCards =>', data);
+  console.log('here from filteredProduct', filteredData);
 
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentItems = filteredData.slice(indexOfFirstItem, indexOfLastItem);
+  console.log('currentdata vehicle: ', currentItems);
 
   if (!navigator.onLine) {
     return (

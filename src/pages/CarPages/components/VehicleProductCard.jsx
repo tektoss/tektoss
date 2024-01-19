@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 // import { useDispatch, useSelector } from 'react-redux';
 import { useSelector } from 'react-redux';
 // import { db } from '../config/firebaseConfig';
@@ -19,7 +19,8 @@ export default function VehicleProductCard({ product }) {
     id, price, vendor, model, make, year, condition, isPromoted, images, datePosted,
     // brand,
   } = product;
-
+  console.log('here is the product vehicles', product);
+  const location = useLocation();
   const image = images[0];
   const postDate = datePosted?.seconds
     ? convertSecondsToHumanDate(datePosted?.seconds)
@@ -37,7 +38,7 @@ export default function VehicleProductCard({ product }) {
 
   useEffect(() => {
     setMiles(distance);
-  }, [distance, userCoordinates.longitude, userCoordinates.latitude]);
+  }, [distance, userCoordinates.longitude, userCoordinates.latitude, location]);
 
   // const handleAddToWishList = async (wishListProduct) => {
   //   if (isAnonymous) {

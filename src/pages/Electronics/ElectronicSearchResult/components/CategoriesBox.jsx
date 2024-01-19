@@ -26,7 +26,7 @@ export default function CategoriesBox() {
         {
           categoriesArray.map((categories) => (
             <li>
-              <button type="button" onClick={() => handleClearFilter(`/Electronicscategory/${categories}`)}><h6>{categories}</h6></button>
+              <button type="button" onClick={() => handleClearFilter(`/electronics/${categories}`)}><h6>{categories}</h6></button>
             </li>
           ))
         }

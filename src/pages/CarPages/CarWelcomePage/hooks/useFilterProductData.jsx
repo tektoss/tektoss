@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
+import { useLocation } from 'react-router-dom';
 import { selectProductsState } from '../../../../redux/slice/productsSlice';
 import isItemWithinMiles from '../utils/isItemWithinMiles';
 
@@ -17,9 +18,10 @@ export default function useFilterProductData(
 
   const { filterObject } = useSelector(selectProductsState);
   const {
-    maxPrice, minPrice, minYear, maxYear, condition,
+    maxPrice, minPrice, condition, category,
   } = filterObject;
-  // console.log('this is from useFilterProductData =>', filterObject);
+  console.log('this is from useFilterProductData Vehicle =>', filterObject);
+  const location = useLocation();
   // const selectedCategory = useSelector((state) => state.products.selectedCategory);
 
   useEffect(() => {
@@ -40,9 +42,10 @@ export default function useFilterProductData(
               item.price >= minPrice
               // && item.mainCat === 'vehicle'
               && item.price <= maxPrice
-              && item.year >= minYear
-              && item.year <= maxYear
+              // && item.year >= minYear
+              // && item.year <= maxYear
               && (item.condition === condition || condition === 'all')
+              && (item.category === category || category === 'all')
               && isItemWithinMiles(miles, coordinates, item)
             ),
           );
@@ -54,8 +57,9 @@ export default function useFilterProductData(
               item.price >= minPrice
               // && item.mainCat === 'vehicle'
               && item.price <= maxPrice
-              && item.year >= minYear
-              && item.year <= maxYear
+              // && item.year >= minYear
+              // && item.year <= maxYear
+              && (item.category === category || category === 'all')
               && (item.condition === condition || condition === 'all')
 
             ),
@@ -72,5 +76,5 @@ export default function useFilterProductData(
     };
 
     filterProductData();
-  }, [data, time, miles]);
+  }, [data, time, miles, location]);
 }
