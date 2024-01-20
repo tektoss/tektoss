@@ -24,7 +24,7 @@ export default function Main() {
     brand: 'all',
     category: 'all',
     condition: 'all',
-    mainCat: 'electronics',
+    // mainCat: 'electronics',
   };
 
   useEffect(() => () => {

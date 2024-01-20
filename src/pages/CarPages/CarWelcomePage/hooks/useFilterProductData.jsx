@@ -29,21 +29,13 @@ export default function useFilterProductData(
       try {
         setIsLoading(true);
 
-        // // Check if data is available before filtering
-        // if (data.length === 0) {
-        //   // Wait for data to be fetched
-        //   return;
-        // }
         let filtered = [];
 
         if (isLocationAvailable) {
           filtered = data.filter(
             (item) => (
               item.price >= minPrice
-              // && item.mainCat === 'vehicle'
               && item.price <= maxPrice
-              // && item.year >= minYear
-              // && item.year <= maxYear
               && (item.condition === condition || condition === 'all')
               && (item.category === category || category === 'all')
               && isItemWithinMiles(miles, coordinates, item)
@@ -55,10 +47,7 @@ export default function useFilterProductData(
           filtered = data.filter(
             (item) => (
               item.price >= minPrice
-              // && item.mainCat === 'vehicle'
               && item.price <= maxPrice
-              // && item.year >= minYear
-              // && item.year <= maxYear
               && (item.category === category || category === 'all')
               && (item.condition === condition || condition === 'all')
 

@@ -1,17 +1,16 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { selectProductsState } from '../../../../redux/slice/productsSlice';
-import ProductCard from '../../../../components/ProductCard';
-import Loader from '../../../../components/Loader';
-import EmptyDisplay from '../../../../components/EmptyDisplay';
-import UserOffline from '../../../../components/UserOffline';
+import ProductCard from '../../components/ProductCard';
+import Loader from '../../components/Loader';
+import EmptyDisplay from '../../components/EmptyDisplay';
+import UserOffline from '../../components/UserOffline';
 import { selectLocationState } from '../../../../redux/slice/locationSlice';
 import useGetUserLocation from '../hooks/useGetUserLocation';
 import useItemsFetch from '../hooks/useItemsFetch';
 import useFilterProductData from '../hooks/useFilterProductData';
-import PaginationBar from '../../../../components/PaginationBar';
+import PaginationBar from '../../components/PaginationBar';
 import FilterByDistance from './FilterByDistance';
-// import FindItemsSlider from './FindItemsSlider';
 
 export default function DisplayCards() {
   const { filterObject } = useSelector(selectProductsState);
@@ -42,7 +41,6 @@ export default function DisplayCards() {
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentItems = filteredData.slice(indexOfFirstItem, indexOfLastItem);
-  console.log('currentdata electronics: ', currentItems);
 
   if (!navigator.onLine) {
     return (

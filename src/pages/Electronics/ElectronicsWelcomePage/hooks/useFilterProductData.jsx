@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
+import { useLocation } from 'react-router-dom';
 import { selectProductsState } from '../../../../redux/slice/productsSlice';
 import isItemWithinMiles from '../utils/isItemWithinMiles';
 
@@ -13,28 +14,25 @@ export default function useFilterProductData(
   time,
   setIsLoading,
 ) {
+  console.log('this is from electronics Items =>', data);
+
   const { filterObject } = useSelector(selectProductsState);
   const {
-    maxPrice, minPrice, category, condition,
+    maxPrice, minPrice, condition, category,
   } = filterObject;
+  console.log('this is from useFilterProductData Electronics =>', filterObject);
+  const location = useLocation();
+  // const selectedCategory = useSelector((state) => state.products.selectedCategory);
 
   useEffect(() => {
     const filterProductData = async () => {
       try {
         setIsLoading(true);
-
-        // Check if data is available before filtering
-        if (data.length === 0) {
-          // Wait for data to be fetched
-          return;
-        }
-
         let filtered = [];
 
         if (isLocationAvailable) {
           filtered = data.filter(
             (item) => (
-              // item.mainCat !== 'vehicle'
               item.price >= minPrice
               && item.price <= maxPrice
               && (item.condition === condition || condition === 'all')
@@ -47,11 +45,11 @@ export default function useFilterProductData(
         if (!isLocationAvailable) {
           filtered = data.filter(
             (item) => (
-              // item.mainCat !== 'vehicle'
               item.price >= minPrice
               && item.price <= maxPrice
-              && (item.condition === condition || condition === 'all')
               && (item.category === category || category === 'all')
+              && (item.condition === condition || condition === 'all')
+
             ),
           );
         }
@@ -62,12 +60,9 @@ export default function useFilterProductData(
       } catch (error) {
         setIsLoading(false);
         console.log(error.message);
-      } finally {
-        // Set loading to false even if there's an error or no data
-        setIsLoading(false);
       }
     };
 
     filterProductData();
-  }, [data, time, miles]);
+  }, [data, time, miles, location]);
 }

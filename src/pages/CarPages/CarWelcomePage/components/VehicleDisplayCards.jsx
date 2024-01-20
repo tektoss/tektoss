@@ -27,7 +27,6 @@ export default function VehicleDisplayCards() {
 
   useGetUserLocation(isLocationAvailable);
   useItemsFetch(setIsLoading, setFilteredData, setData, isLocationAvailable);
-  console.log('here from itemsfetch', filteredData);
   useFilterProductData(
     data,
     setFilteredData,
@@ -38,12 +37,10 @@ export default function VehicleDisplayCards() {
     time,
     setIsLoading,
   );
-  console.log('here from filteredProduct', filteredData);
 
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentItems = filteredData.slice(indexOfFirstItem, indexOfLastItem);
-  console.log('currentdata vehicle: ', currentItems);
 
   if (!navigator.onLine) {
     return (
