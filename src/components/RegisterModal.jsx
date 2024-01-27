@@ -160,7 +160,7 @@ export default function RegisterModal({
         } catch (err) {
           setIsLoading(false);
           handleTermsClose();
-          errorToast('Something went wrong, Please try again');
+          errorToast('Something went wrong, Please try again...');
         }
 
         setIsLoading(false);

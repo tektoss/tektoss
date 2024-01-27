@@ -70,6 +70,7 @@ export default function FormItems() {
     condition: 'new',
     postedFrom: 'web',
     mainCat: 'vehicle',
+    VIN: '',
     isPromoted: false,
     datePosted: new Date(),
     location: {
@@ -158,7 +159,7 @@ export default function FormItems() {
     setIsCheckingOut(true);
 
     const {
-      price, year, details, images, condition,
+      price, year, details, images, condition, VIN,
     } = newItem;
 
     if (!price.trim() || !details.trim()) {
@@ -277,6 +278,7 @@ export default function FormItems() {
           isPromoted: true,
           postedFrom: 'web',
           mainCat: 'vehicle',
+          VIN,
           datePosted: new Date(),
           dateLastPromoted: new Date(),
           vendor: vendorData,
@@ -309,7 +311,7 @@ export default function FormItems() {
     e.preventDefault();
 
     const {
-      price, year, details, images, condition,
+      price, year, details, images, condition, VIN,
     } = newItem;
 
     setIsPosting(true);
@@ -429,6 +431,7 @@ export default function FormItems() {
         isPromoted: false,
         postedFrom: 'web',
         mainCat: 'vehicle',
+        VIN,
         vendor: vendorData,
         datePosted: new Date(),
       };
@@ -578,6 +581,19 @@ export default function FormItems() {
               placeholder="eg. 2020"
               name="year"
               value={newItem.year}
+              onChange={handleFormChange}
+            />
+          </div>
+        </div>
+        <div className="col-md-6">
+          <div className="new-item-form__input-div">
+            <label htmlFor="vin-input" className="new-item-form__label">VIN</label>
+            <input
+              id="Vin-input"
+              className="new-item-form__input"
+              placeholder="1HGBH41JXMN109186"
+              name="VIN"
+              value={newItem.VIN}
               onChange={handleFormChange}
             />
           </div>

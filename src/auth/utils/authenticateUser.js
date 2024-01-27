@@ -248,7 +248,7 @@ export const handleSignInWithGoogle = async (
     }
   } catch (error) {
     handleCloseSignInModal();
-    errorToast('Something went wrong, Please try again');
+    errorToast('Something went wrong, Please try again ....');
     setGoogleLoading(false);
   }
 };

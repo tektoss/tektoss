@@ -25,7 +25,7 @@ const ButtonWithLinks = () => {
     <div>
       {/* Button that will trigger the display of links */}
       {isSellNowVisible && (
-        <button onClick={toggleLinks} className="sell-now-main" style={{ textAlign: 'right' }}>
+        <button onClick={toggleLinks} className="sell-now-main">
           Sell Now
         </button>
       )}

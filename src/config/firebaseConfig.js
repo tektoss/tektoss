@@ -11,8 +11,8 @@ export const firebaseConfig = {
   projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
   storageBucket: 'tektoss-d83df.appspot.com',
   messagingSenderId: '897386202691',
-  appId: '1:897386202691:web:8ec147d26f9ca63777f6f6',
-  measurementId: 'G-E54BY8C0GE',
+  appId: '1:897386202691:web:6d3bb95a1d19d52d77f6f6',
+  measurementId: 'G-VCN229H606',
 };
 
 export const app = initializeApp(firebaseConfig);
