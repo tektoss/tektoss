@@ -44,7 +44,7 @@ export default function NavbarBottom() {
               <span style={{ color: 'White', fontWeight: 'bold' }}>irloz</span>
             </span>
           </Link>
-          <p>Electronic Gadgets Marketplace</p>
+          <p>Vehicles and Electronic Gadgets Marketplace</p>
         </div>
         <div className="bottom-nav__content-search-div">
           <input

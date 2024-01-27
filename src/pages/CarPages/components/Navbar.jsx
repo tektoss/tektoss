@@ -240,7 +240,7 @@ function Navbar() {
                   <span style={{ color: 'White', fontWeight: 'bold' }}>irloz</span>
                 </span>
               </Link>
-              <p>Electronic Gadgets Marketplace</p>
+              <p>Vehicles and Electronic Gadgets Marketplace</p>
             </div>
             <ul className="d-flex justify-content-end align-items-center">
               {!isAnonymous && <li>
@@ -352,7 +352,7 @@ function Navbar() {
               </span>
               <span style={{ color: 'White', fontWeight: 'bold' }}>{nameForLogo}</span>
             </Link>
-            <p>Electronic Gadgets Marketplace</p>
+            <p>Vehicles and Electronic Gadgets Marketplace</p>
 
 
 

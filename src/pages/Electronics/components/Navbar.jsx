@@ -259,7 +259,7 @@ function Navbar() {
                   <span style={{ color: 'White', fontWeight: 'bold' }}>irloz</span>
                 </span>
               </Link>
-              <p>Electronic Gadgets Marketplace</p>
+              <p>Vehicles and Electronic Gadgets Marketplace</p>
             </div>
             <ul className="d-flex justify-content-end align-items-center">
               {!isAnonymous && <li>
@@ -373,7 +373,7 @@ function Navbar() {
                 <span style={{ color: 'White', fontWeight: 'bold' }}>irloz</span>
               </span>
             </Link>
-            <p>Electronic Gadgets Marketplace</p>
+            <p>Vehicles and Electronic Gadgets Marketplace</p>
 
           </div>
           <div className="bottom-nav__content-search-div navbar-custom__search-div">
