@@ -144,6 +144,11 @@ function Navbar() {
       }
     });
   }, []);
+  // State to track whether the "Sell Now" button is clicked
+  // const [sellNowClicked, setSellNowClicked] = useState(false);
+  // const handleSellNowClick = () => { 
+  //   setSellNowClicked(true);
+  // };
 
   // const handleCatPopOverClick = (name) => {
   //   setshowCategory(false);
@@ -366,9 +371,9 @@ function Navbar() {
             </div>
           </div>
 
-          <div className="bottom-nav__content-cat-div">
+          <div className="bottom-nav__content-cat-div" style={{ marginRight: '-70px' }}>
             <ul style={{ display: 'flex', listStyle: 'none', padding: 0 }}>
-              <li style={{ marginRight: '20px' }}>
+              <li style={{ marginRight: '0.5px' }}>
                 <Link to="/electronics" className="link">
                   <button name="electronics"
                     role="button"
@@ -383,7 +388,7 @@ function Navbar() {
                   </button>
                 </Link>
               </li>
-              <li style={{ marginRight: '20px' }}>
+              <li style={{ marginRight: '0.5px' }}>
                 <Link to="/vehicles" className="link">
                   <button name="vehicles"
                     role="button"

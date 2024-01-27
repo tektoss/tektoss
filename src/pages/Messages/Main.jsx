@@ -1,5 +1,5 @@
 import React from 'react';
-import AdPanel from '../../../components/AdPanel';
+import AdPanel from '../../components/AdPanel';
 import ChatWall from './components/ChatWall';
 import ChatList from './components/ChatList';
 

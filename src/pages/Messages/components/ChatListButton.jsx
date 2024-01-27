@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import profile from '../../../../assets/images/profile.jpg';
-import { SET_CHAT_DETAILS } from '../../../../redux/slice/chatSlice';
+import profile from '../../../assets/images/profile.jpg';
+import { SET_CHAT_DETAILS } from '../../../redux/slice/chatSlice';
 
 export default function ChatListButton({ data, uid }) {
   const {

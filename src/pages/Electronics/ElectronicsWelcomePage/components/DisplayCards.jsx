@@ -4,12 +4,12 @@ import { selectProductsState } from '../../../../redux/slice/productsSlice';
 import ProductCard from '../../components/ProductCard';
 import Loader from '../../components/Loader';
 import EmptyDisplay from '../../components/EmptyDisplay';
-import UserOffline from '../../components/UserOffline';
+import UserOffline from '../../../../components/UserOffline';
 import { selectLocationState } from '../../../../redux/slice/locationSlice';
 import useGetUserLocation from '../hooks/useGetUserLocation';
 import useItemsFetch from '../hooks/useItemsFetch';
 import useFilterProductData from '../hooks/useFilterProductData';
-import PaginationBar from '../../components/PaginationBar';
+import PaginationBar from '../../../../components/PaginationBar';
 import FilterByDistance from './FilterByDistance';
 
 export default function DisplayCards() {

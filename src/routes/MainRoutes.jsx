@@ -31,7 +31,7 @@ import MobileChatRoom from '../pages/Electronics/MobileChatRoom/MobileChatRoom';
 import MobileChatWall from '../pages/Electronics/MobileChatWall/MobileChatWall';
 import WelcomePage from '../pages/WelcomePage/WelcomePage';
 import NewArrivals from '../pages/Electronics/NewArrivals/NewArrivals';
-import Messages from '../pages/Electronics/Messages/Messages';
+import Messages from '../pages/Messages/Messages';
 import MobileSettings from '../pages/Electronics/MobileSettings/MobileSettings';
 import SupportPage from '../pages/SupportPage/SupportPage';
 import Electronics from '../pages/Electronics/ElectronicsWelcomePage/Electronics';

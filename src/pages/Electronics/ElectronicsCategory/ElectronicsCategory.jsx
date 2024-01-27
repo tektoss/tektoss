@@ -8,7 +8,7 @@ import Main from './Main';
 import appName from '../../../Constants/constantVariables';
 import NavbarBottom from '../components/NavbarBottom';
 
-export default function ElectronicsCategory() {
+export default function electronicsCategory() {
   const { category } = useParams();
 
   return (
@@ -19,7 +19,7 @@ export default function ElectronicsCategory() {
           name="description"
           content={`Find the latest ${category} and get the best prices and deals right here at ${appName}`}
         />
-        <link rel="canonical" href={`/Electronicscategory/${category}#page-top`} />
+        <link rel="canonical" href={`/electronics/${category}#page-top`} />
       </Helmet>
       <Navbar />
       <NavbarBottom />

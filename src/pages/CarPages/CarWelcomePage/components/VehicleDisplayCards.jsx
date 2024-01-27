@@ -4,7 +4,7 @@ import { selectProductsState } from '../../../../redux/slice/productsSlice';
 import VehicleProductCard from '../../components/VehicleProductCard';
 import Loader from '../../components/Loader';
 import EmptyDisplay from '../../components/EmptyDisplay';
-import UserOffline from '../../components/UserOffline';
+import UserOffline from '../../../../components/UserOffline';
 import { selectLocationState } from '../../../../redux/slice/locationSlice';
 import useGetUserLocation from '../hooks/useGetUserLocation';
 import useItemsFetch from '../hooks/useItemsFetch';

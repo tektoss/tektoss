@@ -18,7 +18,7 @@ export default function CategoryFilterCard({ category }) {
   const priceGap = 900;
 
   const brandArray = {
-    'Computers & Tablets': ['all', 'Dell', 'Lenovo', 'Acer', 'Asus', 'Microsoft', 'Toshiba', 'IBM', 'HP', 'LG', 'ViewSonic', 'NEC'],
+    Laptops: ['all', 'Dell', 'Lenovo', 'Acer', 'Asus', 'Microsoft', 'Toshiba', 'IBM', 'HP', 'LG', 'ViewSonic', 'NEC'],
     'Video Games & Consoles': ['all', 'Sony (PlayStation)', 'Microsoft (Xbox)', 'Nintendo', 'Sega', 'Valve (Steam)', 'Razer', 'Logitech', 'Corsair', 'Alienware', 'HyperX'],
     'Audio & Headphones': ['all', 'Bose', 'Sony', 'Sennheiser', 'Beats by Dre', 'JBL', 'Audio-Technica', 'Skullcandy', 'Bang & Olufsen', 'Shure', 'AKG'],
     'Office Electronics': ['all', 'Dell', 'Lenovo', 'Acer', 'Asus', 'Microsoft', 'Toshiba', 'IBM', 'LG', 'HP', 'ViewSonic', 'NEC'],
@@ -26,7 +26,7 @@ export default function CategoryFilterCard({ category }) {
     'Car Electronics': ['all', 'Pioneer', 'Sony', 'Kenwood', 'Alpine', 'JVC', 'Clarion', 'Garmin', 'TomTom', 'Harman Kardon', 'Blaupunkt'],
     'Cameras, Drones & Accessories': ['all', 'Nikon', 'Canon', 'Sony', 'Panasonic', 'Fujifilm', 'GoPro', 'DJI', 'Leica', 'Olympus', 'Pentax'],
     'Home Appliances': ['all', 'Whirlpool', 'LG Electronics', 'Samsung', 'General Electric (GE)', 'Maytag', 'KitchenAid', 'Bosch', 'Kenmore', 'Electrolux', 'Frigidaire'],
-    'Cellphones & Accessories': ['all', 'Apple', 'Samsung', 'Google', 'OnePlus', 'Xiaomi', 'Huawei', 'Sony', 'LG', 'Nokia', 'Motorola'],
+    'Cellphones & Smartphones': ['all', 'Apple', 'Samsung', 'Google', 'OnePlus', 'Xiaomi', 'Huawei', 'Sony', 'LG', 'Nokia', 'Motorola'],
     Televisions: ['all', 'Samsung', 'LG', 'Sony', 'TCL', 'Panasonic', 'Vizio', 'Philips', 'Sharp', 'Hisense', 'Insignia'],
   };
 

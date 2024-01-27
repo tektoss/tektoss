@@ -5,7 +5,7 @@ import {
   updateDoc,
 } from 'firebase/firestore';
 import ChatListButton from './ChatListButton';
-import { db } from '../../../../config/firebaseConfig';
+import { db } from '../../../config/firebaseConfig';
 import fetchChats from '../utils/fetchChatData';
 
 export default function ChatList({ uid }) {

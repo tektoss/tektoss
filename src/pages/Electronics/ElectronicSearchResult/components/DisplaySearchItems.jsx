@@ -34,6 +34,7 @@ export default function DisplaySearchItems() {
         const q = query(
           collection(db, 'products'),
           where('isPromoted', '==', true),
+          where('mainCat', '!==', 'vehicle'),
           where('status', '==', 'active'),
         );
         const querySnapshot = await getDocs(q);
@@ -46,6 +47,7 @@ export default function DisplaySearchItems() {
         const q2 = query(
           collection(db, 'products'),
           where('isPromoted', '==', true),
+          where('mainCat', '!==', 'vehicle'),
           where('status', '==', 'pending'),
         );
         const querySnapshot2 = await getDocs(q2);
@@ -57,6 +59,7 @@ export default function DisplaySearchItems() {
         const q3 = query(
           collection(db, 'products'),
           where('isPromoted', '==', false),
+          where('mainCat', '!==', 'vehicle'),
           where('status', '==', 'active'),
         );
         const querySnapshot3 = await getDocs(q3);
@@ -68,6 +71,7 @@ export default function DisplaySearchItems() {
         const q4 = query(
           collection(db, 'products'),
           where('isPromoted', '==', false),
+          where('mainCat', '!==', 'vehicle'),
           where('status', '==', 'pending'),
         );
         const querySnapshot4 = await getDocs(q4);

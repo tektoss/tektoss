@@ -21,11 +21,9 @@ import { selectNotificationState, setNotifications } from '../../../redux/slice/
 import useAssignDeviceId from '../../../Hooks/useAssignDeviceId';
 import useGetUserLocation from '../../../Hooks/useGetUserLocation';
 import { selectLocationState } from '../../../redux/slice/locationSlice';
-import MobileLoginModal from './MobileLoginModal';
+import MobileLoginModal from '../../../../src/components/MobileLoginModal';
 import SignInModal from '../../../auth/SignIn/SignInModal';
 import SignUpModal from '../../../auth/Register/SignUpModal';
-import ChatList from '../../ChatRoom/ChatRoom';
-import ForgotPasswordModal from './ForgotPasswordModal';
 
 function Navbar() {
   const dispatch = useDispatch();

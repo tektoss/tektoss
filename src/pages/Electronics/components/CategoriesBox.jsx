@@ -24,7 +24,7 @@ export default function CategoriesBox() {
         {categoriesArray.map((category) => (
           <li key={category}>
             <Link
-              to={`/Electronicscategory/${category}`}
+              to={`/electronics/${category}`}
               onClick={handleClearFilter}
               style={{
                 backgroundColor: 'white', color: 'purple', padding: '15px', borderRadius: '15%', display: 'inline-block', margin: '4px',

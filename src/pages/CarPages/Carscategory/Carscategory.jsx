@@ -1,6 +1,8 @@
-import React from 'react';
+import { React, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { Helmet } from 'react-helmet-async';
 import { useParams } from 'react-router-dom';
+import { setFilter } from '../../../redux/slice/productsSlice';
 import Navbar from '../components/Navbar';
 import Main from './Main';
 // import Footer from '../../../sections/Footer';
@@ -11,6 +13,25 @@ import NavbarBottom from '../components/NavbarBottom';
 export default function Carscategory() {
   const { vehicleType, make } = useParams();
 
+  const dispatch = useDispatch();
+
+  const initialFilter = {
+    maxPrice: 10000,
+    minPrice: 0,
+    location: 'all',
+    make: 'all',
+    model: 'all',
+    minYear: 2000,
+    maxYear: 2024,
+    condition: 'all',
+    mainCat: 'vehicle',
+  };
+
+  useEffect(() => () => {
+    dispatch(setFilter(initialFilter));
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
       <Helmet>
@@ -19,7 +40,7 @@ export default function Carscategory() {
           name="description"
           content={`Find the latest ${vehicleType} and get the best prices and deals right here at Cirloz`}
         />
-        <link rel="canonical" href={`Carscategory/${vehicleType}/${make}#page-top`} />
+        <link rel="canonical" href={`vehicles/${vehicleType}/${make}#page-top`} />
       </Helmet>
       <Navbar />
       <NavbarBottom />

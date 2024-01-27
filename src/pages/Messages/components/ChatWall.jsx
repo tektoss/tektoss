@@ -7,16 +7,16 @@ import { Link } from 'react-router-dom';
 import {
   addDoc, collection, doc, setDoc,
 } from '@firebase/firestore';
-import profile from '../../../../assets/images/profile.jpg';
-import { selectAuthState } from '../../../../redux/slice/authSlice';
+import profile from '../../../assets/images/profile.jpg';
+import { selectAuthState } from '../../../redux/slice/authSlice';
 import ChatCard from './ChatCard';
 import {
 //   RESET_CHAT_TEMPLATE,
   selectChatState,
-} from '../../../../redux/slice/chatSlice';
+} from '../../../redux/slice/chatSlice';
 import { fetchMessages } from '../utils/fetchChatData';
 import sendMessage from '../utils/sendMessage';
-import { db } from '../../../../config/firebaseConfig';
+import { db } from '../../../config/firebaseConfig';
 
 export default function ChatWall({ uid }) {
   const [message, setMessage] = useState('');

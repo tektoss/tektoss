@@ -6,7 +6,7 @@ import {
   where,
   orderBy,
 } from '@firebase/firestore';
-import { db } from '../../../../config/firebaseConfig';
+import { db } from '../../../config/firebaseConfig';
 
 const fetchUserDetails = async (id) => {
   if (id) {

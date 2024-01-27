@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import React from 'react';
+// import { useDispatch } from 'react-redux';
 import VehicleDisplayCards from './components/VehicleDisplayCards';
 // import AdPanel from '../../components/AdPanel';
 import SectionHeader from '../components/SectionHeader';
@@ -8,31 +8,33 @@ import CategoriesBox from '../Carscategory/components/CategoriesBox';
 // import SearchCategoriesBox from '../CarSearchResult/components/CategoriesBox';
 import SearchBar from './components/SearchBar';
 // import useTopScroll from '../../Hooks/useTopScroll';
-import { setFilter } from '../../../redux/slice/productsSlice';
+// import { setFilter } from '../../../redux/slice/productsSlice';
 // import HorizontalAdPanel from '../../components/HorizontalAdPanel';
 import SellNowButtonBoxMobile from '../../WishList/components/SellNowButtonBoxMobile';
 import Hero from './components/Hero';
 // import NewArrivalsButton from '../../components/NewArrivalsButton';
 
 export default function Main() {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
-  const initialFilter = {
-    maxPrice: 10000,
-    minPrice: 0,
-    location: 'all',
-    make: 'all',
-    model: 'all',
-    minYear: 2000,
-    maxYear: 2024,
-    condition: 'all',
-    mainCat: 'vehicle',
-  };
+  // const initialFilter = {
+  //   maxPrice: 10000,
+  //   minPrice: 0,
+  //   location: 'all',
+  //   make: 'all',
+  //   model: 'all',
+  //   minYear: 2000,
+  //   maxYear: 2024,
+  //   condition: 'all',
+  //   mainCat: 'vehicle',
+  //   catgeory: 'all',
+  //   brand: 'all',
+  // };
 
-  useEffect(() => () => {
-    dispatch(setFilter(initialFilter));
-    window.scrollTo(0, 0);
-  }, []);
+  // useEffect(() => () => {
+  //   dispatch(setFilter(initialFilter));
+  //   window.scrollTo(0, 0);
+  // }, []);
 
   // useTopScroll();
 

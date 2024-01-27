@@ -35,7 +35,7 @@ export default function CategoriesBox() {
               <li key={category}>
                 <button
                   type="button"
-                  onClick={() => handleClearFilter(`/Electronicscategory/${category}`)}
+                  onClick={() => handleClearFilter(`/electronics/${category}`)}
                 >
                   <h6>{category}</h6>
                 </button>
@@ -55,7 +55,7 @@ export default function CategoriesBox() {
               <li key={category}>
                 <button
                   type="button"
-                  onClick={() => handleClearFilter(`/Carscategory/${category}`)}
+                  onClick={() => handleClearFilter(`/vehicles/${category}`)}
                 >
                   <h6>{category}</h6>
                 </button>

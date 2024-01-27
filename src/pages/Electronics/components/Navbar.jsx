@@ -25,8 +25,8 @@ import { selectLocationState } from '../../../redux/slice/locationSlice';
 import MobileLoginModal from './MobileLoginModal';
 import SignInModal from '../../../auth/SignIn/SignInModal';
 import SignUpModal from '../../../auth/Register/SignUpModal';
-import ChatList from '../../ChatRoom/ChatRoom';
-import ForgotPasswordModal from './ForgotPasswordModal';
+// import ChatList from '../../ChatRoom/ChatRoom';
+// import ForgotPasswordModal from '../../components/ForgotPasswordModal';
 
 function Navbar() {
   const dispatch = useDispatch();

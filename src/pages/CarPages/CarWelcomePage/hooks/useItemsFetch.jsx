@@ -107,14 +107,14 @@ export default function useItemsFetch(setIsLoading, setFilteredData, setData, is
             collection(db, 'products'),
             // where('vehicleType', '==', vehicleCategory),
             where('isPromoted', '==', false),
-            // where('mainCat', '==', 'vehicle'),
+            where('mainCat', '==', 'vehicle'),
             where('status', '==', 'pending'),
           );
         } else {
           q4 = query(
             collection(db, 'products'),
             where('isPromoted', '==', false),
-            // where('mainCat', '==', 'vehicle'),
+            where('mainCat', '==', 'vehicle'),
             where('status', '==', 'pending'),
           );
         }

@@ -18,7 +18,7 @@ export default function DrawerButton({
   const dispatch = useDispatch();
 
   const handleCategoryClick = (category) => {
-    navigate(`/Carscategory/${category}`);
+    navigate(`/vehicles/${category}`);
     setToggleDrawer(false);
   };
 

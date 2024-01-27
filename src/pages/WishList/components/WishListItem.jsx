@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export default function WishListItem({ item, removeItem }) {
   const {
-    name, price, location, condition, id, images,
+    name, price, location, condition, id, images, mainCat,
   } = item;
 
   const image = images || '';
@@ -14,7 +14,7 @@ export default function WishListItem({ item, removeItem }) {
 
   return (
     <div className="wish-list__item" key={id}>
-      <Link to={`/single-item/${id}`}>
+      <Link to={mainCat === 'vehicle' ? `/single-vehicle/${id}` : `/single-electronic/${id}`}>
         <div className="wish-list__image-div">
           <img src={image} alt="..." />
         </div>
