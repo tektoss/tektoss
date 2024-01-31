@@ -267,6 +267,18 @@ function Navbar() {
               <p>Vehicles and Electronic Gadgets Marketplace</p>
             </div>
 
+            <div className="bottom-nav__content-App-div">
+            <h4 className="footer__heading" style={{ fontSize: '1.1em', fontWeight: 'bold', marginBottom: '15px', fontStyle: 'revert-layer' }}>Download our App</h4>
+            <div style={{ marginLeft: '8px' }}></div>
+            <div className="d-flex">
+              <a href="https://apps.apple.com/us/app/electrotoss/id6473089394" target="_blank" rel="noreferrer" className="footer__socials-inner-div" title="iOS">
+                <i className="fa-brands fa-app-store-ios" style={{ color: 'white', fontSize: '30px', size: 10 }} />
+              </a>
+              <a href="https://play.google.com/store/apps/details?id=com.tektoss.electrotoss" target="_blank" rel="noreferrer" className="footer__socials-inner-div" title="Android">
+                <i className="fa-brands fa-google-play" style={{ color: 'white', fontSize: '30px', size: 70 }} />
+              </a>
+            </div>
+          </div>
 
             <ul className="d-flex justify-content-end align-items-center">
               {!isAnonymous && <li>
@@ -358,7 +370,7 @@ function Navbar() {
             <p>Vehicles and Electronic Gadgets Marketplace</p>
           </div>
 
-          <div className="bottom-nav__content-App-div">
+          {/* <div className="bottom-nav__content-App-div">
             <h4 className="footer__heading" style={{ fontSize: '1.1em', fontWeight: 'bold', marginBottom: '15px', fontStyle: 'revert-layer' }}>Download our App</h4>
             <div style={{ marginLeft: '8px' }}></div>
             <div className="d-flex">
@@ -369,9 +381,9 @@ function Navbar() {
                 <i className="fa-brands fa-google-play" style={{ color: 'white', fontSize: '30px', size: 70 }} />
               </a>
             </div>
-          </div>
+          </div> */}
 
-          <div className="bottom-nav__content-cat-div" style={{ marginRight: '-70px' }}>
+          <div className="bottom-nav__content-cat-div" style={{ marginRight: '20px' }}>
             <ul style={{ display: 'flex', listStyle: 'none', padding: 0 }}>
               <li style={{ marginRight: '0.5px' }}>
                 <Link to="/electronics" className="link">
@@ -380,7 +392,7 @@ function Navbar() {
                     style={{
                       background: 'none',
                       border: 'none',
-                      color: 'white', // Replace 'your-desired-color' with the color you want
+                      color: 'black', // Replace 'your-desired-color' with the color you want
                       cursor: 'pointer',
                     }}
                   >
@@ -395,7 +407,7 @@ function Navbar() {
                     style={{
                       background: 'none',
                       border: 'none',
-                      color: 'white', // Replace 'your-desired-color' with the color you want
+                      color: 'black', // Replace 'your-desired-color' with the color you want
                       cursor: 'pointer',
                     }}
                   >

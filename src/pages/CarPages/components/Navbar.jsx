@@ -334,7 +334,7 @@ function Navbar() {
                     style={{
                       background: 'none',
                       border: 'none',
-                      color: 'white', // Replace 'your-desired-color' with the color you want
+                      color: 'black', // Replace 'your-desired-color' with the color you want
                       cursor: 'pointer',
                     }}
                   >

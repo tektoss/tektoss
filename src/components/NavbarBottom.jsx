@@ -1,3 +1,5 @@
+/* eslint-disable react/button-has-type */
+/* eslint-disable jsx-a11y/no-redundant-roles */
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 // eslint-disable-next-line import/no-named-as-default
@@ -60,10 +62,45 @@ export default function NavbarBottom() {
             <i className="fa-solid fa-magnifying-glass" />
           </button>
         </div>
-        <Link to="/" className="bottom-nav__home-icon-link">
-          <i className="fa-solid fa-house" />
-          <h6>Home</h6>
-        </Link>
+        {/* <Link to="/" className="bottom-nav__home-icon-link"> */}
+        {/* <i className="fa-solid fa-house" /> */}
+        {/* <h6>Home</h6> */}
+        <div className="bottom-nav__content-cat-div" style={{ marginRight: '20px' }}>
+          <ul style={{ display: 'flex', listStyle: 'none', padding: 0 }}>
+            <li style={{ marginRight: '0.5px' }}>
+              <Link to="/electronics" className="link">
+                <button
+                  name="electronics"
+                  role="button"
+                  style={{
+                    background: 'none',
+                    border: 'none',
+                    color: 'white', // Replace 'your-desired-color' with the color you want
+                    cursor: 'pointer',
+                  }}
+                >
+                  <h6>Electronics</h6>
+                </button>
+              </Link>
+            </li>
+            <li style={{ marginRight: '0.5px' }}>
+              <Link to="/vehicles" className="link">
+                <button
+                  name="vehicles"
+                  role="button"
+                  style={{
+                    background: 'none',
+                    border: 'none',
+                    color: 'white', // Replace 'your-desired-color' with the color you want
+                    cursor: 'pointer',
+                  }}
+                >
+                  <h6>Vehicles</h6>
+                </button>
+              </Link>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   );

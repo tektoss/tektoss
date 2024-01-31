@@ -101,7 +101,7 @@ export default function EditFormItems() {
     e.preventDefault();
 
     const {
-      name, price, year, details, condition, datePosted, location,
+      name, price, year, details, condition, datePosted, location, VIN,
       images, viewCount, subCategory,
     } = item;
 
@@ -140,7 +140,7 @@ export default function EditFormItems() {
       return;
     }
     if (isNaN(year.trim())) {
-      toast.error('Year must be a date', {
+      toast.error('Year must be a year', {
         position: 'top-center',
         autoClose: 2500,
         hideProgressBar: true,
@@ -233,6 +233,7 @@ export default function EditFormItems() {
         isPromoted: false,
         postedFrom: 'web',
         mainCat: 'vehicle',
+        VIN,
         vendor: vendorData,
         datePosted,
         subCategory,
@@ -254,7 +255,7 @@ export default function EditFormItems() {
     e.preventDefault();
 
     const {
-      name, price, year, details, condition, location, subCategory, viewCount,
+      name, price, year, details, condition, location, subCategory, viewCount, VIN,
       images, datePosted,
     } = item;
 
@@ -370,6 +371,7 @@ export default function EditFormItems() {
         isPromoted: true,
         postedFrom: 'web',
         mainCat: 'vehicle',
+        VIN,
         vendor: vendorData,
         datePosted,
         subCategory,
@@ -473,6 +475,19 @@ export default function EditFormItems() {
               placeholder="eg. 2020"
               name="year"
               value={item.year}
+              onChange={handleFormChange}
+            />
+          </div>
+        </div>
+        <div className="col-md-6">
+          <div className="new-item-form__input-div">
+            <label htmlFor="vin-input" className="new-item-form__label">VIN</label>
+            <input
+              id="Vin-input"
+              className="new-item-form__input"
+              placeholder="1HGBH41JXMN109186"
+              name="VIN"
+              value={item.VIN}
               onChange={handleFormChange}
             />
           </div>

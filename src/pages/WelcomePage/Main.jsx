@@ -4,15 +4,15 @@ import DisplayCards from './components/DisplayCards';
 // import AdPanel from '../../components/AdPanel';
 import SectionHeader from '../../components/SectionHeader';
 // import FilterCard from '../../components/FilterCard';
-import SearchCategoriesBox from '../SearchResult/components/CategoriesBox';
+// import SearchCategoriesBox from '../SearchResult/components/CategoriesBox';
 import SearchBar from './components/SearchBar';
 // import useTopScroll from '../../Hooks/useTopScroll';
 import { setFilter } from '../../redux/slice/productsSlice';
 // import HorizontalAdPanel from '../../components/HorizontalAdPanel';
 // import SellNowButtonBoxMobile from '../WishList/components/SellNowButtonBoxMobile';
 import Hero from './components/Hero';
-// import NewArrivalsButton from '../../components/NewArrivalsButton';
-import MainCategories from './components/MainCategories';
+// import NewArrivalsButton from '../../c omponents/NewArrivalsButton';
+// import MainCategories from './components/MainCategories';
 
 export default function Main() {
   const dispatch = useDispatch();
@@ -37,13 +37,13 @@ export default function Main() {
         <div className="main-section__left-div">
           {/* <CategoriesBox /> */}
           {/* <NewArrivalsButton /> */}
-          <SectionHeader>Categories</SectionHeader>
+          {/* <SectionHeader>Categories</SectionHeader>
           {/* <FilterCard /> */}
-          <MainCategories />
+          {/* <MainCategories /> */}
           {/* <AdPanel /> */}
         </div>
         <div className="main-section__right-div welcome-page__right-div">
-          <SearchCategoriesBox />
+          {/* <SearchCategoriesBox /> */}
           <Hero />
           {/* <HorizontalAdPanel /> */}
           <div className="main-section__mobile-div">
