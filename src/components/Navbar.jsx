@@ -242,7 +242,7 @@ function Navbar() {
               { appName }
               </span> */}
             </Link>
-            <p>Your Marketplace for Vehicles and Electronic Gadgets</p>
+            <p style={{ fontSize: '11px' }}>Your Marketplace for Vehicles and Electronic Gadgets</p>
           </div>
           <ul className="d-flex justify-content-end align-items-center">
             { !isAnonymous && <li>
@@ -319,9 +319,9 @@ function Navbar() {
               <span>
                 <img className="navbar-custom__app-logo" src={appLogo} alt={appName} />
               </span>
-              <span className="h2 navbar-custom__brand-text--small">
+              {/* <span className="h2 navbar-custom__brand-text--small">
               { appName }
-              </span>
+              </span> */}
             </Link>
             {/* <p>Electronic Gadgets Marketplace</p> */}
           </div>

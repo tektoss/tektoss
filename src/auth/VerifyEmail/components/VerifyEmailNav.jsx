@@ -17,7 +17,7 @@ export default function VerifyEmailNav() {
                 { appName }
               </span> */}
             </div>
-            <p>Your Marketplace for Vehicles and Electronic Gadgets</p>
+            <p style={{ fontSize: '11px' }}>Your Marketplace for Vehicles and Electronic Gadgets</p>
           </div>
         </div>
       </div>
