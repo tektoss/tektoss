@@ -40,6 +40,7 @@ import ItemRequestList from '../pages/ItemRequestList/ItemRequestList';
 import SingleItemRequest from '../pages/SingleItemRequest/SingleItemRequest';
 import SupportPage from '../pages/SupportPage/SupportPage';
 import PrivacyPolicyPage from '../pages/PrivacyPolicyPage/PrivacyPolicyPage';
+import assetlinks from '../pages/.well-known'
 
 export default function MainRoutes() {
   useEffect(() => {
@@ -99,6 +100,7 @@ export default function MainRoutes() {
         <Route path="/supportPage" element={<SupportPage />} />
         <Route path="/privacyPolicyPage" element={<PrivacyPolicyPage />} />
         <Route path="/test" element={<Test />} />
+        <Route path="/.well-known/assetlinks.json" element={<assetlinks />} />
       </Routes>
     </BrowserRouter>
   );
