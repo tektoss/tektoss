@@ -22,7 +22,7 @@ export default function Main({ uid }) {
         console.log('Document data:', docSnap.data());
         const vendorData = docSnap.data();
         console.log('notifications!!', vendorData.notifications);
-        setNotificationsList(vendorData.notifications);
+        setNotificationsList(vendorData?.notifications);
         setLoading(false);
       } else {
         console.log('No such document!');
@@ -53,7 +53,7 @@ export default function Main({ uid }) {
     const notificationsJSON = localStorage.getItem('notificationsCounts');
     const notificationsData = JSON.parse(notificationsJSON);
     const dataJSON = JSON.stringify(
-      { messageCount: notificationsData.messageCount, notificationCount: 0 },
+      { messageCount: notificationsData?.messageCount, notificationCount: 0 },
     );
     localStorage.setItem('notificationsCounts', dataJSON);
 
