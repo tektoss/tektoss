@@ -19,7 +19,6 @@ export default function Main({ uid }) {
       const docSnap = await getDoc(docRef);
 
       if (docSnap.exists()) {
-        console.log('Document data:', docSnap.data());
         const vendorData = docSnap.data();
         setNotificationsList(vendorData?.notifications);
         setLoading(false);
@@ -70,8 +69,8 @@ export default function Main({ uid }) {
           {loading && (<Loader />)}
           {!loading && (
           <>
-            {(notificationsList.length > 0) && <MessagesList data={notificationsList} />}
-            {(notificationsList.length === 0) && <NotificationsEmpty />}
+            {(notificationsList && notificationsList.length > 0) && <MessagesList data={notificationsList} />}
+            {(notificationsList && notificationsList.length === 0) && <NotificationsEmpty />}
           </>
           )}
         </div>

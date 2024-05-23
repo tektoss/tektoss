@@ -23,6 +23,7 @@
         "no-param-reassign": "off",
         "no-restricted-globals": "off",
         "react/jsx-filename-extension": "off",
-        "radix": "off"
+        "radix": "off",
+        "max-len": ["error", { "code": 120 }]
     }
 }
