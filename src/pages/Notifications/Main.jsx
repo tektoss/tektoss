@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { doc, getDoc, updateDoc } from 'firebase/firestore';
-import AdPanel from '../../../components/AdPanel';
-import ContentInfoBox from '../../../components/ContentInfoBox';
+import AdPanel from '../../components/AdPanel';
+import ContentInfoBox from '../../components/ContentInfoBox';
 import NotificationsEmpty from './components/NotificationsEmpty';
-import { db } from '../../../config/firebaseConfig';
+import { db } from '../../config/firebaseConfig';
 import MessagesList from './components/MessagesList';
-import Loader from '../../../components/Loader';
+import Loader from '../../components/Loader';
 
 export default function Main({ uid }) {
   const [notificationsList, setNotificationsList] = useState([]);
@@ -21,8 +21,7 @@ export default function Main({ uid }) {
       if (docSnap.exists()) {
         console.log('Document data:', docSnap.data());
         const vendorData = docSnap.data();
-        console.log('notifications!!', vendorData.notifications);
-        setNotificationsList(vendorData.notifications);
+        setNotificationsList(vendorData?.notifications);
         setLoading(false);
       } else {
         console.log('No such document!');
@@ -51,9 +50,9 @@ export default function Main({ uid }) {
     resetNewNotifications();
 
     const notificationsJSON = localStorage.getItem('notificationsCounts');
-    const notificationsData = JSON.parse(notificationsJSON);
+    const notificationsData = notificationsJSON ? JSON.parse(notificationsJSON) : {};
     const dataJSON = JSON.stringify(
-      { messageCount: notificationsData.messageCount, notificationCount: 0 },
+      { messageCount: notificationsData?.messageCount || 0, notificationCount: 0 },
     );
     localStorage.setItem('notificationsCounts', dataJSON);
 
@@ -71,11 +70,8 @@ export default function Main({ uid }) {
           {loading && (<Loader />)}
           {!loading && (
           <>
-            {/* {(notificationsList.length > 0) && <MessagesList data={notificationsList} />}
-            {(notificationsList.length === 0) && <NotificationsEmpty />} */}
-            {(notificationsList && notificationsList.length > 0) && <MessagesList data={notificationsList} />}
-            {(notificationsList && notificationsList.length === 0) && <NotificationsEmpty />}
-
+            {(notificationsList.length > 0) && <MessagesList data={notificationsList} />}
+            {(notificationsList.length === 0) && <NotificationsEmpty />}
           </>
           )}
         </div>
