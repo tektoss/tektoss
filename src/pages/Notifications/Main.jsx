@@ -9,35 +9,31 @@ import Loader from '../../components/Loader';
 
 export default function Main({ uid }) {
   const [notificationsList, setNotificationsList] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true); // Initialize loading as true
 
   const fetchData = async () => {
     try {
-      setLoading(true);
-
       const docRef = doc(db, 'vendors', uid);
       const docSnap = await getDoc(docRef);
 
       if (docSnap.exists()) {
-        console.log('Document data:', docSnap.data());
         const vendorData = docSnap.data();
-        console.log('notifications!!', vendorData.notifications);
-        setNotificationsList(vendorData?.notifications);
-        setLoading(false);
+        setNotificationsList(vendorData?.notifications || []); // Ensure it's always an array
       } else {
         console.log('No such document!');
-        setLoading(false);
+        setNotificationsList([]); // Set an empty array if no document exists
       }
     } catch (err) {
       console.log(err.message);
-      setLoading(false);
+      setNotificationsList([]); // Set an empty array in case of error
+    } finally {
+      setLoading(false); // Ensure loading is set to false in the end
     }
   };
 
   const resetNewNotifications = async () => {
     try {
       const vendorRef = doc(db, 'vendors', uid);
-
       await updateDoc(vendorRef, {
         newNotifications: [],
       });
@@ -51,14 +47,13 @@ export default function Main({ uid }) {
     resetNewNotifications();
 
     const notificationsJSON = localStorage.getItem('notificationsCounts');
-    const notificationsData = JSON.parse(notificationsJSON);
-    const dataJSON = JSON.stringify(
-      { messageCount: notificationsData?.messageCount, notificationCount: 0 },
-    );
+    const notificationsData = notificationsJSON ? JSON.parse(notificationsJSON) : {};
+    const dataJSON = JSON.stringify({
+      messageCount: notificationsData?.messageCount || 0,
+      notificationCount: 0,
+    });
     localStorage.setItem('notificationsCounts', dataJSON);
-
-    console.log('data after fetch', notificationsList);
-  }, []);
+  }, [uid]); // Add uid as a dependency to rerun effect if uid changes
 
   return (
     <div className="main-section-div">
@@ -68,12 +63,16 @@ export default function Main({ uid }) {
         </div>
         <div className="main-section__right-div">
           <ContentInfoBox>Notifications</ContentInfoBox>
-          {loading && (<Loader />)}
-          {!loading && (
-          <>
-            {(notificationsList.length > 0) && <MessagesList data={notificationsList} />}
-            {(notificationsList.length === 0) && <NotificationsEmpty />}
-          </>
+          {loading ? (
+            <Loader />
+          ) : (
+            <>
+              {notificationsList.length > 0 ? (
+                <MessagesList data={notificationsList} />
+              ) : (
+                <NotificationsEmpty />
+              )}
+            </>
           )}
         </div>
       </main>
