@@ -1,39 +1,43 @@
 import React, { useEffect, useState } from 'react';
 import { doc, getDoc, updateDoc } from 'firebase/firestore';
-import AdPanel from '../../components/AdPanel';
-import ContentInfoBox from '../../components/ContentInfoBox';
+import AdPanel from '../../../components/AdPanel';
+import ContentInfoBox from '../../../components/ContentInfoBox';
 import NotificationsEmpty from './components/NotificationsEmpty';
-import { db } from '../../config/firebaseConfig';
+import { db } from '../../../config/firebaseConfig';
 import MessagesList from './components/MessagesList';
-import Loader from '../../components/Loader';
+import Loader from '../../../components/Loader';
 
 export default function Main({ uid }) {
   const [notificationsList, setNotificationsList] = useState([]);
-  const [loading, setLoading] = useState(true); // Initialize loading as true
+  const [loading, setLoading] = useState(false);
 
   const fetchData = async () => {
     try {
+      setLoading(true);
+
       const docRef = doc(db, 'vendors', uid);
       const docSnap = await getDoc(docRef);
 
       if (docSnap.exists()) {
+        console.log('Document data:', docSnap.data());
         const vendorData = docSnap.data();
-        setNotificationsList(vendorData?.notifications || []); // Ensure it's always an array
+        console.log('notifications!!', vendorData.notifications);
+        setNotificationsList(vendorData.notifications);
+        setLoading(false);
       } else {
         console.log('No such document!');
-        setNotificationsList([]); // Set an empty array if no document exists
+        setLoading(false);
       }
     } catch (err) {
       console.log(err.message);
-      setNotificationsList([]); // Set an empty array in case of error
-    } finally {
-      setLoading(false); // Ensure loading is set to false in the end
+      setLoading(false);
     }
   };
 
   const resetNewNotifications = async () => {
     try {
       const vendorRef = doc(db, 'vendors', uid);
+
       await updateDoc(vendorRef, {
         newNotifications: [],
       });
@@ -47,13 +51,14 @@ export default function Main({ uid }) {
     resetNewNotifications();
 
     const notificationsJSON = localStorage.getItem('notificationsCounts');
-    const notificationsData = notificationsJSON ? JSON.parse(notificationsJSON) : {};
-    const dataJSON = JSON.stringify({
-      messageCount: notificationsData?.messageCount || 0,
-      notificationCount: 0,
-    });
+    const notificationsData = JSON.parse(notificationsJSON);
+    const dataJSON = JSON.stringify(
+      { messageCount: notificationsData.messageCount, notificationCount: 0 },
+    );
     localStorage.setItem('notificationsCounts', dataJSON);
-  }, [uid]); // Add uid as a dependency to rerun effect if uid changes
+
+    console.log('data after fetch', notificationsList);
+  }, []);
 
   return (
     <div className="main-section-div">
@@ -63,16 +68,15 @@ export default function Main({ uid }) {
         </div>
         <div className="main-section__right-div">
           <ContentInfoBox>Notifications</ContentInfoBox>
-          {loading ? (
-            <Loader />
-          ) : (
-            <>
-              {notificationsList.length > 0 ? (
-                <MessagesList data={notificationsList} />
-              ) : (
-                <NotificationsEmpty />
-              )}
-            </>
+          {loading && (<Loader />)}
+          {!loading && (
+          <>
+            {/* {(notificationsList.length > 0) && <MessagesList data={notificationsList} />}
+            {(notificationsList.length === 0) && <NotificationsEmpty />} */}
+            {(notificationsList && notificationsList.length > 0) && <MessagesList data={notificationsList} />}
+            {(notificationsList && notificationsList.length === 0) && <NotificationsEmpty />}
+
+          </>
           )}
         </div>
       </main>
