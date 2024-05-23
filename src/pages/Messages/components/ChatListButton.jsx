@@ -4,9 +4,14 @@ import profile from '../../../assets/images/profile.jpg';
 import { SET_CHAT_DETAILS } from '../../../redux/slice/chatSlice';
 
 export default function ChatListButton({ data, uid }) {
-  const {
-    firstName, photoURL, uid: recipientId,
-  } = data.otherUserDetails;
+  const firstName = data?.otherUserDetails?.firstName || '';
+  const photoURL = data?.otherUserDetails?.photoURL || '';
+  const recipientId = data?.otherUserDetails?.uid || '';
+  // const {
+  //   firstName = '',
+  //   photoURL = '',
+  //   uid: recipientId = '',
+  // } = data.otherUserDetails;
   const dispatch = useDispatch();
 
   const chatDetailsData = {
@@ -39,17 +44,17 @@ export default function ChatListButton({ data, uid }) {
           <img src={photoURL || profile} alt="user profile" className="chat-list__card-image" />
         </div>
         <div className="chat-list__card-info-div">
-          <h6>{ firstName }</h6>
+          <h6>{firstName}</h6>
           {uid !== data.lastMessage.senderId ? (<p>{lastMessage}</p>) : null}
           {uid === data.lastMessage.senderId ? (<p>{`You: ${myLastMessage}`}</p>) : null}
         </div>
       </div>
-      { (data?.messageList?.length > 0) && (
-      <div className="chat-list__new-message">
-        <div className="chat-list__new-message__icon">
-          <h6 className="chat-list__new-message__icon-value">New</h6>
+      {(data?.messageList?.length > 0) && (
+        <div className="chat-list__new-message">
+          <div className="chat-list__new-message__icon">
+            <h6 className="chat-list__new-message__icon-value">New</h6>
+          </div>
         </div>
-      </div>
       )}
     </button>
   );
