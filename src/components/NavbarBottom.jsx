@@ -43,7 +43,7 @@ export default function NavbarBottom() {
               { appName }
             </span> */}
           </Link>
-          <p style={{ fontSize: '11px' }}>Your Marketplace for Vehicles and Electronic Gadgets</p>
+          <p style={{ fontSize: '11px' }}>A Multi-purpose Place</p>
         </div>
         <div className="bottom-nav__content-search-div">
           <input
