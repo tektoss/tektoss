@@ -9,7 +9,8 @@ export default function PrivacyStatement() {
         Welcome to
         {' '}
         {appName}
-        , an online marketplace for buying and selling everything.
+        , an A Multi-purpose online place for buying and selling everything,
+        Finding jobs and services.
         By using this platform, you
         agree to the following terms and conditions:
       </h5>

@@ -14,8 +14,8 @@ export default function CarsCategory() {
         <title>{`Category| ${appName}`}</title>
         <meta
           name="description"
-          content={`Your One-Stop Electronic Gadget Marketplace.
-          Discover the Best Deals, Connect with Sellers, and Trade Gadgets with Ease right here on ${appName}.`}
+          content={`A Multi-purpose Place.
+          Discover the Best Deals, Connect with Sellers and Jobs, and Trade Gadgets , Vehicles, and otheres with Ease right here on ${appName}.`}
         />
         <link rel="canonical" href="/#page-top" />
       </Helmet>

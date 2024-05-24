@@ -17,7 +17,7 @@ export default function AuthNav() {
                 { appName }
               </span>
             </Link>
-            <p>Electronic Gadgets Marketplace</p>
+            <p>A multi-purpose Place</p>
           </div>
         </div>
       </div>

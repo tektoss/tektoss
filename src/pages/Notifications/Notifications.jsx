@@ -37,7 +37,7 @@ export default function Notifications() {
         <title>{`Notifications | ${appName}`}</title>
         <meta
           name="description"
-          content={`Your One-Stop Electronic Gadget Marketplace.
+          content={`A Multi-purpose Place.
           Discover the Best Deals, Connect with Sellers, and Trade Gadgets with Ease right here on ${appName}.`}
         />
         <link rel="canonical" href="/notifications" />
