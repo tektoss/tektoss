@@ -31,7 +31,7 @@ export default function Footer() {
                 { appName }
               </h4> */}
             </Link>
-            <p className="footer__brand-info">{`Connect, Buy, and Sell Your Favorite Vehicles and Gadgets right here on ${appName}.`}</p>
+            <p className="footer__brand-info">{`Connect, Buy, and Sell Your Favorite Vehicles, Gadgets, and others right here on ${appName}.`}</p>
             <SellNowButton />
             <div className="footer__info-div">
               <div className="footer__supportPage-div">
