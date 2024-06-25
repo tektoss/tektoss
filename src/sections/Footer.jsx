@@ -81,7 +81,7 @@ export default function Footer() {
                 <div>
                   {' '}
                 </div>
-                <a href="https://play.google.com/store/apps/details?id=com.tektoss.electrotoss" target="_blank" rel="noopener noreferrer">
+                <a href="https://play.google.com/store/apps/details?id=com.nudiance.app" target="_blank" rel="noopener noreferrer">
                   <div>
                     <button className="footer__info--get-the-app__button" type="button">
                       <div className="footer__info--get-the-app__button-div">
