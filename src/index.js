@@ -10,6 +10,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import TimeAgo from 'javascript-time-ago'
 import en from 'javascript-time-ago/locale/en.json';
 import { HelmetProvider } from 'react-helmet-async';
+import { PrimeReactProvider, PrimeReactContext } from 'primereact/api';
+        
 
 TimeAgo.addDefaultLocale(en);
 
@@ -17,9 +19,11 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   // <React.StrictMode>
     <Provider store={store}>
+      <PrimeReactProvider>
       <HelmetProvider>
        <MainRoutes />
       </HelmetProvider>
+      </PrimeReactProvider>
     </Provider>
   // </React.StrictMode>
 );

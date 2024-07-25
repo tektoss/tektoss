@@ -3054,6 +3054,24 @@ form input:focus-visible, form textarea:focus-visible {
   outline-color: #511989 !important;
 }
 
+.p-multiselect-label {
+  height: 2.5em;
+  display: flex;
+  align-items: center;
+  padding-left: 15px;
+  width: 100%;
+  overflow: hidden;
+  text-wrap: wrap;
+}
+
+.p-multiselect-token {
+  margin-right: 10px;
+  padding: 4px 10px;
+  display: flex;
+  -moz-column-gap: 4px;
+       column-gap: 4px;
+}
+
 .new-item-form__posted-items-count {
   display: flex;
   flex-direction: column;
@@ -5755,6 +5773,218 @@ form input:focus-visible, form textarea:focus-visible {
   font-weight: 600;
 }
 
+.job-postings__div {
+  padding: 20px 0;
+  border-bottom: 1px solid lightgrey;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.job-postings__tab-button-div {
+  display: flex;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+}
+.job-postings__tab-button {
+  outline: none;
+  border: none;
+  font-weight: 700;
+  padding: 5px 20px;
+  width: 100px;
+  border-radius: 50px;
+  background-color: transparent;
+  color: #511989;
+}
+.job-postings__tab-button:hover {
+  background-color: rgb(243, 243, 243);
+}
+.job-postings__tab-button.active {
+  background-color: #511989;
+  color: #ffffff;
+}
+.job-postings__post-button {
+  outline: none;
+  border: none;
+  font-weight: 700;
+  padding: 5px 20px;
+  min-width: 180px;
+  border-radius: 50px;
+  background-color: rgb(243, 243, 243);
+  color: dimgrey;
+}
+.job-postings__post-button:hover {
+  background-color: #dadada;
+  color: dimgrey;
+}
+.job-postings__card-div {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  -moz-column-gap: 15px;
+       column-gap: 15px;
+  height: 100%;
+  border-radius: 4px;
+  background-color: transparent;
+  border: 1px solid lightgrey;
+  outline: none;
+  padding: 15px;
+  transition: background-color 0.3s;
+  text-align: start;
+}
+.job-postings__card-div:hover {
+  background-color: rgb(243, 243, 243);
+}
+.job-postings__card-div p {
+  margin-bottom: 5px;
+}
+.job-postings__info-div {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.job-postings__image-div {
+  height: 60px;
+  width: 60px;
+  border-radius: 50px;
+  background-color: rgb(243, 243, 243);
+  border: 1px solid lightgrey;
+  overflow: hidden;
+}
+.job-postings__image {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50px;
+  opacity: 0.3;
+}
+.job-postings__single-post-title-div {
+  border-bottom: 1px solid lightgrey;
+  margin-bottom: 20px;
+}
+.job-postings__single-post-title {
+  margin-bottom: 15px;
+}
+.job-postings__contact-detail-title-div {
+  margin-bottom: 15px;
+}
+.job-postings__container-div {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-bottom: 20px;
+}
+.job-postings__text-div {
+  margin-bottom: 20px;
+}
+.job-postings__delete-button {
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  color: #ffffff;
+  font-weight: 600;
+  padding: 5px 20px;
+  background-color: rgb(223, 64, 64);
+  margin-top: 70px;
+}
+.job-postings__tab-button-title {
+  margin: 0;
+}
+.job-postings__web-link-button {
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  color: #ffffff;
+  font-weight: 600;
+  padding: 5px 20px;
+  background-color: #511989;
+}
+.job-postings__job-type-div {
+  display: flex;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+}
+.job-postings__job-type {
+  border-radius: 4px;
+  background-color: rgb(243, 243, 243);
+  font-weight: 600;
+  padding: 5px 10px;
+}
+.job-postings__contact-detail-div {
+  display: flex;
+  -moz-column-gap: 200px;
+       column-gap: 200px;
+}
+.job-postings__card-inner-div {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.job-postings__job-type {
+  padding: 2px 5px;
+  background-color: rgb(243, 243, 243);
+}
+.job-postings__checkbox-outer-div {
+  display: flex;
+  -moz-column-gap: 70px;
+       column-gap: 70px;
+  height: 50px;
+  align-items: center;
+}
+.job-postings__checkbox-div {
+  display: flex;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+  align-items: center;
+}
+.job-postings__checkbox-div h6 {
+  margin: 0;
+}
+.job-postings__submit-button {
+  height: 2.3em;
+  border-radius: 4px;
+  border: none;
+  color: #ffffff;
+  width: 120px;
+  font-weight: 600;
+  outline: none;
+  background-color: #511989;
+  padding: 5px 10px;
+}
+.job-postings__dropdown {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+.job-postings__nested-dropdown {
+  margin-top: 10px;
+}
+.job-postings__nested-dropdown select {
+  padding: 5px;
+  font-size: 16px;
+}
+
+@media (max-width: 430px) {
+  .job-postings__div--addPost {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    padding: 5px 0;
+  }
+  .job-postings__tab-button-title {
+    text-align: center;
+    flex: 1;
+    margin: 0;
+  }
+  .job-postings__post-button {
+    margin-bottom: 25px;
+    width: 70%;
+  }
+  .job-postings__container-div {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-bottom: 20px;
+  }
+}
 .contain-div {
   position: absolute;
   top: 0;
@@ -5989,7 +6219,9 @@ form input:focus-visible, form textarea:focus-visible {
 .request__hero-section-outer-div {
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  -moz-column-gap: 15px;
+       column-gap: 15px;
 }
 .request__hero-section-div {
   border: 2px solid lightgrey;
@@ -5998,9 +6230,10 @@ form input:focus-visible, form textarea:focus-visible {
   width: 70%;
   padding: 15px;
   display: flex;
+  -moz-column-gap: 15px;
+       column-gap: 15px;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
 }
 .request__item-card {
   border: 1px solid lightgrey;
@@ -6042,6 +6275,8 @@ form input:focus-visible, form textarea:focus-visible {
   display: flex;
   align-items: center;
   justify-content: center;
+  -moz-column-gap: 15px;
+       column-gap: 15px;
 }
 .request__search-bar {
   height: 100%;
@@ -6049,6 +6284,14 @@ form input:focus-visible, form textarea:focus-visible {
   border: 1px solid rgb(126, 126, 126);
   border-radius: 4px;
   padding: 0 15px;
+}
+.request__search-bar-button {
+  height: 2.3em;
+  padding: 5px 20px;
+  color: #ffffff;
+  border-radius: 5px;
+  background-color: #511989;
+  border: none;
 }
 .request__single-item-item-type {
   width: 200px;
@@ -6138,10 +6381,14 @@ form input:focus-visible, form textarea:focus-visible {
   padding: 15px;
 }
 .request__section__text {
+  flex: 3.5;
   text-align: center;
   font-weight: 700;
+  width: 60%;
+  text-align: left;
 }
 .request__section__button {
+  flex: 1;
   color: #ffffff;
   border-radius: 4px;
   background-color: #511989;
@@ -6152,6 +6399,44 @@ form input:focus-visible, form textarea:focus-visible {
 }
 .request__section__button.home {
   width: 180px;
+  width: 100%;
+  padding: 5px 10px;
+}
+
+.request-box__outer-div {
+  display: flex;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+  height: auto;
+  width: 100%;
+  padding: 0 150px;
+  margin-bottom: 20px;
+}
+.request-box__item-div {
+  height: auto;
+  padding: 15px;
+  flex: 1;
+  border-radius: 4px;
+  border: 2px solid lightgrey;
+}
+.request-box__title {
+  font-weight: 700;
+  color: #511989;
+}
+.request-box__text {
+  color: darkgray;
+  width: 90%;
+}
+.request-box__button {
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  padding: 5px 20px;
+  background-color: #511989;
+  color: #ffffff;
+  font-size: 0.9em;
+  font-weight: 700;
+  letter-spacing: 0.5px;
 }
 
 @media (max-width: 430px) {
@@ -6233,7 +6518,86 @@ form input:focus-visible, form textarea:focus-visible {
   .request__single-item__inner-info-div-bottom__button.delete-button {
     background-color: rgb(223, 64, 64);
   }
+  .request-box__outer-div {
+    gap: 15px;
+    row-gap: 15px;
+    height: auto;
+    padding: 0 15px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: nowrap; /* Prevents wrapping of the flex items */
+    width: -moz-max-content;
+    width: max-content; /* Ensures the inner container width exceeds the outer container */
+  }
+  .request-box__outermost-div {
+    display: flex;
+    overflow-x: auto; /* Enables horizontal scrolling */
+    white-space: nowrap; /* Prevents line breaks */
+    width: 100%; /* Adjust the width as needed */
+  }
+  .request-box__item-div {
+    height: auto;
+    padding: 15px;
+    flex: 0 0 auto; /* Prevents cards from shrinking */
+    width: 350px;
+    border-radius: 4px;
+    border: 2px solid lightgrey;
+    text-wrap: wrap;
+  }
+  .request-box__item-div p {
+    line-height: 1.3;
+  }
+  .request-box__title {
+    font-weight: 700;
+    color: #511989;
+  }
+  .request-box__text {
+    color: darkgray;
+    width: 90%;
+  }
+  .request-box__button {
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    padding: 5px 20px;
+    background-color: #511989;
+    color: #ffffff;
+    font-size: 0.9em;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
 }
+.new-arrivals__no-arrivals-outer-div {
+  display: flex;
+  justify-content: center;
+}
+.new-arrivals__no-arrivals-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 4px;
+  border: 1px solid lightgrey;
+  background-color: rgb(243, 243, 243);
+  height: 150px;
+  width: 60%;
+  margin-bottom: 20px;
+}
+.new-arrivals__view-all-button {
+  height: 2em;
+  outline: none;
+  border: 1px solid lightgrey;
+  background-color: lighygrey;
+  border-radius: 4px;
+  width: 45%;
+}
+.new-arrivals__view-all-button-div {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
 .footer {
   height: auto;
   background-color: #511989;
@@ -7314,7 +7678,7 @@ button.checkout__buttom:disabled {
   padding: 5px;
   width: 180px;
   flex-shrink: 0;
-  height: 100%;
+  height: 200px;
   overflow: hidden;
   background-color: white;
   transition: background-color 0.4s;
@@ -7360,13 +7724,17 @@ button.checkout__buttom:disabled {
     margin-bottom: 0;
     height: auto;
   }
+  .welcome-page__explore-shops__shop-outer-div {
+    margin-bottom: 0;
+    height: unset;
+  }
   .welcome-page__explore-shops__main-div {
     margin-bottom: 0;
     height: auto;
     padding: 2.4em 10px 10px;
   }
   .welcome-page__explore-shops__shop-div {
-    height: auto;
+    height: 120px;
     width: 100%;
     gap: 5px;
   }
@@ -7381,7 +7749,10 @@ button.checkout__buttom:disabled {
   .welcome-page__shop-card {
     padding: 5px;
     width: 155px;
-    height: 200px;
+    height: 100%;
+  }
+  .welcome-page__shop-card__shop-bio {
+    display: none;
   }
   .welcome-page__shop-card:hover .welcome-page__shop-card__button {
     bottom: 5px;

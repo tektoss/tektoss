@@ -1,0 +1,35 @@
+.new-arrivals {
+    &__no-arrivals-outer-div {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__no-arrivals-div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 4px;
+        border: 1px solid $primaryGreyColour;
+        background-color: $primaryMidGreyColour;
+        height: 150px;
+        width: 60%;
+        margin-bottom: 20px;
+    }
+
+    &__view-all-button {
+        height: 2em;
+        outline: none;
+        border: 1px solid $primaryGreyColour;
+        background-color: lighygrey;
+        border-radius: 4px;
+        width: 45%;
+    }
+
+    &__view-all-button-div {
+        display: flex;
+        justify-content: center;
+        font-weight: bold;
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+}

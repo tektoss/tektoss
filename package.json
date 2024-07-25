@@ -17,6 +17,7 @@
     "emoji-flag": "^1.1.0",
     "firebase": "^9.21.0",
     "nanoid": "^4.0.2",
+    "primereact": "^10.7.0",
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.4",
     "react-countries-flags": "^1.2.4",

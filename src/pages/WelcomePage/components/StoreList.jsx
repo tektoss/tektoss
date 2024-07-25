@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import {
   collection, query, where, getDocs,
 } from 'firebase/firestore';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import { db } from '../../../config/firebaseConfig';
 import ShopCard from './ShopCard';
 import Hero from './Hero';
@@ -10,7 +10,7 @@ import SectionHeader from '../../../components/SectionHeader';
 
 export default function StoreList() {
   const [stores, setStores] = useState([]);
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const fetchStores = async () => {
     const q = query(collection(db, 'vendors'), where('isPremium', '==', true));
@@ -46,7 +46,7 @@ export default function StoreList() {
     }
         </div>
       </div>
-      <div className="request__hero-section-outer-div">
+      {/* <div className="request__hero-section-outer-div">
         <div className="request__hero-section-div">
           <h5 className="request__section__text">
             Check out what users are looking to buy.
@@ -59,7 +59,19 @@ export default function StoreList() {
             View Requests
           </button>
         </div>
-      </div>
+        <div className="request__hero-section-div">
+          <h5 className="request__section__text">
+            Check out various jobs and services being offered.
+          </h5>
+          <button
+            className="request__section__button home"
+            type="button"
+            onClick={() => navigate('/request-item-list')}
+          >
+            View Services
+          </button>
+        </div>
+      </div> */}
     </div>
   );
 }
