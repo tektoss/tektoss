@@ -1,17 +1,16 @@
-/* eslint-disable react/jsx-filename-extension */
 import React from 'react';
-import Main from './Main';
 import Navbar from '../../components/Navbar';
 import NavbarBottom from '../../components/NavbarBottom';
-import AuthFooter from '../../auth/components/AuthFooter';
+import Main from './Main';
+import Footer from '../../sections/Footer';
 
-export default function WelcomePage() {
+export default function JobPostings() {
   return (
     <>
       <Navbar />
       <NavbarBottom />
       <Main />
-      <AuthFooter />
+      <Footer />
     </>
   );
 }

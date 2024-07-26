@@ -11,15 +11,13 @@ import ProductCard from '../../../components/ProductCard';
 import EmptyDisplay from '../../../components/EmptyDisplay';
 import Loader from '../../../components/Loader';
 import { selectProductsState } from '../../../redux/slice/productsSlice';
-import FilterByDistance from '../../WelcomePage/components/FilterByDistance';
-import isItemWithinMiles from '../../WelcomePage/utils/isItemWithinMiles';
 import { selectLocationState } from '../../../redux/slice/locationSlice';
 import { db } from '../../../config/firebaseConfig';
+//
 
 export default function DisplayNewArrivals() {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [miles, setMiles] = useState(70);
   const [itemsPerPage] = useState(32);
   const [currentPage, setCurrentPage] = useState(1);
   const [filteredData, setFilteredData] = useState([]);
@@ -28,7 +26,7 @@ export default function DisplayNewArrivals() {
   const {
     updateTime: time, maxPrice, minPrice, condition, brand,
   } = filterCategoryObject;
-  const { coordinates, isLocationAvailable } = useSelector(selectLocationState);
+  const { isLocationAvailable } = useSelector(selectLocationState);
 
   const fetchData = async () => {
     try {
@@ -69,7 +67,6 @@ export default function DisplayNewArrivals() {
             && item.price <= maxPrice
             && (item.condition === condition || condition === 'all')
             && (item.brand === brand || brand === 'all')
-            && isItemWithinMiles(miles, coordinates, item)
             ),
           );
         }
@@ -93,7 +90,7 @@ export default function DisplayNewArrivals() {
     };
 
     filterData();
-  }, [data, time, miles]);
+  }, [data, time]);
 
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
@@ -109,39 +106,34 @@ export default function DisplayNewArrivals() {
 
   if (!isLoading && filteredData.length === 0) {
     return (
-      <>
-        <FilterByDistance setMiles={setMiles} miles={miles} />
-        <EmptyDisplay />
-      </>
+      <EmptyDisplay />
     );
   }
 
   return (
-    <>
-      <FilterByDistance setMiles={setMiles} miles={miles} />
-      <div className="search-result-items">
-        <div className="row g-2">
-          {
+    <div className="search-result-items">
+      <div className="row g-2">
+        {
           currentItems.map((product) => (
             <div className="col-6 col-sm-4 col-md-2">
               <ProductCard product={product} />
             </div>
           ))
           }
-        </div>
-        <div className="d-flex justify-content-center mt-5">
-          <ul className="pagination">
-            <li className="page-item pagination__prev-page-item">
-              <button
-                className="page-link"
-                type="button"
-                disabled={currentPage === 1}
-                onClick={() => paginate(currentPage - 1)}
-              >
-                Prev
-              </button>
-            </li>
-            {
+      </div>
+      <div className="d-flex justify-content-center mt-5">
+        <ul className="pagination">
+          <li className="page-item pagination__prev-page-item">
+            <button
+              className="page-link"
+              type="button"
+              disabled={currentPage === 1}
+              onClick={() => paginate(currentPage - 1)}
+            >
+              Prev
+            </button>
+          </li>
+          {
                 Array.from({ length: Math.ceil(filteredData.length / itemsPerPage) })
                   .map((_, index) => (
                     <li className="page-item pagination__page-item">
@@ -156,19 +148,18 @@ export default function DisplayNewArrivals() {
                     </li>
                   ))
                }
-            <li className="page-item pagination__next-page-item">
-              <button
-                className="page-link"
-                type="button"
-                disabled={currentPage === Math.ceil(filteredData.length / itemsPerPage)}
-                onClick={() => paginate(currentPage + 1)}
-              >
-                Next
-              </button>
-            </li>
-          </ul>
-        </div>
+          <li className="page-item pagination__next-page-item">
+            <button
+              className="page-link"
+              type="button"
+              disabled={currentPage === Math.ceil(filteredData.length / itemsPerPage)}
+              onClick={() => paginate(currentPage + 1)}
+            >
+              Next
+            </button>
+          </li>
+        </ul>
       </div>
-    </>
+    </div>
   );
 }

@@ -29,13 +29,18 @@ function Test() {
   };
 
   return (
-    <div>
-      the distance is
-      {' '}
-      {getDistance()}
-      {' '}
-      miles.
-    </div>
+    <>
+      <div>
+        the distance is
+        {' '}
+        {getDistance()}
+        {' '}
+        miles.
+      </div>
+      <div>
+        <input />
+      </div>
+    </>
   );
 }
 

@@ -1,26 +1,24 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import DisplayCards from './components/DisplayCards';
 import SectionHeader from '../../components/SectionHeader';
-// import AdPanel from '../../components/AdPanel';
 import FilterCard from '../../components/FilterCard';
-// import CategoriesBox from '../../components/CategoriesBox';
 import SearchCategoriesBox from '../SearchResult/components/CategoriesBox';
-// import SearchBar from './components/SearchBar';
-// import useTopScroll from '../../Hooks/useTopScroll';
 import { setFilter } from '../../redux/slice/productsSlice';
-// import HorizontalAdPanel from '../../components/HorizontalAdPanel';
 import SellNowButtonBoxMobile from '../WishList/components/SellNowButtonBoxMobile';
-// import Hero from './components/Hero';
 import TopBrands from './components/TopBrands';
-// import ExploreShops from './components/ExploreShops';
 import { selectItemTypeState, setItemType } from '../../redux/slice/itemTypeSlice';
 import ItemTypeToggleButton from './components/ItemTypeToggleButton';
 import StoreList from './components/StoreList';
+import DisplayNewArrivals from './components/DisplayNewArrivals';
+import RequestBox from './components/RequestBox';
 
 export default function Main() {
   const dispatch = useDispatch();
   const { itemType } = useSelector(selectItemTypeState);
+
+  const navigate = useNavigate();
 
   const initialFilter = {
     maxPrice: 10000,
@@ -67,9 +65,48 @@ export default function Main() {
         </div>
       </main>
       <main className="main-section">
+        <div className="request-box__outermost-div">
+          <div className="request-box__outer-div">
+            <RequestBox>
+              <div>
+                <h5 className="request-box__title">Can&apos;t Find What You&apos;re Looking For?</h5>
+                <p className="request-box__text">
+                  Post an item you need and let others know what you&apos;re looking for.
+                  Click the button below to post your needs!
+                </p>
+                <button
+                  onClick={() => navigate('/request-item-list')}
+                  type="button"
+                  className="request-box__button"
+                >
+                  Get Started
+                </button>
+              </div>
+            </RequestBox>
+            <RequestBox>
+              <div>
+                <h5 className="request-box__title">Need Services or Want to Offer Your Expertise?</h5>
+                <p className="request-box__text">
+                  Explore a wide range of services or post
+                  your own job opportunities. Click the button below to get started!
+                </p>
+                <button
+                  onClick={() => navigate('/job-postings')}
+                  type="button"
+                  className="request-box__button"
+                >
+                  Get Started
+                </button>
+              </div>
+            </RequestBox>
+          </div>
+        </div>
         <div>
           <SectionHeader>Top Brands</SectionHeader>
           <TopBrands itemType={itemType} />
+        </div>
+        <div>
+          <DisplayNewArrivals />
         </div>
         <div>
           <SectionHeader>All Products</SectionHeader>

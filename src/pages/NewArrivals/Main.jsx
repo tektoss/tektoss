@@ -2,7 +2,7 @@ import React from 'react';
 // import SectionHeader from '../../components/SectionHeader';
 // import AdPanel from '../../components/AdPanel';
 import SearchBar from '../SearchResult/components/SearchBar';
-import CategoriesBox from '../SearchResult/components/CategoriesBox';
+// import CategoriesBox from '../SearchResult/components/CategoriesBox';
 import SellNowButtonBoxMobile from '../WishList/components/SellNowButtonBoxMobile';
 import NewArrivalsHeader from './components/NewArrivalsHeader';
 import DisplayNewArrivals from './components/DisplayNewArrivals';
@@ -18,8 +18,10 @@ export default function Main() {
         <div className="main-section__right-div">
           <SellNowButtonBoxMobile />
           <NewArrivalsHeader />
-          <CategoriesBox />
+          {/* <CategoriesBox /> */}
+          <br />
           <SearchBar />
+          <br />
           <DisplayNewArrivals />
         </div>
       </main>

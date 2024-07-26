@@ -40,6 +40,10 @@ import ItemRequestList from '../pages/ItemRequestList/ItemRequestList';
 import SingleItemRequest from '../pages/SingleItemRequest/SingleItemRequest';
 import SupportPage from '../pages/SupportPage/SupportPage';
 import PrivacyPolicyPage from '../pages/PrivacyPolicyPage/PrivacyPolicyPage';
+import JobPostings from '../pages/JobPostings/JobPostings';
+import AddJobPosting from '../pages/AddJobPosting/AddJobPosting';
+import SingleJobPosting from '../pages/SingleJobPosting/SingleJobPosting';
+import SingleServicePosting from '../pages/SingleServicePosting/SingleServicePosting';
 
 export default function MainRoutes() {
   useEffect(() => {
@@ -94,6 +98,10 @@ export default function MainRoutes() {
         <Route path="/create-shop" element={<NewShop />} />
         <Route path="/add-request-item" element={<AddNewItemRequest />} />
         <Route path="/request-item-list" element={<ItemRequestList />} />
+        <Route path="/job-postings" element={<JobPostings />} />
+        <Route path="/single-job-posting/:id" element={<SingleJobPosting />} />
+        <Route path="/single-service-posting/:id" element={<SingleServicePosting />} />
+        <Route path="/add-job-posting" element={<AddJobPosting />} />
         <Route path="/single-request/:id" element={<SingleItemRequest />} />
         <Route path="/process-payment/:purpose" element={<ProcessPayment />} />
         <Route path="/supportPage" element={<SupportPage />} />

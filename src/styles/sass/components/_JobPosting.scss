@@ -1,0 +1,244 @@
+.job-postings {
+    &__div {
+        padding: 20px 0;
+        border-bottom: 1px solid $primaryGreyColour;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+
+    &__tab-button-div {
+        display: flex;
+        column-gap: 20px;
+    }
+
+    &__tab-button {
+        outline: none;
+        border: none;
+        font-weight: 700;
+        padding: 5px 20px;
+        width: 100px;
+        border-radius: 50px;
+        background-color: transparent;
+        color: $secondaryColour;
+
+        &:hover {
+            background-color: $primaryMidGreyColour;
+        }
+
+        &.active {
+            background-color: $secondaryColour;
+            color: $lightFont;
+        }
+    }
+
+    &__post-button {
+        outline: none;
+        border: none;
+        font-weight: 700;
+        padding: 5px 20px;
+        min-width: 180px;
+        border-radius: 50px;
+        background-color: $primaryMidGreyColour;
+        color: dimgrey;
+
+        &:hover {
+            background-color: darken($primaryMidGreyColour, 10%);
+            color: dimgrey;
+        }
+    }
+
+    &__card-div {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        column-gap: 15px;
+        height: 100%;
+        border-radius: 4px;
+        background-color: transparent;
+        border: 1px solid $primaryGreyColour;
+        outline: none;
+        padding: 15px;
+        transition: background-color 0.3s;
+        text-align: start;
+
+        &:hover {
+            background-color: $primaryMidGreyColour;
+        }
+
+        & p {
+            margin-bottom: 5px;
+        }
+    }
+
+    &__info-div {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+    }
+
+    &__image-div {
+        height: 60px;
+        width: 60px;
+        border-radius: 50px;
+        background-color: $primaryMidGreyColour;
+        border: 1px solid $primaryGreyColour;
+        overflow: hidden;
+    }
+
+    &__image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50px;
+        opacity: 0.3;
+    }
+
+    &__single-post-title-div {
+        border-bottom: 1px solid $primaryGreyColour;
+        margin-bottom: 20px;
+    }
+
+    &__single-post-title {
+        margin-bottom: 15px;
+    }
+
+    &__contact-detail-title-div {
+        margin-bottom: 15px;
+    }
+
+    &__container-div {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        margin-bottom: 20px;
+    }
+
+    &__text-div {
+        margin-bottom: 20px;
+    }
+
+    &__delete-button {
+        border: none;
+        outline: none;
+        border-radius: 4px;
+        color: $lightFont;
+        font-weight: 600;
+        padding: 5px 20px;
+        background-color: $dangerRed;
+        margin-top: 70px;
+    }
+
+    &__tab-button-title {
+        margin: 0;
+    }
+
+    &__web-link-button {
+        border: none;
+        outline: none;
+        border-radius: 4px;
+        color: $lightFont;
+        font-weight: 600;
+        padding: 5px 20px;
+        background-color: $secondaryColour;
+    }
+
+    &__job-type-div {
+        display: flex;
+        column-gap: 10px;
+    }
+
+    &__job-type {
+        border-radius: 4px;
+        background-color: $primaryMidGreyColour;
+        font-weight: 600;
+        padding: 5px 10px;
+    }
+
+    &__contact-detail-div {
+        display: flex;
+        column-gap: 200px;
+    }
+
+    &__card-inner-div {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+
+    &__job-type {
+        padding: 2px 5px;
+        background-color: $primaryMidGreyColour;
+    }
+
+    &__checkbox-outer-div {
+        display: flex;
+        column-gap: 70px;
+        height: 50px;
+        align-items: center;
+    }
+
+    &__checkbox-div {
+        display: flex;
+        column-gap: 10px;
+        align-items: center;
+
+        h6 {
+            margin: 0;
+        }
+    }
+
+    &__submit-button {
+        height: 2.3em;
+        border-radius: 4px;
+        border: none;
+        color: $lightFont;
+        width: 120px;
+        font-weight: 600;
+        outline: none;
+        background-color: $secondaryColour;
+        padding: 5px 10px;
+    }
+
+    &__dropdown {
+        position: relative;
+        display: inline-block;
+        margin-bottom: 20px;
+    }
+
+    &__nested-dropdown {
+        margin-top: 10px;
+
+        & select {
+            padding: 5px;
+            font-size: 16px;
+        }
+    }
+}
+
+@include mobileScreen {
+    .job-postings {
+        &__div--addPost {
+            display: flex;
+            flex-direction: column-reverse;
+            align-items: center;
+            padding: 5px 0;
+        }
+
+        &__tab-button-title {
+            text-align: center;
+            flex: 1;
+            margin: 0;
+        }
+
+        &__post-button {
+            margin-bottom: 25px;
+            width: 70%;
+        }
+
+        &__container-div {
+            display: grid;
+            grid-template-columns: 1fr;
+            margin-bottom: 20px;
+        }
+    }
+}
