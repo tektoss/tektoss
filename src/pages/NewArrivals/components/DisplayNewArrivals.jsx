@@ -13,6 +13,7 @@ import Loader from '../../../components/Loader';
 import { selectProductsState } from '../../../redux/slice/productsSlice';
 import { selectLocationState } from '../../../redux/slice/locationSlice';
 import { db } from '../../../config/firebaseConfig';
+//
 
 export default function DisplayNewArrivals() {
   const [data, setData] = useState([]);
