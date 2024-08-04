@@ -98,58 +98,64 @@ export default function Main() {
               </div>
               <div className="job-postings__container-div">
                 <div>
-                  <h5>Company Name</h5>
+                  <h5 style={{ color: '#511989', fontWeight: 'bold' }}>Company Name</h5>
                   <p>{posting.vendor.Company}</p>
                 </div>
                 <div>
-                  <h5>Job Location</h5>
+                  <h5 style={{ color: '#511989', fontWeight: 'bold' }}>Job Location</h5>
                   <p>{posting.vendor?.address || posting.vendor?.addresss}</p>
                 </div>
                 <div>
-                  <h5>Salary</h5>
+                  <h5 style={{ color: '#511989', fontWeight: 'bold' }}>Salary</h5>
                   <p>{posting.salary}</p>
                 </div>
-                {posting?.consultType && (
-                <div>
-                  <h5>Nature of Job</h5>
-                  <p>{posting?.consultType}</p>
-                </div>
+                {posting?.jtravelReq && (
+                  <div>
+                    <h5 style={{ color: '#511989', fontWeight: 'bold' }}>Travel Requirement</h5>
+                    <p>{posting?.jtravelReq}</p>
+                  </div>
                 )}
                 <div>
-                  <h5>Job Type</h5>
+                  <h5 style={{ color: '#511989', fontWeight: 'bold' }}>Job Type</h5>
                   <div className="job-postings__job-type-div">
                     {
-                    posting.jobType.split(', ').map((type) => (
-                      <div className="job-postings__job-type">{type}</div>
-                    ))
-                  }
+                      posting.jobType.split(', ').map((type) => (
+                        <div className="job-postings__job-type">{type}</div>
+                      ))
+                    }
                   </div>
                 </div>
                 <div>
-                  <h5>Time Posted</h5>
+                  <h5 style={{ color: '#511989', fontWeight: 'bold' }}>Time Posted</h5>
                   <p><ReactTimeAgo date={posting.datePosted.toDate()} locale="en-US" /></p>
                 </div>
               </div>
+              {posting?.jMinEducation && (
+                <div>
+                  <h5 style={{ color: '#511989', fontWeight: 'bold' }}>Minimum Level of Education Required</h5>
+                  <p>{posting?.jMinEducation}</p>
+                </div>
+              )}
               <div className="job-postings__text-div">
-                <h5>Job Description</h5>
+                <h5 style={{ color: '#511989', fontWeight: 'bold' }}>Job Description</h5>
                 <p>
                   {posting.jDescription}
                 </p>
               </div>
               <div className="job-postings__text-div">
-                <h5>Skill and Technical Requirement</h5>
+                <h5 style={{ color: '#511989', fontWeight: 'bold' }}>Job Expectations and Duties</h5>
                 <p>
                   {posting.jExpectation}
                 </p>
               </div>
               <div className="job-postings__text-div">
-                <h5>Compensation and Other Benefits</h5>
+                <h5 style={{ color: '#511989', fontWeight: 'bold' }}>Compensation and Other Benefits</h5>
                 <p>
                   {posting.jComBenefit}
                 </p>
               </div>
               <div className="job-postings__text-div">
-                <h5>Company Overview</h5>
+                <h5 style={{ color: '#511989', fontWeight: 'bold' }}>Company Blurb</h5>
                 <p>
                   {posting.jcomBlurb}
                 </p>
@@ -160,19 +166,19 @@ export default function Main() {
                 </div>
                 <div className="job-postings__contact-detail-div">
                   {posting?.phoneNumber && (
-                  <div>
-                    <h6>Phone Number</h6>
-                    <p>{posting?.phoneNumber}</p>
-                  </div>
+                    <div>
+                      <h6>Phone Number</h6>
+                      <p>{posting?.phoneNumber}</p>
+                    </div>
                   )}
                   {posting?.companyEmail && (
-                  <div>
-                    <h6>Company Email</h6>
-                    <p>{posting.companyEmail}</p>
-                  </div>
+                    <div>
+                      <h6>Company Email</h6>
+                      <p>{posting.companyEmail}</p>
+                    </div>
                   )}
                   <div>
-                    <h6>External Link</h6>
+                    {/* <h6>External Link</h6> */}
                     <button
                       className="job-postings__web-link-button"
                       onClick={() => handleNavigate(posting.externalLink)}
@@ -185,13 +191,13 @@ export default function Main() {
               </div>
               <div>
                 {(uid === posting.vendor.uid) && (
-                <button
-                  className="job-postings__delete-button"
-                  type="button"
-                  onClick={() => handleOpenModal()}
-                >
-                  Delete Posting
-                </button>
+                  <button
+                    className="job-postings__delete-button"
+                    type="button"
+                    onClick={() => handleOpenModal()}
+                  >
+                    Delete Posting
+                  </button>
                 )}
               </div>
             </div>

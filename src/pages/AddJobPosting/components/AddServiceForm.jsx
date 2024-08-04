@@ -8,7 +8,7 @@ export default function AddServiceForm() {
   const initialState = {
     Expertise: [],
     PhoneNumber: '',
-    consultType: '',
+    consultType: 'PersonnelConsultant',
     consultantEmail: '',
     details: '',
     postedFrom: 'Web',
@@ -48,7 +48,7 @@ export default function AddServiceForm() {
       onSubmit={(e) => handleSubmit(e)}
     >
       <div className="row g-4">
-        <div className="col-md-6">
+        {/* <div className="col-md-6">
           <div className="new-item-form__input-div">
             <label htmlFor="service-consult-type" className="new-item-form__label">
               Consult Type
@@ -63,7 +63,7 @@ export default function AddServiceForm() {
               onChange={handleFormChange}
             />
           </div>
-        </div>
+        </div> */}
         <div className="col-md-6">
           <div className="new-item-form__input-div">
             <label htmlFor="job-company-name" className="new-item-form__label">
@@ -73,7 +73,7 @@ export default function AddServiceForm() {
             <input
               id="job-company-name"
               className="new-item-form__input"
-              placeholder="eg. Data Scientist"
+              placeholder="Eva's Nail Painting/Plumbing"
               name="companyName"
               value={service.companyName}
               onChange={handleFormChange}
@@ -113,13 +113,13 @@ export default function AddServiceForm() {
         <div className="col-md-6">
           <div className="new-item-form__input-div">
             <label htmlFor="address" className="new-item-form__label">
-              Site Address
+              Location Address
               <span>*</span>
             </label>
             <input
               id="address"
               className="new-item-form__input"
-              placeholder="Site Address"
+              placeholder="2200 N High Street, Suite 330 New York, NY"
               name="address"
               value={service.address}
               onChange={handleFormChange}

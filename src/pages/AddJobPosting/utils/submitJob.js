@@ -40,8 +40,7 @@ export const serviceFormIsVerified = (service) => {
   const numberRegex = /^\d+$/;
 
   if (
-    service.consultType.trim() === ''
-        || service.companyName.trim() === ''
+    service.companyName.trim() === ''
         || service.address.trim() === ''
         || service.details.trim() === ''
   ) {

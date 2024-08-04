@@ -83,7 +83,7 @@ export default function AddJobForm() {
             <input
               id="Company"
               className="new-item-form__input"
-              placeholder="eg. Data Scientist"
+              placeholder=""
               name="Company"
               value={job.Company}
               onChange={handleFormChange}
@@ -314,7 +314,7 @@ export default function AddJobForm() {
           <div className="new-item-form__textarea-div">
             <label className="new-item-form__label new-item-form__label--alt">
               <h6>
-                Company Overview
+                Company Blurb
                 <span>*</span>
               </h6>
             </label>

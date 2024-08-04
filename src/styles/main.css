@@ -5898,16 +5898,25 @@ form input:focus-visible, form textarea:focus-visible {
   padding: 5px 20px;
   background-color: #511989;
 }
-.job-postings__job-type-div {
+/* .job-postings__job-type-div {
   display: flex;
   -moz-column-gap: 10px;
        column-gap: 10px;
+} */
+
+.job-postings__job-type-div {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two columns layout */
+  gap: 5px; /* Space between items */
+  margin-top: 10px;
 }
+
 .job-postings__job-type {
+  display: inline-block;
   border-radius: 4px;
   background-color: rgb(243, 243, 243);
   font-weight: 600;
-  padding: 5px 10px;
+  padding: 2px 8px;
 }
 .job-postings__contact-detail-div {
   display: flex;
@@ -5919,10 +5928,16 @@ form input:focus-visible, form textarea:focus-visible {
   gap: 8px;
   flex-wrap: wrap;
 }
+
 .job-postings__job-type {
   padding: 2px 5px;
-  background-color: rgb(243, 243, 243);
+  background-color: grey;
+  color: white;
+  border-radius: 3px;
+  font-size: 14px;
 }
+
+
 .job-postings__checkbox-outer-div {
   display: flex;
   -moz-column-gap: 70px;
@@ -8121,5 +8136,25 @@ button.checkout__buttom:disabled {
     -webkit-appearance: none;
     box-shadow: 0 0 6px rgba(0, 0, 0, 0.05);
     z-index: 2;
+  }
+  .button-container {
+    display: flex;
+   
+    justify-content: flex-start; /* Aligns the button to the left */
+  }
+  
+  .button-rounded {
+    padding: 10px 20px;
+    background-color: #511989; /* Change to your preferred color */
+    color: black;
+    border: none;
+    border-radius: 20px; /* Rounded edges */
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .button-rounded:hover {
+    background-color: #0056b3; /* Change to your preferred hover color */
   }
 }/*# sourceMappingURL=main.css.map */

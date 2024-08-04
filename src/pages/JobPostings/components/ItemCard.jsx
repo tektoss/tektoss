@@ -18,8 +18,8 @@ export default function ItemCard({ cardDetail, isService }) {
           <img alt="company profile" src={cardDetail.vendor.photoUrl || profilePhoto} className="job-postings__image" />
         </div>
         <div className="job-postings__info-div">
-          <h6>{cardDetail.consultType}</h6>
-          <p>{cardDetail.vendor.Company}</p>
+          {/* <h6>{cardDetail.consultType}</h6> */}
+          <h5 style={{ color: '#511989', fontWeight: 'bold' }}>{cardDetail.vendor.Company}</h5>
           <p>{`${cardDetail?.location?.town}, ${cardDetail?.location?.state}`}</p>
           <p>
             Posted
@@ -60,8 +60,8 @@ export default function ItemCard({ cardDetail, isService }) {
         <img alt="company profile" src={cardDetail.vendor.photoUrl || profilePhoto} className="job-postings__image" />
       </div>
       <div className="job-postings__info-div">
-        <h6>{cardDetail.name}</h6>
-        <p>{cardDetail.vendor.Company}</p>
+        <h6 style={{ color: '#511989', fontWeight: 'bold' }}>{cardDetail.name}</h6>
+        <h6 style={{ fontWeight: 'bold' }}>{cardDetail.vendor.Company}</h6>
         <p>{cardDetail.salary}</p>
         <p>{`${cardDetail?.location?.town}, ${cardDetail?.location?.state}`}</p>
         <p>

@@ -88,20 +88,20 @@ export default function Main() {
           <div className="main-section__right-div">
             <ContentInfoBox>Service Posting</ContentInfoBox>
             <div>
-              <div className="job-postings__single-post-title-div">
+              {/* <div className="job-postings__single-post-title-div">
                 <h2 className="job-postings__single-post-title">{posting.consultType}</h2>
-              </div>
+              </div> */}
               <div className="job-postings__container-div">
                 <div>
-                  <h5>Company Name</h5>
+                  <h5 style={{ color: '#511989', fontWeight: 'bold' }}>Company Name</h5>
                   <p>{posting.vendor.Company}</p>
                 </div>
                 <div>
-                  <h5>Job Location</h5>
+                  <h5 style={{ color: '#511989', fontWeight: 'bold' }}>Service Location</h5>
                   <p>{posting.vendor?.address || posting.vendor?.addresss}</p>
                 </div>
                 <div>
-                  <h5>Expertise</h5>
+                  <h5 style={{ color: '#511989', fontWeight: 'bold' }}>My Skills</h5>
                   <div className="job-postings__job-type-div">
                     {
                     posting.Expertise.split(', ').map((type) => {
@@ -115,19 +115,19 @@ export default function Main() {
                   </div>
                 </div>
                 <div>
-                  <h5>Time Posted</h5>
+                  <h5 style={{ color: '#511989', fontWeight: 'bold' }}>Time Posted</h5>
                   <p><ReactTimeAgo date={posting.datePosted.toDate()} locale="en-US" /></p>
                 </div>
               </div>
               <div className="job-postings__text-div">
-                <h5>Job Description</h5>
+                <h5 style={{ color: '#511989', fontWeight: 'bold' }}>Portfolio</h5>
                 <p>
                   {posting.details}
                 </p>
               </div>
               <div>
                 <div className="job-postings__contact-detail-title-div">
-                  <h4>Contact Details</h4>
+                  <h4 style={{ color: '#511989', fontWeight: 'bold' }}>Contact Details</h4>
                 </div>
                 <div className="job-postings__contact-detail-div">
                   {posting?.PhoneNumber && (
