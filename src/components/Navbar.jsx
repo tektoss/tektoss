@@ -26,7 +26,7 @@ import SignInModal from '../auth/SignIn/SignInModal';
 import SignUpModal from '../auth/Register/SignUpModal';
 import { selectItemTypeState, setItemType } from '../redux/slice/itemTypeSlice';
 import { errorToast, successToast } from '../utils/Toasts';
-import JobPostings from '../pages/JobPostings/JobPostings';
+// import JobPostings from '../pages/JobPostings/JobPostings';
 
 function Navbar() {
   const dispatch = useDispatch();
