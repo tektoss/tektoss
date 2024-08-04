@@ -26,7 +26,7 @@ export default function ShareModal({ show, handleClose, itemName }) {
 
   const shareOnTwitter = () => {
     const itemLink = window.location.href;
-    const text = encodeURIComponent(`Check out this ${itemName} at ${itemLink} via ElectroToss`);
+    const text = encodeURIComponent(`Check out this ${itemName} at ${itemLink} via Nudiance`);
     const url = `https://twitter.com/intent/tweet?text=${text}`;
     window.open(url, '_blank');
   };
@@ -37,7 +37,7 @@ export default function ShareModal({ show, handleClose, itemName }) {
 
   const shareOnWhatsapp = () => {
     const itemLink = window.location.href;
-    const text = encodeURIComponent(`Check out this ${itemName} at ${itemLink} via ElectroToss`);
+    const text = encodeURIComponent(`Check out this ${itemName} at ${itemLink} via Nudiance`);
     const url = `https://api.whatsapp.com/send?text=${text}`;
     window.open(url, '_blank');
   };

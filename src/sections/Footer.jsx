@@ -58,7 +58,7 @@ export default function Footer() {
 
               <div className="footer__info footer__info--get-the-app">
                 <h5 className="footer__info--get-the-app__title">Get the App Today</h5>
-                <a href="https://apps.apple.com/us/app/electrotoss/id6473089394" target="_blank" rel="noopener noreferrer">
+                <a href="https://apps.apple.com/us/app/nudiance/id6473089394" target="_blank" rel="noopener noreferrer">
                   <div style={{ marginBottom: 20 }}>
                     <button className="footer__info--get-the-app__button" type="button">
                       <div className="footer__info--get-the-app__button-div">
@@ -157,13 +157,13 @@ export default function Footer() {
           <div className="col-md-4">
             <h4 className="footer__heading">Follow Us</h4>
             <div className="footer__socials-div d-flex">
-              <a href="https://web.facebook.com/electrotoss" target="_blank" rel="noreferrer" className="footer__socials-inner-div" title="facebook">
+              <a href="https://web.facebook.com/nudiance" target="_blank" rel="noreferrer" className="footer__socials-inner-div" title="facebook">
                 <i className="footer__social-icon fa-brands fa-facebook-f" />
               </a>
-              <a href="https://www.instagram.com/electrotoss" target="_blank" rel="noreferrer" className="footer__socials-inner-div" title="instagram">
+              <a href="https://www.instagram.com/nudiance" target="_blank" rel="noreferrer" className="footer__socials-inner-div" title="instagram">
                 <i className="footer__social-icon fa-brands fa-instagram" />
               </a>
-              <a href="https://twitter.com/electrotoss" target="_blank" rel="noreferrer" className="footer__socials-inner-div" title="twitter">
+              <a href="https://twitter.com/nudiance" target="_blank" rel="noreferrer" className="footer__socials-inner-div" title="twitter">
                 <i className="footer__social-icon fa-brands fa-twitter" />
               </a>
               <a href="https://www.youtube.com/channel/UCUDgJq_u7d7A_i_2n6Ap-qg" target="_blank" rel="noreferrer" className="footer__socials-inner-div" title="youtube">

@@ -137,7 +137,7 @@ export default function PrivacyStatement() {
             color: 'black',
           }}
           >
-            Email: admhelp@electrotoss.com
+            Email: info@nudiance.com
           </p>
         </ul>
         <div className="col-md-4">
