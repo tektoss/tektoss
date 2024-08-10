@@ -326,7 +326,7 @@ function Navbar() {
             </Link>
             {/* <p>Electronic Gadgets Marketplace</p> */}
           </div>
-          <div style={{
+{/*           <div style={{
               display: 'flex',
               marginRight: 950,  // Correct syntax for margin-left
               width: '20%', // Ensure correct usage of percentages and units
@@ -347,7 +347,7 @@ function Navbar() {
               >
                 Jobs and Services
               </button>
-            </div>
+            </div> */}
           <div className="bottom-nav__content-search-div navbar-custom__search-div">
             <input
               value={search}
