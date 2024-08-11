@@ -326,28 +326,28 @@ function Navbar() {
             </Link>
             {/* <p>Electronic Gadgets Marketplace</p> */}
           </div>
-         // <div style={{
-         //     display: 'flex',
-         //     marginRight: 950,  // Correct syntax for margin-left
-         //     width: '20%', // Ensure correct usage of percentages and units
-         //   }}>
-         //     <button
-         //       onClick={() => navigate('/job-postings')}
-         //       type="button"
-         //       style={{
-         //         padding: '10px 10px',
-         //         backgroundColor: '#511989', /* Change to your preferred color */
-         //         color: 'white',
-         //         border: 'none',
-         //         borderRadius: '10px', /* Rounded edges */
-         //         fontSize: '17px',
-         //         cursor: 'pointer',
-         //         transition: 'background-color 0.3s ease'
-         //       }}
-         //     >
-         //       Jobs and Services
-         //     </button>
-         //   </div>
+         {/* <div style={{
+              display: 'flex',
+              marginRight: 950,  // Correct syntax for margin-left
+              width: '20%', // Ensure correct usage of percentages and units
+            }}>
+              <button
+                onClick={() => navigate('/job-postings')}
+                type="button"
+                style={{
+                  padding: '10px 10px',
+                  backgroundColor: '#511989', /* Change to your preferred color */
+                  color: 'white',
+                  border: 'none',
+                  borderRadius: '10px', /* Rounded edges */
+                  fontSize: '17px',
+                  cursor: 'pointer',
+                  transition: 'background-color 0.3s ease'
+                }}
+              >
+                Jobs and Services
+              </button>
+            </div> */}
           <div className="bottom-nav__content-search-div navbar-custom__search-div">
             <input
               value={search}
