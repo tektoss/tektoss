@@ -344,8 +344,8 @@ function Navbar() {
                   cursor: 'pointer',
                   transition: 'background-color 0.3s ease'
                 }}
-              >
-                Jobs and Services
+              > */}
+               {/* Jobs and Services
               </button>
             </div> */}
           <div className="bottom-nav__content-search-div navbar-custom__search-div">
