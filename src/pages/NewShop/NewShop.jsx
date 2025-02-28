@@ -17,6 +17,16 @@ export default function NewShop() {
               Discover the Best Deals, Connect with Sellers, and Trade Gadgets with Ease right here on ${appName}.`}
         />
         <link rel="canonical" href="/new-item" />
+
+         <script async src="https://www.googletagmanager.com/gtag/js?id=G-7DH8N2G5K2"></script>
+        <script>
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-7DH8N2G5K2');
+          `}
+        </script>
       </Helmet>
       <Navbar />
       <NavbarBottom />
