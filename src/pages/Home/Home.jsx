@@ -12,11 +12,10 @@ export default function Home() {
         <title>{`Home | ${appName}`}</title>
         <meta
           name="description"
-          content={`A Multi-purpose Place.
-          Discover the Best Deals, Connect with Sellers, and Trade Gadgets with Ease right here on ${appName}.`}
+          content={`A Multi-purpose Place. Discover the Best Deals, Connect with Sellers, and Trade Gadgets with Ease right here on ${appName}.`}
         />
         <link rel="canonical" href="/" />
-        {/* Google Analytics Tag */}
+        {/* Google Analytics */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-7DH8N2G5K2"></script>
         <script>
           {`
@@ -27,11 +26,10 @@ export default function Home() {
           `}
         </script>
       </Helmet>
-      
+
       <Navbar />
       <Main />
       <AuthFooter />
     </>
   );
 }
-
