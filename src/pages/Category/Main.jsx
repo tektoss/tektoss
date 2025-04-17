@@ -34,6 +34,7 @@ export default function Main() {
   }, [category]);
 
   return (
+    <>
     <Helmet>
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-7DH8N2G5K2"></script>
         <script>
@@ -68,5 +69,6 @@ export default function Main() {
         </div>
       </main>
     </div>
+      </>
   );
 }
