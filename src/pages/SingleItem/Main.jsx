@@ -77,19 +77,20 @@ export default function Main() {
   useEffect(() => {
     fetchData();
   }, [id]);
-
-  return (
+return (
+  <>
     <Helmet>
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-7DH8N2G5K2"></script>
-        <script>
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-7DH8N2G5K2');
-          `}
-        </script>
-      </Helmet>
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-7DH8N2G5K2"></script>
+      <script>
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-7DH8N2G5K2');
+        `}
+      </script>
+    </Helmet>
+
     <div className="main-section-div">
       <main className="main-section d-flex justify-content-between">
         <div className="main-section__left-div">
@@ -98,12 +99,11 @@ export default function Main() {
           <ViewsBox uid={uid} />
           <VendorDetails id={product?.vendor?.uid} />
           {!userIsAnonymous && <ButtonsBox product={product} />}
-          {(!userIsAnonymous && (uid === product?.vendor?.uid))
-          && <EditItemButton product={product} id={id} />}
-          {(!userIsAnonymous && uid === product?.vendor?.uid)
-          && <RemoveItemButtonsBox product={product} />}
+          {(!userIsAnonymous && (uid === product?.vendor?.uid)) && <EditItemButton product={product} id={id} />}
+          {(!userIsAnonymous && (uid === product?.vendor?.uid)) && <RemoveItemButtonsBox product={product} />}
           <AdPanel />
         </div>
+
         <div className="main-section__right-div">
           <ItemImageBox />
           <div className="main-section__mobile-div">
@@ -112,11 +112,10 @@ export default function Main() {
             <ProductLocation />
             <VendorDetails id={product?.vendor?.uid} />
             {!userIsAnonymous && <ButtonsBox product={product} />}
-            {(!userIsAnonymous && (uid === product?.vendor?.uid))
-          && <EditItemButton product={product} id={id} />}
-            {(!userIsAnonymous && (uid === product?.vendor?.uid))
-          && <RemoveItemButtonsBox product={product} />}
+            {(!userIsAnonymous && (uid === product?.vendor?.uid)) && <EditItemButton product={product} id={id} />}
+            {(!userIsAnonymous && (uid === product?.vendor?.uid)) && <RemoveItemButtonsBox product={product} />}
           </div>
+
           <DisplayUserItems
             displayName={product?.vendor?.displayName}
             vendorId={product?.vendor?.uid}
@@ -128,5 +127,7 @@ export default function Main() {
         </div>
       </main>
     </div>
-  );
+  </>
+);
+
 }
