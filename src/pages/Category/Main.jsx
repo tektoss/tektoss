@@ -11,6 +11,8 @@ import CategoryFilterCard from './components/CategoryFilterCard';
 import { setCategoryFilter } from '../../redux/slice/productsSlice';
 import SellNowButtonBoxMobile from '../WishList/components/SellNowButtonBoxMobile';
 import HeroSectionBrands from '../SearchResult/components/HeroSectionBrands';
+import { Helmet } from 'react-helmet';
+
 
 export default function Main() {
   const { category } = useParams();
