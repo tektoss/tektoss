@@ -1,8 +1,10 @@
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import { Helmet } from 'react-helmet-async';
 // import AdPanel from '../../components/AdPanel';
 import SectionHeader from '../../components/SectionHeader';
+
 // import SearchBar from '../SearchResult/components/SearchBar';
 import CategoriesBox from '../SearchResult/components/CategoriesBox';
 import DisplayCategoryProducts from './components/DisplayCategoryProducts';
@@ -11,8 +13,6 @@ import CategoryFilterCard from './components/CategoryFilterCard';
 import { setCategoryFilter } from '../../redux/slice/productsSlice';
 import SellNowButtonBoxMobile from '../WishList/components/SellNowButtonBoxMobile';
 import HeroSectionBrands from '../SearchResult/components/HeroSectionBrands';
-import { Helmet } from 'react-helmet';
-
 
 export default function Main() {
   const { category } = useParams();
@@ -37,7 +37,7 @@ export default function Main() {
 
   return (
     <>
-    <Helmet>
+      <Helmet>
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-7DH8N2G5K2"></script>
         <script>
           {`
@@ -48,29 +48,29 @@ export default function Main() {
           `}
         </script>
       </Helmet>
-    <div className="main-section-div">
-      <main className="main-section d-flex justify-content-between">
-        <div className="main-section__left-div">
-          <SectionHeader>Filter</SectionHeader>
-          <CategoryFilterCard category={category} />
-          {/* <AdPanel /> */}
-        </div>
-        <div className="main-section__right-div main-section__right-div__category-alt">
-          <SellNowButtonBoxMobile />
-          <CategoryInfoBox />
-          <CategoriesBox />
-          {/* <SearchBar /> */}
-          <SectionHeader>Top Brands</SectionHeader>
-          <HeroSectionBrands />
-        </div>
-      </main>
-      <main className="main-section">
-        <div>
-          <SectionHeader>{`All ${category}`}</SectionHeader>
-          <DisplayCategoryProducts />
-        </div>
-      </main>
-    </div>
-      </>
+      <div className="main-section-div">
+        <main className="main-section d-flex justify-content-between">
+          <div className="main-section__left-div">
+            <SectionHeader>Filter</SectionHeader>
+            <CategoryFilterCard category={category} />
+            {/* <AdPanel /> */}
+          </div>
+          <div className="main-section__right-div main-section__right-div__category-alt">
+            <SellNowButtonBoxMobile />
+            <CategoryInfoBox />
+            <CategoriesBox />
+            {/* <SearchBar /> */}
+            <SectionHeader>Top Brands</SectionHeader>
+            <HeroSectionBrands />
+          </div>
+        </main>
+        <main className="main-section">
+          <div>
+            <SectionHeader>{`All ${category}`}</SectionHeader>
+            <DisplayCategoryProducts />
+          </div>
+        </main>
+      </div>
+    </>
   );
 }

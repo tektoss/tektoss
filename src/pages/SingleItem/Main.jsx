@@ -4,6 +4,7 @@ import {
 } from 'firebase/firestore';
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import { Helmet } from 'react-helmet-async';
 import AdPanel from '../../components/AdPanel';
 import { db } from '../../config/firebaseConfig';
 import ProductDetail from './components/ProductDetails';
@@ -77,57 +78,56 @@ export default function Main() {
   useEffect(() => {
     fetchData();
   }, [id]);
-return (
-  <>
-    <Helmet>
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-7DH8N2G5K2"></script>
-      <script>
-        {`
+  return (
+    <>
+      <Helmet>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-7DH8N2G5K2"></script>
+        <script>
+          {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
           gtag('config', 'G-7DH8N2G5K2');
         `}
-      </script>
-    </Helmet>
+        </script>
+      </Helmet>
 
-    <div className="main-section-div">
-      <main className="main-section d-flex justify-content-between">
-        <div className="main-section__left-div">
-          <ProductDetail />
-          <ProductLocation />
-          <ViewsBox uid={uid} />
-          <VendorDetails id={product?.vendor?.uid} />
-          {!userIsAnonymous && <ButtonsBox product={product} />}
-          {(!userIsAnonymous && (uid === product?.vendor?.uid)) && <EditItemButton product={product} id={id} />}
-          {(!userIsAnonymous && (uid === product?.vendor?.uid)) && <RemoveItemButtonsBox product={product} />}
-          <AdPanel />
-        </div>
-
-        <div className="main-section__right-div">
-          <ItemImageBox />
-          <div className="main-section__mobile-div">
-            <ViewsBox uid={uid} />
+      <div className="main-section-div">
+        <main className="main-section d-flex justify-content-between">
+          <div className="main-section__left-div">
             <ProductDetail />
             <ProductLocation />
+            <ViewsBox uid={uid} />
             <VendorDetails id={product?.vendor?.uid} />
             {!userIsAnonymous && <ButtonsBox product={product} />}
             {(!userIsAnonymous && (uid === product?.vendor?.uid)) && <EditItemButton product={product} id={id} />}
             {(!userIsAnonymous && (uid === product?.vendor?.uid)) && <RemoveItemButtonsBox product={product} />}
+            <AdPanel />
           </div>
 
-          <DisplayUserItems
-            displayName={product?.vendor?.displayName}
-            vendorId={product?.vendor?.uid}
-          />
-          <DisplaySimilarItems
-            category={product?.category}
-            id={id}
-          />
-        </div>
-      </main>
-    </div>
-  </>
-);
+          <div className="main-section__right-div">
+            <ItemImageBox />
+            <div className="main-section__mobile-div">
+              <ViewsBox uid={uid} />
+              <ProductDetail />
+              <ProductLocation />
+              <VendorDetails id={product?.vendor?.uid} />
+              {!userIsAnonymous && <ButtonsBox product={product} />}
+              {(!userIsAnonymous && (uid === product?.vendor?.uid)) && <EditItemButton product={product} id={id} />}
+              {(!userIsAnonymous && (uid === product?.vendor?.uid)) && <RemoveItemButtonsBox product={product} />}
+            </div>
 
+            <DisplayUserItems
+              displayName={product?.vendor?.displayName}
+              vendorId={product?.vendor?.uid}
+            />
+            <DisplaySimilarItems
+              category={product?.category}
+              id={id}
+            />
+          </div>
+        </main>
+      </div>
+    </>
+  );
 }

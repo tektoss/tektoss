@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import { Helmet } from 'react-helmet-async';
 // import AdPanel from '../../components/AdPanel';
 
 // import SearchBar from '../SearchResult/components/SearchBar';
@@ -36,40 +37,40 @@ export default function Main() {
 
   return (
     <>
-    <Helmet>
+      <Helmet>
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-7DH8N2G5K2"></script>
         <script>
           {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-7DH8N2G5K2');
-          `}
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-7DH8N2G5K2');
+        `}
         </script>
       </Helmet>
-    <div className="main-section-div">
-      <main className="main-section d-flex justify-content-between">
-        <div className="main-section__left-div">
-          <SectionHeader>Filter</SectionHeader>
-          <CarCategoryFilterCard category={category} />
-          {/* <AdPanel /> */}
-        </div>
-        <div className="main-section__right-div main-section__right-div__category-alt">
-          <SellNowButtonBoxMobile />
-          <CategoryInfoBox />
-          <CarsCategoriesBox />
-          {/* <SearchBar /> */}
-          <SectionHeader>Top Brands</SectionHeader>
-          <HeroSectionCarBrands />
-        </div>
-      </main>
-      <main className="main-section">
-        <div>
-          <SectionHeader>{`All ${category}`}</SectionHeader>
-          <DisplayCategoryProducts />
-        </div>
-      </main>
-    </div>
-      </>
+      <div className="main-section-div">
+        <main className="main-section d-flex justify-content-between">
+          <div className="main-section__left-div">
+            <SectionHeader>Filter</SectionHeader>
+            <CarCategoryFilterCard category={category} />
+            {/* <AdPanel /> */}
+          </div>
+          <div className="main-section__right-div main-section__right-div__category-alt">
+            <SellNowButtonBoxMobile />
+            <CategoryInfoBox />
+            <CarsCategoriesBox />
+            {/* <SearchBar /> */}
+            <SectionHeader>Top Brands</SectionHeader>
+            <HeroSectionCarBrands />
+          </div>
+        </main>
+        <main className="main-section">
+          <div>
+            <SectionHeader>{`All ${category}`}</SectionHeader>
+            <DisplayCategoryProducts />
+          </div>
+        </main>
+      </div>
+    </>
   );
 }
